@@ -1,17 +1,17 @@
 "use client"
 
+import { PiUsersThreeThin } from "react-icons/pi";
+
+
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
+  ChartGantt,
+  ChartLine,
+  ChartNetwork,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  GraduationCap,
+  School2,
+  Users2,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -35,124 +35,57 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "OBG",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      role: "Administrador",
+    }
+  ],
+  projects: [
+    {
+      name: "Escolas",
+      url: "/dashboard/schools",
+      icon: School2,
     },
     {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
+      name: "Professores",
+      url: "/dashboard/teachers",
+      icon: GraduationCap,
     },
     {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
+      name: "Equipes",
+      url: "/dashboard/teams",
+      icon: Users2,
     },
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
+      title: "Relatorios",
+      url: "/dashboard/reports",
+      icon: ChartLine,
+      isActive: false,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Equipes",
+          url: "/dashboard/reports/teams",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Pontuações",
+          url: "/dashboard/reports/scores",
         },
         {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
+          title: "Gráficos de Responstas",
+          url: "/dashboard/reports/graphicsAnswers",
         },
         {
-          title: "Explorer",
-          url: "#",
+          title: "Resultados por Equipe",
+          url: "/dashboard/reports/teamsResults",
         },
         {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
+          title: "Certificados",
+          url: "/dashboard/reports/certificates",
+        }
+      ]
+    }
   ],
 }
 
@@ -163,8 +96,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
