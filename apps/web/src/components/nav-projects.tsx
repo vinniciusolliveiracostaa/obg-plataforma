@@ -4,7 +4,6 @@ import {
   type LucideIcon,
 } from "lucide-react"
 
-import * as ReactIcons from "react-icons"
 
 import {
   SidebarGroup,
@@ -20,7 +19,7 @@ export function NavProjects({
   projects: {
     name: string
     url: string
-    icon: LucideIcon | typeof ReactIcons
+    icon: LucideIcon
   }[]
 }) {
 
