@@ -27,7 +27,7 @@ const SIDEBAR_WIDTH_ICON = "3rem"
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 type SidebarContext = {
-  state: "expanded" | "collapsed"
+  state: "collapsed" | "expanded"
   open: boolean
   setOpen: (open: boolean) => void
   openMobile: boolean
@@ -114,7 +114,7 @@ const SidebarProvider = React.forwardRef<
 
     // We add a state so that we can do data-state="expanded" or "collapsed".
     // This makes it easier to style the sidebar with Tailwind classes.
-    const state = open ? "expanded" : "collapsed"
+    const state = open ? "collapsed" : "expanded"
 
     const contextValue = React.useMemo<SidebarContext>(
       () => ({
