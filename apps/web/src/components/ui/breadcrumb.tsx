@@ -17,13 +17,19 @@ const Breadcrumb: React.FC = () => {
     "teamsResults",
     "schools",
     "teams",
-    "teachers"
+    "teachers",
   ]);
 
   // Mapeamento de nomes amigáveis para os segmentos
   const segmentMap: Record<string, string> = {
     dashboard: "Home",
-    reports: "Relatórios",
+    certificates: "Certificados",
+    reports: "Relatórios",
+    graphicsAnswers: "Gráficos de Respostas",
+    teamsResults: "Resultados das Equipes",
+    schools: "Escolas",
+    teams: "Equipes",
+    teachers: "Professores",
   };
 
   // Construir os breadcrumbs
@@ -44,7 +50,9 @@ const Breadcrumb: React.FC = () => {
               {label}
             </Link>
           ) : (
-            <span className="text-sm text-muted-foreground hover:text-foreground cursor-pointer">{label}</span>
+            <span className="text-sm text-muted-foreground hover:text-foreground cursor-pointer">
+              {label}
+            </span>
           )}
         </li>
         {index < segments.length - 1 && (
@@ -77,6 +85,3 @@ const Breadcrumb: React.FC = () => {
 };
 
 export { Breadcrumb };
-
-
-      
