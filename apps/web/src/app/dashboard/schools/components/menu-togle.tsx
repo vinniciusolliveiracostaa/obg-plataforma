@@ -34,15 +34,15 @@ export function MenuTogle() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="ghost">
-            <Trash2 size={16} className="m-2" />
+          <Button variant="destructive">
+            <Trash2 size={16} className="m-2 hover:text-destructive-foreground" />
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[1200px]">
+        <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Editar Escola</DialogTitle>
+            <DialogTitle>Excluir Escola</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you're done.
+              Essa ação é irreversível. Deseja realmente excluir essa escola?
             </DialogDescription>
           </DialogHeader>
           <ProfileForm />
@@ -52,38 +52,34 @@ export function MenuTogle() {
   }
 
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <Button variant="ghost">
-          <Trash2 size={16} className="m-2" />
+    <Dialog open={open} onOpenChange={setOpen}>
+      <DialogTrigger asChild>
+        <Button variant="destructive">
+          <Trash2 size={16} className="m-2 hover:text-destructive-foreground" />
         </Button>
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader className="text-left">
-          <DrawerTitle>Edit profile</DrawerTitle>
-          <DrawerDescription>
-            Make changes to your profile here. Click save when you're done.
-          </DrawerDescription>
-        </DrawerHeader>
-        <ProfileForm className="px-4" />
-        <DrawerFooter className="pt-2">
-          <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Excluir Escola</DialogTitle>
+          <DialogDescription>
+            Essa ação é irreversível. Deseja realmente excluir essa escola?
+          </DialogDescription>
+        </DialogHeader>
+        <ProfileForm />
+      </DialogContent>
+    </Dialog>
   );
+
 }
 
 function ProfileForm({ className }: React.ComponentProps<"form">) {
   return (
     <form className={cn("grid items-start gap-4", className)}>
-      <Button type="submit">Save changes</Button>
+      <div className="grid gap-1.5">
+        <Label htmlFor="destructiveSchool">Para confirmar, digite "EM MARECHAL MASCARENHAS DE MORAES" na caixa abaixo</Label>
+        <Input className="bg-muted border-destructive focus:border-destructive-foreground" id="destructiveSchool" required={true} type="text" />
+      </div>
+      <Button className="bg-destructive text-destructive-foreground hover:bg-destructive/90 h-8" type="submit">Excluir esta escola</Button>
     </form>
   );
 }
-<div className="grid gap-2">
-  <Label></Label>
-  <Input></Input>
-</div>;

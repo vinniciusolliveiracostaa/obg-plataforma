@@ -127,9 +127,6 @@ export function ResultsSection() {
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
-        <TableRow></TableRow>
-      </TableFooter>
     </Table>
   );
 }
