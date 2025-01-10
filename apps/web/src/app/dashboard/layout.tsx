@@ -7,7 +7,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { Metadata } from "next"
 
 
 export default function DashboardLayout({children}: {children: React.ReactNode}) {

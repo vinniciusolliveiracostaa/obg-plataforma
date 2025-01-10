@@ -1,13 +1,7 @@
 "use client"
-
-import { PiUsersThreeThin } from "react-icons/pi";
-
-
 import * as React from "react"
 import {
-  ChartGantt,
   ChartLine,
-  ChartNetwork,
   GalleryVerticalEnd,
   GraduationCap,
   School2,

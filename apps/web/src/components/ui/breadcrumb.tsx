@@ -30,6 +30,7 @@ const Breadcrumb: React.FC = () => {
     schools: "Escolas",
     teams: "Equipes",
     teachers: "Professores",
+    editSchool: "Editar Escola",
   };
 
   // Construir os breadcrumbs
