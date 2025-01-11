@@ -28,11 +28,13 @@ const Breadcrumb: React.FC = () => {
     graphicsAnswers: "Gráficos de Respostas",
     teamsResults: "Resultados das Equipes",
     schools: "Escolas",
-    teams: "Equipes",
-    teachers: "Professores",
     editSchool: "Editar Escola",
     addSchool: "Adicionar Escola",
     addSchoolCSV: "Importar Escola por CSV",
+    teachers: "Professores",
+    editTeacher: "Editar Professor",
+    addTeacher: "Adicionar Professor",
+    teams: "Equipes",
   };
 
   // Construir os breadcrumbs
