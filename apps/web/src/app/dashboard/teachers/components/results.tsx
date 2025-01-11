@@ -112,7 +112,7 @@ export function ResultsSection() {
         <TableRow>
           <TableHead>NOME</TableHead>
           <TableHead>CPF</TableHead>
-          <TableHead>SEX</TableHead>
+          <TableHead>SEXO</TableHead>
           <TableHead>COR</TableHead>
           <TableHead>CATEGORIAS</TableHead>
           <TableHead>TELEFONE</TableHead>
