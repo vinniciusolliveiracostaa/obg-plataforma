@@ -31,6 +31,8 @@ const Breadcrumb: React.FC = () => {
     teams: "Equipes",
     teachers: "Professores",
     editSchool: "Editar Escola",
+    addSchool: "Adicionar Escola",
+    addSchoolCSV: "Importar Escola por CSV",
   };
 
   // Construir os breadcrumbs
