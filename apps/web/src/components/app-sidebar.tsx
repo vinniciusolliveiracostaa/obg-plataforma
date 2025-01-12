@@ -4,6 +4,7 @@ import {
   ChartLine,
   GalleryVerticalEnd,
   GraduationCap,
+  HeartPulse,
   School2,
   User2,
   Users2,
@@ -24,8 +25,8 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "Teste",
+    email: "teste@teste.com",
     avatar: "/avatars/shadcn.jpg",
   },
   teams: [
@@ -62,7 +63,7 @@ const data = {
       title: "Relatorios",
       url: "/dashboard/reports",
       icon: ChartLine,
-      isActive: false,
+      isActive: true,
       items: [
         {
           title: "Equipes",
@@ -83,6 +84,27 @@ const data = {
         {
           title: "Certificados",
           url: "/dashboard/reports/certificates",
+        }
+      ]
+    },
+    {
+      title: "Sistema",
+      url: "/dashboard/admin/reports",
+      icon: HeartPulse,
+      isActive: true,
+      hide: false,
+      items: [
+        {
+          title: "Sessões",
+          url: "/dashboard/admin/reports/sessions",
+        },
+        {
+          title: "Usuários",
+          url: "/dashboard/admin/reports/users",
+        },
+        {
+          title: "Status de Serviços",
+          url: "/dashboard/admin/reports/servicesStatus",
         }
       ]
     }

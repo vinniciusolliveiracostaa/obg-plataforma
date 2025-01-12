@@ -26,6 +26,7 @@ export function NavMain({
     url: string
     icon?: LucideIcon
     isActive?: boolean
+    hide?: boolean
     items?: {
       title: string
       icon?: LucideIcon
@@ -41,6 +42,7 @@ export function NavMain({
             key={item.title}
             asChild
             defaultOpen={item.isActive}
+            hidden={item.hide}
             className="group/collapsible"
           >
             <SidebarMenuItem>
