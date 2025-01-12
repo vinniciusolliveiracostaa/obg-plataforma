@@ -5,6 +5,7 @@ import {
   GalleryVerticalEnd,
   GraduationCap,
   School2,
+  User2,
   Users2,
 } from "lucide-react"
 
@@ -49,6 +50,11 @@ const data = {
       name: "Equipes",
       url: "/dashboard/teams",
       icon: Users2,
+    },
+    {
+      name: "Alunos",
+      url: "/dashboard/students",
+      icon: User2,
     },
   ],
   navMain: [

@@ -35,6 +35,11 @@ const Breadcrumb: React.FC = () => {
     editTeacher: "Editar Professor",
     addTeacher: "Adicionar Professor",
     teams: "Equipes",
+    editTeam: "Editar Equipe",
+    addTeam: "Adicionar Equipe",
+    students: "Alunos",
+    editStudent: "Editar Aluno",
+    addStudent: "Adicionar Aluno",
   };
 
   // Construir os breadcrumbs

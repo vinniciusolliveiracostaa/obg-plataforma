@@ -17,7 +17,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-00",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -26,7 +26,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-01",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -35,7 +35,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-02",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -44,7 +44,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-03",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -53,7 +53,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-04",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -62,7 +62,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-05",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -71,7 +71,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-06",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -80,7 +80,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-07",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -89,7 +89,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-08",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -98,7 +98,7 @@ const teachers = [
     name: "JOSE ALFREDO DE SOUSA",
     cpf: "123.456.789-09",
     sex: "MASCULINO",
-    color: "PRETA",
+    team: "Equipe 1",
     school: "EM MARECHAL MASCARENHAS DE MORAES",
     tel: "+55(88) 99999-9999",
     email: "teste@teste.com",
@@ -110,12 +110,11 @@ export function ResultsSection() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>NOME</TableHead>
+        <TableHead>NOME</TableHead>
           <TableHead>CPF</TableHead>
           <TableHead>SEXO</TableHead>
-          <TableHead>COR</TableHead>
+          <TableHead>EQUIPE</TableHead>
           <TableHead>ESCOLA</TableHead>
-          <TableHead>TELEFONE</TableHead>
           <TableHead>EMAIL</TableHead>
           <TableHead className="w-[100px]"></TableHead>
         </TableRow>
@@ -126,9 +125,8 @@ export function ResultsSection() {
           <TableCell>{teacher.name}</TableCell>
           <TableCell>{teacher.cpf}</TableCell>
           <TableCell>{teacher.sex}</TableCell>
-          <TableCell>{teacher.color}</TableCell>
+          <TableCell>{teacher.team}</TableCell>
           <TableCell>{teacher.school}</TableCell>
-          <TableCell>{teacher.tel}</TableCell>
           <TableCell>{teacher.email}</TableCell>
           <TableCell className="text-right">
             <Link className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground" href="/dashboard/teachers/editTeacher">

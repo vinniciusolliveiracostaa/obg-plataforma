@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/drawer";
 
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import { Label } from "./ui/label";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
 type SearchBarProps = {
@@ -60,49 +60,13 @@ const FilterDrawer = () => {
                 <h2 className="text-lg font-semibold">Identificação</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="grid gap-1.5">
-                    <Label htmlFor="inepCode">Código INEP</Label>
-                    <Input id="inepCode" placeholder="Digite o código INEP" />
+                    <Label htmlFor="inepCode">Nome</Label>
+                    <Input id="inepCode" placeholder="Digite o nome do professor" />
                   </div>
                   <div className="grid gap-1.5">
-                    <Label htmlFor="name">Nome</Label>
-                    <Input id="name" placeholder="Digite o nome da escola" />
+                    <Label htmlFor="name">CPF</Label>
+                    <Input id="name" placeholder="digite o CPF" />
                   </div>
-                </div>
-              </div>
-
-              {/* Grupo 2: Localização */}
-              <div className="grid gap-4">
-                <h2 className="text-lg font-semibold">Localização</h2>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="ufCode">UF</Label>
-                    <Input id="ufCode" placeholder="Ex: SP, RJ" />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="municipio">Município</Label>
-                    <Input id="municipio" placeholder="Digite o município" />
-                  </div>
-                  <div className="grid gap-1.5">
-                    <Label htmlFor="localizacao">Localização</Label>
-                    <Input
-                      id="localizacao"
-                      placeholder="Digite a localização"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Grupo 3: Dados Administrativos */}
-              <div className="grid gap-4">
-                <h2 className="text-lg font-semibold">Dados Administrativos</h2>
-                <div className="grid gap-1.5">
-                  <Label htmlFor="categoriaAdministrativa">
-                    Categoria Administrativa
-                  </Label>
-                  <Input
-                    id="categoriaAdministrativa"
-                    placeholder="Ex: Pública, Privada"
-                  />
                 </div>
               </div>
             </div>
