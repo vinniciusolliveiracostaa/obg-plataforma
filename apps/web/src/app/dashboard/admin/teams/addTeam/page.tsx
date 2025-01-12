@@ -14,7 +14,7 @@ const AddTeamPage: React.FC = () => {
       </div>
       <div className="flex justify-center items-center">
         <div className="w-full max-w-4xl">
-          <Tabs defaultValue="account" className="w-full">
+          <Tabs defaultValue="teamData" className="w-full">
             <TabsList className="grid grid-cols-4 gap-2 mb-4">
               <TabsTrigger value="teamData" className="text-sm font-medium">Dados da Equipe</TabsTrigger>
               <TabsTrigger value="studentOneData" className="text-sm font-medium">Dados do Aluno 1</TabsTrigger>

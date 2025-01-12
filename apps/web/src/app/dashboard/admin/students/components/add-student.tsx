@@ -8,7 +8,7 @@ import {
   import { Plus } from "lucide-react";
 import Link from "next/link";
   
-  const AddTeacher = () => {
+  const AddStudent = () => {
     return (
       <Popover>
         <PopoverTrigger>
@@ -26,12 +26,12 @@ import Link from "next/link";
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <Link href="/dashboard/teachers/addTeacher" className={buttonVariants({ variant: "outline" })}>Manualmente</Link>
+            <Link href="/dashboard/admin/students/addStudent" className={buttonVariants({ variant: "outline" })}>Manualmente</Link>
           </div>
         </PopoverContent>
       </Popover>
     );
   };
   
-  export default AddTeacher;
+  export default AddStudent;
   

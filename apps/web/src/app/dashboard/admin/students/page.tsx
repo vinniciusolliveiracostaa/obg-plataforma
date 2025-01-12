@@ -1,7 +1,7 @@
 import { PaginationComponent } from "./components/pagination";
 import { ResultsSection } from "./components/results";
 import { SearchBar } from "./components/searchBar";
-import AddTeacher from "./components/add-teacher";
+import AddStudent from "./components/add-student";
 
 export default function StudentsPage() {
   return (
@@ -13,7 +13,7 @@ export default function StudentsPage() {
               <SearchBar placeholder="Busque um aluno" />
             </div>
             <div className="h-full w-16 flex justify-center items-center">
-              <AddTeacher/>
+              <AddStudent/>
             </div>
           </div>
           <div className="flex-1">

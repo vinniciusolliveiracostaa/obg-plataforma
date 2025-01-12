@@ -1,7 +1,7 @@
-import { PaginationComponent } from "./components/pagination";
-import { ResultsSection } from "./components/results";
-import { SearchBar } from "../../../components/searchBar";
-import AddSchool from "./components/add-school";
+import { PaginationComponent } from "../../components/pagination";
+import { ResultsSection } from "../../components/results";
+import { SearchBar } from "./components/searchBar"
+import AddSchool from "../../components/add-school";
 
 export default function SchoolsPage() {
   return (

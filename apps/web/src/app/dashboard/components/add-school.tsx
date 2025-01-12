@@ -8,7 +8,7 @@ import {
   import { Plus } from "lucide-react";
 import Link from "next/link";
   
-  const AddTeam = () => {
+  const AddSchool = () => {
     return (
       <Popover>
         <PopoverTrigger>
@@ -19,19 +19,20 @@ import Link from "next/link";
         <PopoverContent>
           <div className="mb-4">
             <h3 className="text-lg font-semibold">
-              Adicionar Equipe
+              Adicionar Escola
             </h3>
             <p className="text-sm">
-              Escolha como deseja adicionar um equipe.
+              Escolha como deseja adicionar a escola.
             </p>
           </div>
           <div className="flex flex-col gap-2">
-            <Link href="/dashboard/teams/addTeam" className={buttonVariants({ variant: "outline" })}>Manualmente</Link>
+            <Link href="/dashboard/admin/schools/addSchool" className={buttonVariants({ variant: "outline" })}>Manualmente</Link>
+            <Link href="/dashboard/admin/schools/addSchoolCSV" className={buttonVariants({ variant: "outline" })}>Importar por CSV</Link>
           </div>
         </PopoverContent>
       </Popover>
     );
   };
   
-  export default AddTeam;
+  export default AddSchool;
   

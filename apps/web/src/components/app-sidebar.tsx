@@ -39,51 +39,51 @@ const data = {
   projects: [
     {
       name: "Escolas",
-      url: "/dashboard/schools",
+      url: "/dashboard/admin/schools",
       icon: School2,
     },
     {
       name: "Professores",
-      url: "/dashboard/teachers",
+      url: "/dashboard/admin/teachers",
       icon: GraduationCap,
     },
     {
       name: "Equipes",
-      url: "/dashboard/teams",
+      url: "/dashboard/admin/teams",
       icon: Users2,
     },
     {
       name: "Alunos",
-      url: "/dashboard/students",
+      url: "/dashboard/admin/students",
       icon: User2,
     },
   ],
   navMain: [
     {
       title: "Relatorios",
-      url: "/dashboard/reports",
+      url: "/dashboard/admin/reports",
       icon: ChartLine,
       isActive: true,
       items: [
         {
           title: "Equipes",
-          url: "/dashboard/reports/teams",
+          url: "/dashboard/admin/reports/teams",
         },
         {
           title: "Pontuações",
-          url: "/dashboard/reports/scores",
+          url: "/dashboard/admin/reports/scores",
         },
         {
           title: "Gráficos de Responstas",
-          url: "/dashboard/reports/graphicsAnswers",
+          url: "/dashboard/admin/reports/graphicsAnswers",
         },
         {
           title: "Resultados por Equipe",
-          url: "/dashboard/reports/teamsResults",
+          url: "/dashboard/admin/reports/teamsResults",
         },
         {
           title: "Certificados",
-          url: "/dashboard/reports/certificates",
+          url: "/dashboard/admin/reports/certificates",
         }
       ]
     },

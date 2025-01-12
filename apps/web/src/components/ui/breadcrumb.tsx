@@ -18,11 +18,13 @@ const Breadcrumb: React.FC = () => {
     "schools",
     "teams",
     "teachers",
+    "students",
   ]);
 
   // Mapeamento de nomes amigáveis para os segmentos
   const segmentMap: Record<string, string> = {
     dashboard: "Home",
+    admin: "Administrador",
     certificates: "Certificados",
     reports: "Relatórios",
     graphicsAnswers: "Gráficos de Respostas",
