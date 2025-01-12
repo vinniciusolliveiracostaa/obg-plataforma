@@ -19,7 +19,7 @@ export default function TeachersPage() {
           <div className="flex-1">
             <ResultsSection />
           </div>
-          <div className="h-14">
+          <div className="h-10">
             <PaginationComponent/>
           </div>
         </div>
