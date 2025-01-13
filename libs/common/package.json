@@ -1,0 +1,23 @@
+{
+  "name": "@monorepo/common",
+  "version": "1.0.0",
+  "main": "dist/src/index",
+  "dependencies": {
+    "@nestjs/cli": "^10.4.9",
+    "@nestjs/common": "^10.4.15",
+    "@nestjs/core": "^10.4.15",
+    "@nestjs/platform-express": "^10.4.15",
+    "@nestjs/schematics": "^10.2.3",
+    "@nestjs/typeorm": "^10.0.2",
+    "@types/node": "^22.10.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "reflect-metadata": "0.2",
+    "typeorm": "^0.3.20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "start:dev": "nest start --watch",
+    "start:prod": "node ."
+  }
+}

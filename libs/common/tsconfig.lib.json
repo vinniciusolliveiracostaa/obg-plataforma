@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,           // Gera arquivos de declaração (.d.ts)
+    "declarationMap": true,        // Gera mapas para declarações
+    "emitDecoratorMetadata": true, // Suporte para decoradores no NestJS
+    "experimentalDecorators": true,
+    "sourceMap": true,             // Gera arquivos de mapeamento para debug
+    "outDir": "./dist"             // Cada lib terá seu próprio dist
+  },
+  "include": ["src/**/*"],         // Inclui todos os arquivos em src
+  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"] // Exclui desnecessários
+}
