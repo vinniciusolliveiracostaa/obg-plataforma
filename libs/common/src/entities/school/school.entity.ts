@@ -4,31 +4,50 @@ import { Student } from '../students/students.entity';
 import { Teacher } from '../teacher/teacher.entity';
 import { Team } from '../teams/teams.entity';
 
+
+export enum Location {
+    RURAL = 'RURAL',
+    URBANA = 'URBANA'
+}
+
+export enum AdmCategory {
+    PUBLICA = 'PUBLICA',
+    PRIVADA = 'PRIVADA'
+}
+
+export enum AdmDependency {
+    FEDERAL = 'FEDERAL',
+    ESTADUAL = 'ESTADUAL',
+    MUNICIPAL = 'MUNICIPAL',
+    PRIVADA = 'PRIVADA'
+}
+
 @Entity()
 export class School {
     @PrimaryGeneratedColumn({ name: 'schoolId', type: 'int' })
     id: number;
 
-    @OneToOne(() => User)
-    user: User
+    @OneToOne(() => User, { cascade: true, onDelete: 'CASCADE' })
+    @JoinColumn()
+    user: User;
 
     @Column({ type: 'varchar', length: 8, unique: true })
     inepCode: string;
 
-    @Column({ type: 'char' })
+    @Column({ type: 'char', length: 2 })
     ufCode: string;
 
     @Column()
     city: string;
 
-    @Column({ type: 'enum', enum: [ 'RURAL', 'URBANA' ] })
-    location: 'RURAL' | 'URBANA';
+    @Column({ type: 'enum', enum: Location })
+    location: Location;
 
     @Column()
     locality: string;
 
-    @Column({ type: 'enum', enum: [ 'PUBLICA', 'PRIVADA' ] })
-    admCategory: 'PUBLICA' | 'PRIVADA';
+    @Column({ type: 'enum', enum: AdmCategory })
+    admCategory: AdmCategory;
 
     @Column()
     serviceRestriction: string;
@@ -36,8 +55,8 @@ export class School {
     @Column()
     address: string;
 
-    @Column({ type: 'enum', enum: [ 'FEDERAL', 'ESTADUAL', 'MUNICIPAL', 'PRIVADA' ] })
-    admDependency: 'FEDERAL' | 'ESTADUAL' | 'MUNICIPAL' | 'PRIVADA';
+    @Column({ type: 'enum', enum: AdmDependency })
+    admDependency: AdmDependency;
 
     @Column()
     privCategory: string;
@@ -57,10 +76,10 @@ export class School {
     @Column()
     otherOffers: string;
 
-    @Column()
+    @Column({ type: 'float' })
     latitude: number;
 
-    @Column()
+    @Column({ type: 'float' })
     longitude: number;
 
     @OneToMany(() => Student, student => student.school)

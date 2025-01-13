@@ -9,7 +9,7 @@ export class Team {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ type: 'int', width: 5, unique: true })
+    @Column({ type: 'int', unique: true })
     @Generated('increment')
     teamNumber: number;
 

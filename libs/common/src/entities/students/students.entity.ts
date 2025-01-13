@@ -20,7 +20,8 @@ export class Student extends Person {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => User)
+    @OneToOne(() => User, { cascade: true, onDelete: 'CASCADE' })
+    @JoinColumn()
     user: User;
 
     @ManyToOne(() => School, school => school.students)
@@ -34,9 +35,9 @@ export class Student extends Person {
     motherName: string;
 
     @Column()
-    brithDate: Date;
+    birthDate: Date;
 
-    @Column({ type: "int", length: 11 })
+    @Column({ type: "int", length: 11, nullable: true })
     nis?: number;
 
     @ManyToMany(() => Category)

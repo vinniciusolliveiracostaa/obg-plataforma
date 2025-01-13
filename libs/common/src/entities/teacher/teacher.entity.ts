@@ -10,7 +10,8 @@ export class Teacher extends Person {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => User)
+    @OneToOne(() => User, { cascade: true, onDelete: 'CASCADE' })
+    @JoinColumn()
     user: User;
 
     @ManyToOne(() => School, school => school.teachers)
