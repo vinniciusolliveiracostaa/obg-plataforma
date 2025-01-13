@@ -10,7 +10,6 @@ export class School {
     id: number;
 
     @OneToOne(() => User)
-    @JoinColumn({ name: 'userId' })
     user: User
 
     @Column({ type: 'varchar', length: 8, unique: true })

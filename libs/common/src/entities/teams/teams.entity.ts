@@ -9,7 +9,7 @@ export class Team {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({ type: 'int', width: 5 })
+    @Column({ type: 'int', width: 5, unique: true })
     @Generated('increment')
     teamNumber: number;
 
@@ -22,6 +22,6 @@ export class Team {
     teacher: Teacher;
 
     // Uma equipe tem exatamente 3 alunos
-    @OneToMany(() => Student, student => student.team)
+    @OneToMany(() => Student, student => student.team, { nullable: false })
     students: Student[];
 }

@@ -21,11 +21,10 @@ export class Student extends Person {
     id: number;
 
     @OneToOne(() => User)
-    @JoinColumn({  name: 'userId' })
     user: User;
 
     @ManyToOne(() => School, school => school.students)
-    @JoinColumn({ name: 'schoolId' }) 
+    @JoinColumn() 
     school: School
 
     @Column({ type: "int" })
@@ -37,8 +36,8 @@ export class Student extends Person {
     @Column()
     brithDate: Date;
 
-    @Column({ type: "int", length: 11, unique: true })
-    nis: number;
+    @Column({ type: "int", length: 11 })
+    nis?: number;
 
     @ManyToMany(() => Category)
     @JoinTable()
