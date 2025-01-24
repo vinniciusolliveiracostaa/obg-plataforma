@@ -1,50 +1,42 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  OneToOne,
-  JoinColumn,
-  ManyToOne,
-  JoinTable,
-  ManyToMany,
-  OneToMany,
-} from "typeorm";
-import { User } from "../user/user.entity";
-import { School } from "../school/school.entity";
-import { Category } from "../common/caregories/categories.entity";
-import { Person } from "../common/person/person.entity";
-import { Team } from "../teams/teams.entity";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity()
+import { User } from "../../entities/users/users.entity";
+import { Person } from "../../entities/common/person/person.entity";
+import { School } from "../../entities/schools/schools.entity";
+import { Team } from "../../entities/teams/teams.entity";
+
+
+export enum Status {
+    ACTIVE = 'ATIVO',
+    PAYMENT_PENDING = 'PAGAMENTO_PENDENTE',
+    INACTIVE = 'INATIVO'
+}
+
+@Entity('students')
 export class Student extends Person {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToOne(() => User, { cascade: true, onDelete: 'CASCADE' })
-    @JoinColumn()
-    user: User;
-
-    @ManyToOne(() => School, school => school.students)
-    @JoinColumn() 
-    school: School
-
-    @Column({ type: "int" })
+    @Column({ type: "int", nullable: false })
     serie: number;
 
-    @Column()
+    @Column({ type: "varchar", nullable: false })
     motherName: string;
 
-    @Column()
+    @Column({ type: "date", nullable: false })
     birthDate: Date;
 
-    @Column({ type: "int", length: 11, nullable: true })
+    @Column({ type: "int", nullable: true })
     nis?: number;
 
-    @ManyToMany(() => Category)
-    @JoinTable()
-    categories: Category[];
+    @CreateDateColumn()
+    createdAt: Date
 
-    @ManyToOne(() => Team, team => team.students)
-    @JoinColumn()
-    team: Team;
+    @UpdateDateColumn()
+    updatedAt: Date
+
+    constructor(student: Partial<Student>) {
+        super();
+        Object.assign(this, student);
+    }
 }

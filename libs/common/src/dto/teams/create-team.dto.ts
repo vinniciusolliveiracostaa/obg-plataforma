@@ -1,14 +1,17 @@
-import { IsArray, IsNumber, isNumber } from "class-validator";
+import { IsArray, IsNotEmpty, IsNumber } from "class-validator";
 
 
 export class CreateTeamDto {
     @IsNumber()
+    @IsNotEmpty()
     schoolId: number;
 
     @IsNumber()
+    @IsNotEmpty()
     teacherId: number;
 
+    @IsNumber({}, { each: true })
     @IsArray()
-    @IsNumber({}, { each: true })  // Valida que cada item do array é um número
-    studentId: number[];
+    @IsNotEmpty()
+    studentsId: number[];
 }

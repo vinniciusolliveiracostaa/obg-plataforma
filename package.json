@@ -1,5 +1,5 @@
 {
-  "name": "obg-plataforma",
+  "name": "obg",
   "private": true,
   "scripts": {
     "build": "turbo build",

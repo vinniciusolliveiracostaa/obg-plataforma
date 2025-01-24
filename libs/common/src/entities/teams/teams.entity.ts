@@ -1,27 +1,12 @@
-import { Column, Entity, Generated, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { School } from "../school/school.entity";
-import { Teacher } from "../teacher/teacher.entity";
-import { Student } from "../students/students.entity";
+import { School } from "../../entities/schools/schools.entity";
+import { Student } from "../../entities/students/students.entity";
+import { Teacher } from "../../entities/teachers/teachers.entity";
+import { Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity()
+
+@Entity('teams')
 export class Team {
     @PrimaryGeneratedColumn()
     id: number;
-
-    @Column({ type: 'int', unique: true })
-    @Generated('increment')
-    teamNumber: number;
-
-    // Uma equipe pertence a uma escola
-    @ManyToOne(() => School, school => school.teams, { nullable: false })
-    school: School;
-
-    // Uma equipe tem um professor responsável
-    @ManyToOne(() => Teacher, teacher => teacher.teams, { nullable: false })
-    teacher: Teacher;
-
-    // Uma equipe tem exatamente 3 alunos
-    @OneToMany(() => Student, student => student.team, { nullable: false })
-    students: Student[];
 }
