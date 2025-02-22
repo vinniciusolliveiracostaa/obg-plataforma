@@ -1,12 +1,10 @@
 import React from 'react';
-
+import { RegisterForm } from "./.components/ui/register-form"
 
 const RegisterPage: React.FC = () => {
     return (
-        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-                <h1 className="text-3xl font-bold">Register</h1>
-            </main>
+        <div className='h-full w-full flex justify-center items-center bg-muted'>
+            <RegisterForm/>
         </div>
     );
 };

@@ -80,7 +80,7 @@ export function LoginForm() {
     } else {
       passwordForm.setError("password", {
         type: "manual",
-        message: "Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para escolher outra.",
+        message: 'Senha incorreta. Tente novamente ou clique em "Esqueceu a senha?" para escolher outra.',
       });
     }*/
   };
@@ -304,7 +304,7 @@ export function LoginForm() {
                     </div>
                     <div className="h-1/2 flex flex-row justify-end items-end space-x-10">
                       <Button
-                        className="font-semibold h-10 w-[6.375rem] text-sm bg-transparent hover:bg-transparent text-primary/90 hover:text-primary"
+                        className="font-semibold h-10 w-[6.375rem] text-sm bg-transparent hover:bg-transparent text-primary/90 hover:text-primary shadow-none"
                       >
                         Enviar novamente
                       </Button>
