@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -54,7 +54,8 @@ export function LoginForm() {
       code: "",
     },
   });
-
+  
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleEmailSubmit = async (values: z.infer<typeof emailSchema>) => {
     // Valide o e-mail no backend (você deve implementar a verificação do e-mail)
     setStep(2);
@@ -68,10 +69,8 @@ export function LoginForm() {
       });
     }*/
   };
-
-  const handlePasswordSubmit = async (
-    values: z.infer<typeof passwordSchema>
-  ) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handlePasswordSubmit = async (values: z.infer<typeof passwordSchema>) => {
     // Valide a senha no backend (você deve implementar a verificação da senha)
     setStep(3);
     /*const passwordIsValid = true; // Suponha que a senha está correta
@@ -84,7 +83,7 @@ export function LoginForm() {
       });
     }*/
   };
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleCodeSubmit = async (values: z.infer<typeof codeSchema>) => {
     // Valide o código no backend (você deve implementar a verificação do código)
     redirect("/");

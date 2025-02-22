@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
@@ -212,3 +212,4 @@ export function LoginForm() {
     </AnimatePresence>
   );
 }
+*/
