@@ -35,11 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
-            <div>
-            <ModeToggle />
-            </div>
-            {children}
+          >{children}
           </ThemeProvider>
         </body>
       </html>
