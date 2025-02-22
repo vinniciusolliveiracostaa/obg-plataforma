@@ -5,6 +5,6 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function PrivateLayout({ children }: RootLayoutProps) {
+export default function PublicLayout({ children }: RootLayoutProps) {
   return <>{children}</>;
 }

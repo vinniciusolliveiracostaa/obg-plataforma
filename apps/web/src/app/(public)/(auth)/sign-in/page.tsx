@@ -1,13 +1,14 @@
+import React from 'react';
 
 
-const SignIn: React.FC = () => {
+const SignInPage: React.FC = () => {
     return (
-        <div className="h-full">
-            <div className="flex justify-center items-center h-full">
-                <h2 className="font-bold text-2xl">Em construção...</h2>
-            </div>
+        <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+                <h1 className="text-3xl font-bold">SignIn</h1>
+            </main>
         </div>
     );
 };
 
-export default SignIn;
+export default SignInPage;
