@@ -4,7 +4,6 @@ import { lastValueFrom } from 'rxjs';
 
 import { AuthRequest, IsPublic, LocalAuthGuard } from '@repo/common/index';
 
-console.log('teste')
 
 @Controller('auth')
 export class AuthController {
@@ -17,9 +16,7 @@ export class AuthController {
     @Post('login')
     @HttpCode(HttpStatus.OK)
     async signIn(@Request() req: AuthRequest) {
-        console.log('Entrando no método signIn'); // teste
         try {
-            console.log("User:",req.user)
             const auth = await lastValueFrom(
                 
                 this.natsClient.send({ cmd:'signIn.auth'}, req.user)

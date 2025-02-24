@@ -11,7 +11,6 @@ import { NextFunction, Request, Response } from "express";
 export class LoginValidationMiddleware implements NestMiddleware {
   async use(req: Request, res: Response, next: NextFunction) {
     const body = req.body;
-    console.log("Middleware Body",body)
 
     const loginRequestBody = new LoginRequestBody();
     loginRequestBody.email = body.email;
@@ -26,7 +25,6 @@ export class LoginValidationMiddleware implements NestMiddleware {
         }, [])
       );
     }
-    console.log("passando no middleware", loginRequestBody.email, loginRequestBody.password)
 
     next();
   }

@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Inject, Post } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { CreateUserDto } from '@repo/common/index';
+import { CreateUserDto, IsPublic } from '@repo/common/index';
 import { lastValueFrom } from 'rxjs';
 
 @Controller('users')
@@ -54,6 +54,7 @@ export class UsersController {
     }
   }
 
+   @IsPublic() // temporiro
   @Get()
   async findAll() {
     try {

@@ -3,15 +3,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from '@repo/common/index';
+import { GuardsModule, JwtAuthGuard } from '@repo/common/index';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [UsersModule, AuthModule],
+  imports: [UsersModule, AuthModule, GuardsModule],
   controllers: [AppController],
   providers: [AppService,
     {provide: APP_GUARD,
-      useClass: RolesGuard
+      useClass: JwtAuthGuard
     }
   ],
 })
