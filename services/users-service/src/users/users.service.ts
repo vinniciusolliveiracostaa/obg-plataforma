@@ -54,6 +54,16 @@ export class UsersService {
     }
   }
 
+  async getUserByEmail(email: string) {
+    try {
+      const user = await this.usersRepository.findOneBy({ email });
+      if (!user) {
+        throw new RpcException('User not found');
+      }
+      return user;
+    } catch (error) {throw new RpcException(error.message);}
+  }
+
   async getUsers() {
     try {
       const users = await this.usersRepository.find();

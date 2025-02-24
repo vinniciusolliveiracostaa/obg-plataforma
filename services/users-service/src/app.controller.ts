@@ -27,4 +27,14 @@ export class AppController {
       throw new RpcException(error.message);
     }
   }
+
+  @MessagePattern({ cmd: 'find.email.user'})
+  async findUser(email: string) {
+    try {
+      const user = await this.appService.getUserByEmail(email);
+      return user;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
 }

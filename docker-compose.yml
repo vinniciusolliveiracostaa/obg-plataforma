@@ -21,6 +21,21 @@ services:
       - 6222:6222
     networks:
       - obg-network
+    
+  keycloak:
+    container_name: obg-keycloack
+    image: quay.io/keycloak/keycloak:latest
+    env_file:
+      - ./.env
+    ports:
+      - 8080:8080
+      - 9000:9000
+    networks:
+      - obg-network
+    command:
+      ["start-dev"]
+    depends_on:
+      - postgres
 
 volumes:
   postgres_data:

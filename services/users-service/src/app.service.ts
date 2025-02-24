@@ -41,6 +41,15 @@ export class AppService {
     }
   }
 
+  async getUserByEmail(email:string) {
+    try {
+      const user = await this.usersService.getUserByEmail(email);
+      return user;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   async getUsers() {
     try {
       const users = await this.usersService.getUsers();

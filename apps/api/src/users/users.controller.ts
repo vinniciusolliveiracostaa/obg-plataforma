@@ -1,5 +1,5 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Inject, Post } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
+import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { CreateUserDto } from '@repo/common/index';
 import { lastValueFrom } from 'rxjs';
 
@@ -62,7 +62,7 @@ export class UsersController {
       );
       return users;
     } catch (error) {
-      throw new Error(error.message);
+      throw new RpcException(error.message);
     }
   }
 }
