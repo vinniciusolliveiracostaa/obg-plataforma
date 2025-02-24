@@ -1,6 +1,6 @@
 import { Body, Controller, Get, HttpException, HttpStatus, Inject, Post } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { CreateUserDto, IsPublic } from '@repo/common/index';
+import { CreateUserDto, IsPublic, Role, Roles } from '@repo/common/index';
 import { lastValueFrom } from 'rxjs';
 
 @Controller('users')
@@ -12,6 +12,7 @@ export class UsersController {
     this.natsClient.connect();
   }
 
+  @IsPublic() // temporario
   @Post()
   async create(@Body() createUserDto: CreateUserDto) {
     try {
@@ -65,5 +66,17 @@ export class UsersController {
     } catch (error) {
       throw new RpcException(error.message);
     }
+  }
+
+  @Get('admin')
+  @Roles(Role.ADMIN)
+  async admin() {
+    return { message: 'Is Admin' }
+  }
+
+  @Get('school')
+  @Roles(Role.SCHOOL)
+  async school() {
+    return { message: 'Is School' }
   }
 }

@@ -2,7 +2,8 @@ import { Body, Injectable } from '@nestjs/common';
 import { createId } from '@paralleldrive/cuid2';
 import { InjectRepository } from '@nestjs/typeorm';
 import { EntityManager, Repository } from 'typeorm';
-import * as bcrypt from 'bcrypt';
+//import * as bcrypt from 'bcrypt';
+import * as argon2 from 'argon2';
 import { CreateUserDto, UpdateUserDto, User } from '@repo/common/index';
 import { RpcException } from '@nestjs/microservices';
 
@@ -28,7 +29,7 @@ export class UsersService {
         throw new RpcException('Email already exists');
       }
 
-      const hashedPassword = await bcrypt.hash(createUserDto.password, 10);
+      const hashedPassword = await argon2.hash(createUserDto.password);
       const user = new User({
         ...createUserDto,
         id: createId(),

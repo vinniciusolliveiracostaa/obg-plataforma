@@ -5,7 +5,7 @@ export interface UserPayload {
     sub: string;
     email: string;
     name: string;
-    role: Role[];
+    roles: Role[];
     iat?: number;
     exp?: number;
 }

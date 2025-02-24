@@ -36,5 +36,5 @@ export class SignInDto {
 
   @IsEnum(Role)
   @IsNotEmpty()
-  role: Role;
+  roles: Role[];
 }
