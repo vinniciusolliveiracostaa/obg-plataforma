@@ -5,9 +5,15 @@ import { UsersModule } from './users/users.module';
 import { APP_GUARD } from '@nestjs/core';
 import { GuardsModule, JwtAuthGuard, RolesGuard } from '@repo/common/index';
 import { AuthModule } from './auth/auth.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 @Module({
-  imports: [UsersModule, AuthModule, GuardsModule],
+  imports: [
+    UsersModule,
+    AuthModule,
+    GuardsModule,
+  ],
   controllers: [AppController],
   providers: [AppService,
     {provide: APP_GUARD,
