@@ -34,6 +34,8 @@
     }
   },
   "dependencies": {
+    "typeorm": "^0.3.21",
+    "@repo/common": "workspace:*"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

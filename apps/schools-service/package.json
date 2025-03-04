@@ -1,5 +1,5 @@
 {
-  "name": "users-service",
+  "name": "schools-service",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,6 +20,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@repo/dtos": "workspace:*",
+    "@repo/entities": "workspace:*",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.1",
     "@nestjs/core": "^11.0.1",
@@ -28,9 +30,6 @@
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/typeorm": "^11.0.0",
     "@paralleldrive/cuid2": "^2.2.2",
-    "@repo/common": "workspace:*",
-    "@repo/dtos": "workspace:*",
-    "@repo/entities": "workspace:*",
     "argon2": "^0.41.1",
     "nats": "^2.29.2",
     "pg": "^8.13.3",

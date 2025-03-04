@@ -1,20 +1,46 @@
-{
-  "name": "obg-plataforma",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
-  },
-  "devDependencies": {
-    "prettier": "^3.5.0",
-    "turbo": "^2.4.2",
-    "typescript": "5.7.3"
-  },
-  "packageManager": "pnpm@10.4.1",
-  "engines": {
-    "node": ">=22"
-  }
-}
+name: OBG Platform
+services:
+  postgres:
+    container_name: obg-postgres-db
+    image: bitnami/postgresql:latest
+    env_file:
+      - ./.env
+    ports:
+      - 5433:5432
+    networks:
+      - obg-network
+
+  nats:
+    container_name: obg-nats-server
+    image: nats:latest
+    env_file:
+      - ./.env
+    ports:
+      - 8222:8222
+      - 4222:4222
+      - 6222:6222
+    networks:
+      - obg-network
+
+  keycloak:
+    container_name: obg-keycloack
+    image: quay.io/keycloak/keycloak:latest
+    env_file:
+      - ./.env
+    ports:
+      - 8080:8080
+      - 9000:9000
+    networks:
+      - obg-network
+    command:
+      ["start-dev"]
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  obg-network:
+    driver: bridge
