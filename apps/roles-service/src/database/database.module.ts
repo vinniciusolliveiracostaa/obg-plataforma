@@ -1,7 +1,7 @@
 import { Global, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '@repo/entities/index';
+import { UserRole } from '@repo/entities/index';
 
 @Global()
 @Module({
@@ -16,14 +16,14 @@ import { User } from '@repo/entities/index';
         password: configService.get('DB_PASS'),
         database: configService.get('DB_DB'),
         migrations: ['migrations/*.ts'],
-        entities: [User],
+        entities: [UserRole],
         synchronize: Boolean(configService.get('DB_SYNC')),
         logging: Boolean(configService.get('DB_LOGG')),
         autoLoadEntities: true,
       }),
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([UserRole]),
   ],
 })
 export class DatabaseModule {}

@@ -1,4 +1,4 @@
-import { IsJSON, IsNotEmpty, IsString, IsUUID } from "class-validator";
+import { IsJSON, IsNotEmpty, IsString } from "class-validator";
 
 
 
@@ -11,8 +11,4 @@ export class CreateUserRoleDto {
     @IsJSON()
     @IsNotEmpty()
     permissions: JSON;
-
-    @IsUUID()
-    @IsNotEmpty()
-    userId: string;
 }

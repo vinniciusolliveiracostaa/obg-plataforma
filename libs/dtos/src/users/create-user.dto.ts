@@ -1,5 +1,5 @@
 import { Domains } from '@repo/common/index';
-import { IsArray, IsEnum, IsNotEmpty, IsObject, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsArray, IsEnum, IsNotEmpty, IsObject, IsString, IsUUID, Matches, MaxLength, MinLength } from 'class-validator';
 
 
 export class CreateUserDto {
@@ -31,4 +31,8 @@ export class CreateUserDto {
   @IsObject()
   @IsNotEmpty()
   roleData: any;
+
+  @IsUUID()
+  @IsNotEmpty()
+  roleId: string;
 }

@@ -8,21 +8,21 @@ import {
   UpdateUserDto,
   UpdateUserRoleDto,
 } from '@repo/dtos/index';
-import { User, UserRole } from '@repo/entities/index';
+import { User } from '@repo/entities/index';
 import { Repository, EntityManager, In } from 'typeorm';
 import * as argon2 from 'argon2';
 import { Domains } from '@repo/common/index';
-import { Payload, RpcException } from '@nestjs/microservices';
+import { RpcException } from '@nestjs/microservices';
 import { UserCreateSchoolService } from './schools/school.service';
+import { CreateUserRoleService } from './userRole/userRole.service';
 
 @Injectable()
 export class UsersService {
   constructor(
     @InjectRepository(User)
     private readonly usersRepository: Repository<User>,
-    @InjectRepository(UserRole)
-    private readonly userRoleRepository: Repository<UserRole>,
     private readonly entityManager: EntityManager,
+    private readonly createUserRoleService: CreateUserRoleService,
     private readonly userCreateSchoolService: UserCreateSchoolService,
   ) {}
 
@@ -42,6 +42,12 @@ export class UsersService {
 
       if (existingUser) {
         throw new RpcException('Email already exists');
+      }
+
+      const roleMissing = await this.createUserRoleService.findOneUserRole(createUserDto.roleId);
+
+      if (!roleMissing) {
+        throw new RpcException('Role not exists')
       }
 
       const hashedPassword = await argon2.hash(createUserDto.password);
@@ -77,6 +83,10 @@ export class UsersService {
         message: 'User created successfully',
       };
     } catch (error) {
+      if (error.message === 'Role not exists') {
+        await this.delete(createdUser.id);
+        throw new RpcException('Role not exists');
+      }
       if (error.message === 'Email already exists') {
         throw new RpcException('Email already exists');
       }
@@ -143,86 +153,6 @@ export class UsersService {
       const { password, ...result } = user;
       return {
         user: result,
-        message: 'User updated successfully',
-      };
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
-  }
-
-  async createUserRole(
-    @Body() payload: { userId: string; createUserRoleDto: CreateUserRoleDto },
-  ): Promise<UserRole> {
-    try {
-        const userId = payload.userId;
-        const createUserRoleDto = payload.createUserRoleDto;
-
-      const role = new UserRole({
-        ...createUserRoleDto,
-        id: createId(),
-        userId: userId,
-      });
-
-      const createdRole = await this.entityManager.save(role);
-      return createdRole;
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
-  }
-
-  async findAllUserRole() {
-    try {
-      const userRoles = await this.userRoleRepository.find();
-      if (userRoles.length === 0) {
-        throw new RpcException('No Roles found');
-      }
-      return userRoles;
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
-  }
-
-  async findOneUserRole(id: string) {
-    try {
-      const userRole = await this.userRoleRepository.findOne({ where: { id } });
-      if (!userRole) {
-        throw new RpcException('Role not found');
-      }
-      return userRole;
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
-  }
-  async deleteUserRole(id: string) {
-    try {
-      const userRole = await this.userRoleRepository.find({ where: { id } });
-
-      if (!userRole) {
-        throw new RpcException('Role not found');
-      }
-
-      await this.entityManager.remove(UserRole, userRole);
-      return { message: 'Role deleted successfully' };
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
-  }
-  async updateUserRole(payload: {
-    id: string;
-    updateUserRoleDto: UpdateUserRoleDto;
-  }) {
-    try {
-      const id = payload.id;
-      const updateUserRoleDto = payload.updateUserRoleDto;
-      const user = await this.userRoleRepository.findOne({ where: { id } });
-      if (!user) {
-        throw new RpcException('User not found');
-      }
-
-      await this.entityManager.update(UserRole, id, updateUserRoleDto);
-
-      return {
-        user: user,
         message: 'User updated successfully',
       };
     } catch (error) {

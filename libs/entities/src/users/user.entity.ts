@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { Domains } from '@repo/common/index';
-import { UserRole } from './userRole.entity';
+import { UserRole } from '../userRoles/userRole.entity';
 
 
 
@@ -24,8 +24,8 @@ export class User {
   @Column({type: 'enum', enum: Domains, default: [], array: true, nullable: false})
   domainGroup: Domains[];
 
-  @OneToOne(() => UserRole)
-  role: UserRole
+  @Column({type: 'varchar', nullable: false})
+  roleId: string;
 
   @CreateDateColumn()
   createdAt: Date

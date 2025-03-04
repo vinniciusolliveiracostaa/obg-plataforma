@@ -163,19 +163,32 @@ export class UsersController {
 
   //UserRoles
 
-  @Post(':id/role')
-  async createUserRole(
-    @Param('id') id: string,
-    @Body() createUserRoleDto: CreateUserRoleDto,
-  ) {
+  @Post('role')
+  async createUserRole(@Body() createUserRoleDto: CreateUserRoleDto) {
     try {
-      const payload = { id, createUserRoleDto };
-      const userRole = await lastValueFrom(
-        this.natsClient.send({ cmd: 'create.user.role' }, payload),
-      );
+      const userRole = await lastValueFrom(this.natsClient.send({cmd: 'create.user.role'}, createUserRoleDto));
       return userRole;
     } catch (error) {
-      throw new RpcException(error.message);
+      if (error.message === 'Role already exists') {
+        throw new HttpException(
+          {
+            status: HttpStatus.CONFLICT,
+            message: 'Role already exists!',
+            error: error.message,
+          },
+          HttpStatus.CONFLICT,
+        );
+      }
+
+      // Erro genérico de criação de role
+      throw new HttpException(
+        {
+          status: HttpStatus.INTERNAL_SERVER_ERROR,
+          message: 'Erro ao criar a role',
+          error: error.message,
+        },
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 
@@ -192,7 +205,7 @@ export class UsersController {
   @Get('/role/:id')
   async findOneUserRole(@Param('id') id: string) {
     try {
-      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'find.one.user.roles'}, id))
+      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'find.one.user.role'}, id))
       return userRoles;
     } catch (error) {
       throw new RpcException(error.message)
@@ -202,7 +215,7 @@ export class UsersController {
   @Delete('/role/:id')
   async deleteUserRole(@Param('id') id: string) {
     try {
-      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'delete.user.roles'}, id))
+      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'delete.user.role'}, id))
       return userRoles;
     } catch (error) {
       throw new RpcException(error.message)
@@ -213,7 +226,7 @@ export class UsersController {
   async updateUserRole(@Param('id') id: string, updateUserRoleDto: UpdateUserRoleDto) {
     try {
       const payload = { id, updateUserRoleDto }
-      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'update.user.roles'}, payload))
+      const userRoles = await lastValueFrom(this.natsClient.send({cmd:'update.user.role'}, payload))
       return userRoles;
     } catch (error) {
       throw new RpcException(error.message)
