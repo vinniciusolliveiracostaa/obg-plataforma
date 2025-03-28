@@ -19,6 +19,12 @@ export class SchoolsService {
 
   async create(createSchoolDto: CreateSchoolDto): Promise<School> {
     try {
+      const schoolExists = await this.schoolRepository.findOneBy({
+        email: createSchoolDto.email,
+      });
+      if (schoolExists) {
+        throw new RpcException('SCHOOL_ALREADY_EXISTS');
+      }
       const school = new School({
         ...createSchoolDto,
         id: createId(),

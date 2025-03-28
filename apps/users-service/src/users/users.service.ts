@@ -19,6 +19,12 @@ export class UsersService {
 
   async create(createUserDto: CreateUserDto): Promise<User> {
     try {
+      const userExists = await this.userRepository.findOneBy({
+        email: createUserDto.email,
+      });
+      if (userExists) {
+        throw new RpcException('USER_ALREADY_EXISTS');
+      }
       const user = new User({
         ...createUserDto,
         id: createId(),
