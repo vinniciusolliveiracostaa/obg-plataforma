@@ -11,24 +11,24 @@ import {
 export class CreateSchoolDto {
   @IsString()
   @IsNotEmpty()
-  @ApiProperty()
-  name: string;
+  @ApiProperty({ description: "Nome da escola" })
+  name!: string;
 
   @IsString()
   @IsNotEmpty()
   @Length(9, 9)
-  @ApiProperty()
-  inep: string;
+  @ApiProperty({ description: "Código da escola" })
+  inep!: string;
 
   @IsEmail()
   @IsNotEmpty()
-  @ApiProperty()
-  email: string;
+  @ApiProperty({ description: "Email da escola" })
+  email!: string;
 
   @IsPhoneNumber("BR")
   @IsNotEmpty()
   @ApiProperty()
-  phone: string;
+  phone!: string;
 
   @IsString()
   @IsNotEmpty()
@@ -37,6 +37,12 @@ export class CreateSchoolDto {
     message:
       "O CNPJ deve estar no formato XX.XXX.XXX/XXXX-XX ou XXXXXXXXXXXXXX",
   })
-  @ApiProperty()
-  cnpj: string;
+  @ApiProperty({ description: "CNPJ da escola" })
+  cnpj!: string;
+
+  constructor(partial?: Partial<CreateSchoolDto>) {
+    if (partial) {
+      Object.assign(this, partial);
+    }
+  }
 }

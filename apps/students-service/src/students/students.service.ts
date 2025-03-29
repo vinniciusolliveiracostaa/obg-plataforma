@@ -83,6 +83,17 @@ export class StudentsService {
         throw new RpcException('STUDENT_NOT_FOUND');
       }
 
+      // Verifica se o email já existe
+      if (updateStudentDto.email) {
+        const studentExists = await this.studentRepository.findOneBy({
+          email: updateStudentDto.email,
+        });
+        if (studentExists) {
+          throw new RpcException('STUDENT_ALREADY_EXISTS');
+        }
+      }
+
+      // Atualiza o estudante
       await this.entityManager.update(Student, id, updateStudentDto);
 
       const updatedStudent = await this.studentRepository.findOneBy({ id });
