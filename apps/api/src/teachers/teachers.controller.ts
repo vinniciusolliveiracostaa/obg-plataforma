@@ -35,7 +35,7 @@ export class TeachersController {
       );
       return teacher;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
         default:
           throw new HttpException(
             {
@@ -61,7 +61,16 @@ export class TeachersController {
       );
       return teachers;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEACHERS_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhum Professor(a) encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -87,7 +96,16 @@ export class TeachersController {
       );
       return teacher;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEACHER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Professor(a) não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -117,7 +135,16 @@ export class TeachersController {
       );
       return teacher;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEACHER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Professor(a) não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -143,7 +170,16 @@ export class TeachersController {
       );
       return teacher;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEACHER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Professor(a) não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { EntityManager, Repository } from 'typeorm';
+import { DeleteResult, EntityManager, Repository } from 'typeorm';
 import { createId } from '@paralleldrive/cuid2';
 import { RpcException } from '@nestjs/microservices';
 
@@ -98,7 +98,7 @@ export class StudentsService {
 
   // Deletar um estudante
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string): Promise<DeleteResult> {
     try {
       const student = await this.studentRepository.findOneBy({ id });
 
@@ -106,9 +106,9 @@ export class StudentsService {
         throw new RpcException('STUDENT_NOT_FOUND');
       }
 
-      await this.entityManager.delete(Student, id);
+      const deletedStudent = await this.entityManager.delete(Student, id);
 
-      return;
+      return deletedStudent;
     } catch (error) {
       throw new RpcException(error.message);
     }

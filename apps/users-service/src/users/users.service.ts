@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { EntityManager, Repository } from 'typeorm';
+import { DeleteResult, EntityManager, Repository } from 'typeorm';
 import { createId } from '@paralleldrive/cuid2';
 import { RpcException } from '@nestjs/microservices';
 
@@ -45,7 +45,7 @@ export class UsersService {
       const users = await this.userRepository.find();
 
       if (users.length === 0) {
-        throw new RpcException('STUDENTS_NOT_FOUND');
+        throw new RpcException('USERS_NOT_FOUND');
       }
 
       return users;
@@ -61,7 +61,7 @@ export class UsersService {
       const user = await this.userRepository.findOneBy({ id });
 
       if (!user) {
-        throw new RpcException('STUDENT_NOT_FOUND');
+        throw new RpcException('USER_NOT_FOUND');
       }
 
       return user;
@@ -77,7 +77,7 @@ export class UsersService {
       const user = await this.userRepository.findOneBy({ id });
 
       if (!user) {
-        throw new RpcException('STUDENT_NOT_FOUND');
+        throw new RpcException('USER_NOT_FOUND');
       }
 
       await this.entityManager.update(User, id, updateUserDto);
@@ -85,7 +85,7 @@ export class UsersService {
       const updatedUser = await this.userRepository.findOneBy({ id });
 
       if (!updatedUser) {
-        throw new RpcException('STUDENT_NOT_FOUND');
+        throw new RpcException('USER_NOT_FOUND');
       }
 
       return updatedUser;
@@ -96,17 +96,17 @@ export class UsersService {
 
   // Deletar um usuário
 
-  async remove(id: string): Promise<void> {
+  async remove(id: string): Promise<DeleteResult> {
     try {
       const user = await this.userRepository.findOneBy({ id });
 
       if (!user) {
-        throw new RpcException('STUDENT_NOT_FOUND');
+        throw new RpcException('USER_NOT_FOUND');
       }
 
-      await this.entityManager.delete(User, id);
+      const deletedUser = await this.entityManager.delete(User, id);
 
-      return;
+      return deletedUser;
     } catch (error) {
       throw new RpcException(error.message);
     }

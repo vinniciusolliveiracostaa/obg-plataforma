@@ -11,7 +11,7 @@ import {
   Post,
 } from '@nestjs/common';
 import { ClientNats } from '@nestjs/microservices';
-import { ApiHeader, ApiOperation, ApiProperty, ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { lastValueFrom } from 'rxjs';
 
 import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos/index';
@@ -35,7 +35,7 @@ export class SchoolsController {
       );
       return school;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
         default:
           throw new HttpException(
             {
@@ -61,7 +61,16 @@ export class SchoolsController {
       );
       return schools;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'SCHOOLS_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhuma Escola encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -85,7 +94,16 @@ export class SchoolsController {
       const school = await lastValueFrom(this.client.send('findOneSchool', id));
       return school;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'SCHOOL_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Escola não encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -115,7 +133,16 @@ export class SchoolsController {
       );
       return school;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'SCHOOL_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhuma Escola encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -139,7 +166,16 @@ export class SchoolsController {
       const school = await lastValueFrom(this.client.send('removeSchool', id));
       return school;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'SCHOOL_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhuma Escola encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {

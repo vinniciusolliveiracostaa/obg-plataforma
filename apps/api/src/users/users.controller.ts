@@ -35,7 +35,7 @@ export class UsersController {
       );
       return user;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
         default:
           throw new HttpException(
             {
@@ -59,7 +59,16 @@ export class UsersController {
       const users = await lastValueFrom(this.client.send('findAllUsers', {}));
       return users;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'USERS_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhum Usuário encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -83,7 +92,16 @@ export class UsersController {
       const user = await lastValueFrom(this.client.send('findOneUser', id));
       return user;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'USER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Usuário não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -108,7 +126,16 @@ export class UsersController {
       const user = await lastValueFrom(this.client.send('updateUser', payload));
       return user;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'USER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Usuário não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -132,7 +159,16 @@ export class UsersController {
       const user = await lastValueFrom(this.client.send('removeUser', id));
       return user;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'USER_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Usuário não encontrado',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {

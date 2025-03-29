@@ -32,7 +32,7 @@ export class CreateSchoolDto {
 
   @IsString()
   @IsNotEmpty()
-  @Length(14, 14)
+  @Length(14, 18)
   @Matches(/^(\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}|\d{14})$/, {
     message:
       "O CNPJ deve estar no formato XX.XXX.XXX/XXXX-XX ou XXXXXXXXXXXXXX",

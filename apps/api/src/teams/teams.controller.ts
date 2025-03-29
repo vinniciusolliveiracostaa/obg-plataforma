@@ -35,7 +35,7 @@ export class TeamsController {
       );
       return team;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
         default:
           throw new HttpException(
             {
@@ -59,7 +59,16 @@ export class TeamsController {
       const teams = await lastValueFrom(this.client.send('findAllTeams', {}));
       return teams;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEAMS_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Nenhuma Equipe encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -83,7 +92,16 @@ export class TeamsController {
       const team = await lastValueFrom(this.client.send('findOneTeam', id));
       return team;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEAM_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Equipe não encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -108,7 +126,16 @@ export class TeamsController {
       const team = await lastValueFrom(this.client.send('updateTeam', payload));
       return team;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEAM_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Equipe não encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {
@@ -132,7 +159,16 @@ export class TeamsController {
       const team = await lastValueFrom(this.client.send('removeTeam', id));
       return team;
     } catch (error) {
-      switch (error) {
+      switch (error.message) {
+        case 'TEAM_NOT_FOUND':
+          throw new HttpException(
+            {
+              status: HttpStatus.NOT_FOUND,
+              message: 'Equipe não encontrada',
+              error: error.message,
+            },
+            HttpStatus.NOT_FOUND,
+          );
         default:
           throw new HttpException(
             {

@@ -31,7 +31,7 @@ export class CreateTeacherDto {
 
   @IsString()
   @IsNotEmpty()
-  @Length(11, 11)
+  @Length(11, 14)
   @Matches(/^(\d{3}\.\d{3}\.\d{3}-\d{2}|\d{11})$/, {
     message: "O CPF deve estar no formato XXX.XXX.XXX-XX ou XXXXXXXXXXX",
   })
