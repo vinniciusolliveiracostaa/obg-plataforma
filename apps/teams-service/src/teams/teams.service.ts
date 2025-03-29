@@ -1,15 +1,18 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, EntityManager, Repository } from 'typeorm';
 import { createId } from '@paralleldrive/cuid2';
-import { RpcException } from '@nestjs/microservices';
+import { ClientNats, RpcException } from '@nestjs/microservices';
 
 import { Team } from '@repo/entities/index';
 import { CreateTeamDto, UpdateTeamDto } from '@repo/dtos/index';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class TeamsService {
   constructor(
+    @Inject('SCHOOLS_SERVICE_TEAM_SERVICE_CONSUMER')
+    private readonly client: ClientNats,
     @InjectRepository(Team)
     private readonly teamRepository: Repository<Team>,
     private readonly entityManager: EntityManager,
@@ -19,6 +22,12 @@ export class TeamsService {
 
   async create(createTeamDto: CreateTeamDto): Promise<Team> {
     try {
+      const studentsExists = await lastValueFrom(
+        this.client.send('findOneStudent', createTeamDto.students),
+      );
+      if (studentsExists.length !== createTeamDto.students.length) {
+        throw new RpcException('STUDENTS_NOT_FOUND');
+      }
       const team = new Team({
         ...createTeamDto,
         id: createId(),
@@ -72,6 +81,26 @@ export class TeamsService {
 
       if (!team) {
         throw new RpcException('TEAM_NOT_FOUND');
+      }
+
+      // Verifica se o estudante existe
+      if (updateTeamDto.students) {
+        const studentsExists = await lastValueFrom(
+          this.client.send('findOneStudent', updateTeamDto.students),
+        );
+        if (studentsExists.length !== updateTeamDto.students.length) {
+          throw new RpcException('STUDENTS_NOT_FOUND');
+        }
+      }
+
+      // Verifica se a escola existe
+      if (updateTeamDto.schoolId) {
+        const schoolExists = await lastValueFrom(
+          this.client.send('findOneSchool', updateTeamDto.schoolId),
+        );
+        if (!schoolExists) {
+          throw new RpcException('SCHOOL_NOT_FOUND');
+        }
       }
 
       await this.entityManager.update(Team, id, updateTeamDto);

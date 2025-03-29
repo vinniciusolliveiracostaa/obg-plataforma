@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, EntityManager, Repository } from 'typeorm';
 import { createId } from '@paralleldrive/cuid2';
-import { RpcException } from '@nestjs/microservices';
+import { ClientNats, RpcException } from '@nestjs/microservices';
+import { lastValueFrom } from 'rxjs';
 
 import { Student } from '@repo/entities/index';
 import { CreateStudentDto, UpdateStudentDto } from '@repo/dtos/index';
@@ -10,6 +11,8 @@ import { CreateStudentDto, UpdateStudentDto } from '@repo/dtos/index';
 @Injectable()
 export class StudentsService {
   constructor(
+    @Inject('SCHOOLS_SERVICE_STUDENT_SERVICE_CONSUMER')
+    private readonly client: ClientNats,
     @InjectRepository(Student)
     private readonly studentRepository: Repository<Student>,
     private readonly entityManager: EntityManager,
@@ -25,6 +28,11 @@ export class StudentsService {
       if (studentExists) {
         throw new RpcException('STUDENT_ALREADY_EXISTS');
       }
+
+      await lastValueFrom(
+        this.client.send('findOneSchool', createStudentDto.schoolId),
+      );
+
       const student = new Student({
         ...createStudentDto,
         id: createId(),
@@ -90,6 +98,16 @@ export class StudentsService {
         });
         if (studentExists) {
           throw new RpcException('STUDENT_ALREADY_EXISTS');
+        }
+      }
+
+      // Verifica se a escola está sendo atualizada
+      if (updateStudentDto.schoolId) {
+        const schoolExists = await lastValueFrom(
+          this.client.send('findOneSchool', updateStudentDto.schoolId),
+        );
+        if (!schoolExists) {
+          throw new RpcException('SCHOOL_NOT_FOUND');
         }
       }
 

@@ -37,4 +37,9 @@ export class CreateTeacherDto {
   })
   @ApiProperty()
   cpf: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  schoolId: string;
 }

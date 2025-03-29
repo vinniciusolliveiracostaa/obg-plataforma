@@ -26,6 +26,9 @@ export class Teacher {
   @Column({ type: "varchar", nullable: false, unique: true })
   cpf: string;
 
+  @Column({ type: "varchar", nullable: false, unique: false })
+  schoolId: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

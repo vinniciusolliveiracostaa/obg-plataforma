@@ -4,9 +4,21 @@ import { TeachersController } from './teachers.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { Teacher } from '@repo/entities/index';
+import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Teacher])],
+  imports: [
+    ClientsModule.register([
+      {
+        name: 'SCHOOLS_SERVICE_TEACHER_SERVICE_CONSUMER',
+        transport: Transport.NATS,
+        options: {
+          servers: ['nats://localhost:4222'],
+        },
+      },
+    ]),
+    TypeOrmModule.forFeature([Teacher]),
+  ],
   controllers: [TeachersController],
   providers: [TeachersService],
 })

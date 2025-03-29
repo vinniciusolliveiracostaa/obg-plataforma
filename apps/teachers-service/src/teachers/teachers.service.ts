@@ -1,15 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, EntityManager, Repository } from 'typeorm';
 import { createId } from '@paralleldrive/cuid2';
-
+import { lastValueFrom } from 'rxjs';
 import { Teacher } from '@repo/entities/index';
 import { CreateTeacherDto, UpdateTeacherDto } from '@repo/dtos/index';
-import { RpcException } from '@nestjs/microservices';
+import { ClientNats, RpcException } from '@nestjs/microservices';
 
 @Injectable()
 export class TeachersService {
   constructor(
+    @Inject('SCHOOLS_SERVICE_TEACHER_SERVICE_CONSUMER')
+    private readonly client: ClientNats,
     @InjectRepository(Teacher)
     private readonly teacherRepository: Repository<Teacher>,
     private readonly entityManager: EntityManager,
@@ -26,6 +28,10 @@ export class TeachersService {
       if (teacherExists) {
         throw new RpcException('TEACHER_ALREADY_EXISTS');
       }
+
+      await lastValueFrom(
+        this.client.send('findOneSchool', createTeacherDto.schoolId),
+      );
 
       const teacher = new Teacher({
         ...createTeacherDto,
@@ -83,6 +89,26 @@ export class TeachersService {
 
       if (!teacher) {
         throw new RpcException('TEACHER_NOT_FOUND');
+      }
+
+      // Verifica se o email já existe
+      if (updateTeacherDto.email) {
+        const studentExists = await this.teacherRepository.findOneBy({
+          email: updateTeacherDto.email,
+        });
+        if (studentExists) {
+          throw new RpcException('STUDENT_ALREADY_EXISTS');
+        }
+      }
+
+      // Verifica se a escola está sendo atualizada
+      if (updateTeacherDto.schoolId) {
+        const schoolExists = await lastValueFrom(
+          this.client.send('findOneSchool', updateTeacherDto.schoolId),
+        );
+        if (!schoolExists) {
+          throw new RpcException('SCHOOL_NOT_FOUND');
+        }
       }
 
       await this.entityManager.update(Teacher, id, updateTeacherDto);

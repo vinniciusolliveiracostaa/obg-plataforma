@@ -17,6 +17,12 @@ export class Team {
   @Column({ type: "varchar", nullable: false, unique: true })
   description: string;
 
+  @Column({ type: "varchar", nullable: false, unique: true, array: true })
+  students: string[];
+
+  @Column({ type: "varchar", nullable: false, unique: true })
+  schoolId: string;
+
   @CreateDateColumn()
   createdAt: Date;
 
