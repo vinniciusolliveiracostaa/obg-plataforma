@@ -110,7 +110,15 @@ export class StudentsService {
         const payload = { id };
         await lastValueFrom(this.client.send('deleteUser', { payload }));
 
-        return await transactionalEntityManager.delete(Student, id);
+        const deleteResult = await transactionalEntityManager.delete(
+          Student,
+          id,
+        );
+
+        if (deleteResult.affected === 0) {
+          throw new RpcException('STUDENT_NOT_DELETED');
+        }
+        return deleteResult;
       },
     );
   }

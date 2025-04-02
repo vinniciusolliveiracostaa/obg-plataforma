@@ -78,7 +78,12 @@ export class UsersService {
         const payload = { id };
         await lastValueFrom(this.client.send('deleteStudent', { payload }));
 
-        return await transactionalEntityManager.delete(User, id);
+        const deleteResult = await transactionalEntityManager.delete(User, id);
+
+        if (deleteResult.affected === 0) {
+          throw new RpcException('USER_NOT_DELETED');
+        }
+        return deleteResult;
       },
     );
   }
@@ -102,7 +107,7 @@ export class UsersService {
       // Retorna o usuário encontrado
       return user;
     } catch (error) {
-      throw new RpcException('USER_NOT_FOUND');
+      throw new RpcException(error.message);
     }
   }
 
