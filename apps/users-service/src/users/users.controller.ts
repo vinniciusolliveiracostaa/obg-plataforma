@@ -52,4 +52,20 @@ export class UsersController {
       throw new RpcException(error.message);
     }
   }
+
+  @MessagePattern('findCreateUser')
+  async findCreateUser(
+    @Payload() payload: { email: string; cpf: string; phone: string },
+  ) {
+    try {
+      console.log('findCreateUser', payload);
+      return this.usersService.findCreateUser(
+        payload.email,
+        payload.cpf,
+        payload.phone,
+      );
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
 }

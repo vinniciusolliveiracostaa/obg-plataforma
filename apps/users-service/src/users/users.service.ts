@@ -18,30 +18,34 @@ export class UsersService {
   ) {}
 
   async create(CreateUserDto: CreateUserDto) {
-    return this.entityManager.transaction(
-      async (transactionalEntityManager) => {
-        const existingUser = await this.findCreateUser(
-          CreateUserDto.email,
-          CreateUserDto.cpf,
-          CreateUserDto.phone,
-        );
-        if (existingUser) {
-          throw new RpcException('USER_ALREADY_EXISTS');
-        }
-        const user = new User({
-          ...CreateUserDto,
-          id: createId(),
-        });
+    try {
+      return this.entityManager.transaction(
+        async (transactionalEntityManager) => {
+          const existingUser = await this.findCreateUser(
+            CreateUserDto.email,
+            CreateUserDto.cpf,
+            CreateUserDto.phone,
+          );
+          if (existingUser) {
+            throw new RpcException('USER_ALREADY_EXISTS');
+          }
+          const user = new User({
+            ...CreateUserDto,
+            id: createId(),
+          });
 
-        const newUser = await transactionalEntityManager.save(User, user);
+          const newUser = await transactionalEntityManager.save(User, user);
 
-        if (!newUser) {
-          throw new RpcException('USER_NOT_CREATED');
-        }
+          if (!newUser) {
+            throw new RpcException('USER_NOT_CREATED');
+          }
 
-        return newUser;
-      },
-    );
+          return newUser;
+        },
+      );
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
   }
 
   async update(id: string, updateUserDto: UpdateUserDto) {
@@ -115,12 +119,10 @@ export class UsersService {
     }
   }
 
-  private async findCreateUser(email: string, cpf: string, phone: string) {
-    const user = await this.userRepository.findOne({
+  async findCreateUser(email: string, cpf: string, phone: string) {
+    await this.userRepository.findOne({
       where: [{ email }, { cpf }, { phone }],
     });
-    if (user) {
-      return user;
-    }
+    return new RpcException('USER_ALREADY_EXISTS');
   }
 }
