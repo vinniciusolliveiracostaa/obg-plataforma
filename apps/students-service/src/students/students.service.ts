@@ -147,9 +147,9 @@ export class StudentsService {
       phone: createStudentDto.phone,
     };
 
-    await this.entityManager.findOneBy(Student, payload);
+    const findStudent = await this.entityManager.findOneBy(Student, payload);
 
-    if (payload) {
+    if (findStudent) {
       throw new RpcException('STUDENT_ALREADY_EXISTS');
     }
   }
@@ -163,8 +163,10 @@ export class StudentsService {
 
     console.log('findStudentUser', payload);
 
-    await lastValueFrom(this.client.send('findCreateUser', payload));
-    if (payload) {
+    const findStudentUser = await lastValueFrom(
+      this.client.send('findCreateUser', payload),
+    );
+    if (findStudentUser) {
       throw new RpcException('STUDENT_ALREADY_EXISTS');
     }
   }
