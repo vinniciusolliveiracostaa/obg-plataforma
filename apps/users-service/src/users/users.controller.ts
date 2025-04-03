@@ -7,7 +7,7 @@ import { CreateUserDto, UpdateUserDto } from '@repo/dtos/index';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
   @MessagePattern('createUser')
-  create(@Payload() createUserDto: CreateUserDto) {
+  async create(@Payload() createUserDto: CreateUserDto) {
     try {
       return this.usersService.create(createUserDto);
     } catch (error) {
@@ -16,7 +16,7 @@ export class UsersController {
   }
 
   @MessagePattern('findAllUsers')
-  findAll() {
+  async findAll() {
     try {
       return this.usersService.findAll();
     } catch (error) {
@@ -25,7 +25,7 @@ export class UsersController {
   }
 
   @MessagePattern('findOneUser')
-  findOne(@Payload() id: string) {
+  async findOne(@Payload() id: string) {
     try {
       return this.usersService.findOne(id);
     } catch (error) {
@@ -34,7 +34,9 @@ export class UsersController {
   }
 
   @MessagePattern('updateUser')
-  update(@Payload() payload: { id: string; updateUserDto: UpdateUserDto }) {
+  async update(
+    @Payload() payload: { id: string; updateUserDto: UpdateUserDto },
+  ) {
     try {
       return this.usersService.update(payload.id, payload.updateUserDto);
     } catch (error) {
@@ -43,7 +45,7 @@ export class UsersController {
   }
 
   @MessagePattern('removeUser')
-  remove(@Payload() id: string) {
+  async remove(@Payload() id: string) {
     try {
       return this.usersService.remove(id);
     } catch (error) {

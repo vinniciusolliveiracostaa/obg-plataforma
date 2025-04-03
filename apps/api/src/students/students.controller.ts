@@ -11,28 +11,26 @@ import {
   Post,
 } from '@nestjs/common';
 import { ClientNats } from '@nestjs/microservices';
-import { ApiTags } from '@nestjs/swagger';
-import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos/index';
+import { CreateStudentDto, UpdateStudentDto } from '@repo/dtos/index';
 import { lastValueFrom } from 'rxjs';
 
-@ApiTags('Escolas')
-@Controller('schools')
-export class SchoolsController {
+@Controller('students')
+export class StudentsController {
   constructor(@Inject('GATEWAY_CONSUMER') private client: ClientNats) {}
 
   @Post()
-  async create(@Body() createSchoolDto: CreateSchoolDto) {
+  async create(@Body() createStudentDto: CreateStudentDto) {
     try {
       return await lastValueFrom(
-        this.client.send('createSchool', createSchoolDto),
+        this.client.send('createStudent', createStudentDto),
       );
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'STUDENT_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Aluno já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,
@@ -52,7 +50,7 @@ export class SchoolsController {
   @Get(':id')
   async findOne(@Param('id') id: string) {
     try {
-      return await lastValueFrom(this.client.send('findOneSchool', id));
+      return await lastValueFrom(this.client.send('findOneStudent', id));
     } catch (error) {
       switch (error.message) {
         default:
@@ -70,7 +68,7 @@ export class SchoolsController {
   @Get()
   async findAll() {
     try {
-      return await lastValueFrom(this.client.send('findAllSchools', {}));
+      return await lastValueFrom(this.client.send('findAllStudents', {}));
     } catch (error) {
       switch (error.message) {
         default:
@@ -88,18 +86,18 @@ export class SchoolsController {
   @Patch(':id')
   async update(
     @Param('id') id: string,
-    @Body() updateSchoolDto: UpdateSchoolDto,
+    @Body() updateStudentDto: UpdateStudentDto,
   ) {
     try {
-      const payload = { id, updateSchoolDto };
-      return await lastValueFrom(this.client.send('updateSchool', payload));
+      const payload = { id, updateStudentDto };
+      return await lastValueFrom(this.client.send('updateStudent', payload));
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'STUDENT_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Aluno já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,
@@ -119,14 +117,14 @@ export class SchoolsController {
   @Delete(':id')
   async remove(@Param('id') id: string) {
     try {
-      return await lastValueFrom(this.client.send('removeSchool', id));
+      return await lastValueFrom(this.client.send('removeStudent', id));
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'STUDENT_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Aluno já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,

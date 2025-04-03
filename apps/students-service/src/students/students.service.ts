@@ -65,11 +65,15 @@ export class StudentsService {
   }
 
   async findAll(): Promise<Student[]> {
-    const students = await this.studentRepository.find();
-    if (!students) {
-      throw new RpcException('STUDENTS_NOT_FOUND');
+    try {
+      const students = await this.studentRepository.find();
+      if (!students) {
+        throw new RpcException('STUDENTS_NOT_FOUND');
+      }
+      return students || [];
+    } catch (error) {
+      throw new RpcException(error.message);
     }
-    return students;
   }
 
   async update(
@@ -147,15 +151,15 @@ export class StudentsService {
       return student;
     }
   }
-
+  // Falta implementar
   async findOneByCpf(cpf: string): Promise<Student> {
     return this.findOneByField('cpf', cpf);
   }
-
+  // Falta implementar
   async findOneByEmail(email: string): Promise<Student> {
     return this.findOneByField('email', email);
   }
-
+  // Falta implementar
   async findOneByPhone(phone: string): Promise<Student> {
     return this.findOneByField('phone', phone);
   }

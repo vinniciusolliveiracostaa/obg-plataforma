@@ -89,11 +89,15 @@ export class UsersService {
   }
 
   async findAll() {
-    const users = await this.userRepository.find();
-    if (!users) {
-      throw new RpcException('USERS_NOT_FOUND');
+    try {
+      const users = await this.userRepository.find();
+      if (!users) {
+        throw new RpcException('USERS_NOT_FOUND');
+      }
+      return users || [];
+    } catch (error) {
+      throw new RpcException(error.message);
     }
-    return users;
   }
 
   async findOne(id: string) {

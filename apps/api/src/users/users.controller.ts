@@ -11,28 +11,33 @@ import {
   Post,
 } from '@nestjs/common';
 import { ClientNats } from '@nestjs/microservices';
-import { ApiTags } from '@nestjs/swagger';
-import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos/index';
+import { ApiOperation } from '@nestjs/swagger';
+import { CreateUserDto, UpdateUserDto } from '@repo/dtos/index';
 import { lastValueFrom } from 'rxjs';
 
-@ApiTags('Escolas')
-@Controller('schools')
-export class SchoolsController {
+@Controller('users')
+export class UsersController {
   constructor(@Inject('GATEWAY_CONSUMER') private client: ClientNats) {}
 
+  async onModuleInit() {
+    this.client.connect();
+  }
+
   @Post()
-  async create(@Body() createSchoolDto: CreateSchoolDto) {
+  @ApiOperation({
+    summary: 'Criar um usuário',
+    description: 'Cria um novo usuário no sistema',
+  })
+  async create(@Body() createUserDto: CreateUserDto) {
     try {
-      return await lastValueFrom(
-        this.client.send('createSchool', createSchoolDto),
-      );
+      return await lastValueFrom(this.client.send('createUser', createUserDto));
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'USER_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Usuário já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,
@@ -49,10 +54,15 @@ export class SchoolsController {
       }
     }
   }
+
   @Get(':id')
+  @ApiOperation({
+    summary: 'Buscar um usuário',
+    description: 'Busca um usuário pelo ID',
+  })
   async findOne(@Param('id') id: string) {
     try {
-      return await lastValueFrom(this.client.send('findOneSchool', id));
+      return await lastValueFrom(this.client.send('findOneUser', id));
     } catch (error) {
       switch (error.message) {
         default:
@@ -67,10 +77,15 @@ export class SchoolsController {
       }
     }
   }
+
   @Get()
+  @ApiOperation({
+    summary: 'Buscar todos os usuários',
+    description: 'Busca todos os usuários cadastrados no sistema',
+  })
   async findAll() {
     try {
-      return await lastValueFrom(this.client.send('findAllSchools', {}));
+      return await lastValueFrom(this.client.send('findAllUsers', {}));
     } catch (error) {
       switch (error.message) {
         default:
@@ -85,21 +100,23 @@ export class SchoolsController {
       }
     }
   }
+
   @Patch(':id')
-  async update(
-    @Param('id') id: string,
-    @Body() updateSchoolDto: UpdateSchoolDto,
-  ) {
+  @ApiOperation({
+    summary: 'Atualizar um usuário',
+    description: 'Atualiza um usuário pelo ID',
+  })
+  async update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     try {
-      const payload = { id, updateSchoolDto };
-      return await lastValueFrom(this.client.send('updateSchool', payload));
+      const payload = { id, updateUserDto };
+      return await lastValueFrom(this.client.send('updateUser', payload));
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'USER_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Usuário já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,
@@ -116,17 +133,22 @@ export class SchoolsController {
       }
     }
   }
+
   @Delete(':id')
+  @ApiOperation({
+    summary: 'Remover um usuário',
+    description: 'Remove um usuário pelo ID',
+  })
   async remove(@Param('id') id: string) {
     try {
-      return await lastValueFrom(this.client.send('removeSchool', id));
+      return await lastValueFrom(this.client.send('removeUser', id));
     } catch (error) {
       switch (error.message) {
-        case 'SCHOOL_ALREADY_EXISTS':
+        case 'USER_ALREADY_EXISTS':
           throw new HttpException(
             {
               status: HttpStatus.CONFLICT,
-              message: 'Escola já existe',
+              message: 'Usuário já existe',
               error: error.message,
             },
             HttpStatus.CONFLICT,

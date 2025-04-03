@@ -14,7 +14,7 @@ export class SchoolsService {
     private readonly schoolRepository: Repository<School>,
     private readonly entityManager: EntityManager,
   ) {}
-  create(createSchoolDto: CreateSchoolDto) {
+  async create(createSchoolDto: CreateSchoolDto) {
     return this.entityManager.transaction(
       async (transactionalEntityManager) => {
         const existingSchool = await this.findOne(createSchoolDto.inep);
@@ -35,7 +35,7 @@ export class SchoolsService {
     );
   }
 
-  update(id: string, updateSchoolDto: UpdateSchoolDto) {
+  async update(id: string, updateSchoolDto: UpdateSchoolDto) {
     return this.entityManager.transaction(
       async (transactionalEntityManager) => {
         // Verifica se a escola existe
@@ -53,7 +53,7 @@ export class SchoolsService {
     );
   }
 
-  remove(id: string): Promise<DeleteResult> {
+  async remove(id: string): Promise<DeleteResult> {
     return this.entityManager.transaction(
       async (transactionalEntityManager) => {
         // Verifica se a escola existe
@@ -77,18 +77,18 @@ export class SchoolsService {
     );
   }
 
-  findAll() {
+  async findAll(): Promise<School[]> {
     const schools = this.schoolRepository.find();
     if (!schools) {
       throw new RpcException('SCHOOL_NOT_FOUND');
     }
-    return schools;
+    return schools || [];
   }
 
-  findOne(id: string) {
+  async findOne(id: string): Promise<School> {
     try {
       // Verifica se a escola existe
-      const school = this.schoolRepository.findOneBy({ id });
+      const school = await this.schoolRepository.findOneBy({ id });
 
       if (!school) {
         throw new RpcException('SCHOOL_NOT_FOUND');

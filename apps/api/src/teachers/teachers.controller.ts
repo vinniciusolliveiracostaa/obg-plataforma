@@ -37,6 +37,15 @@ export class TeachersController {
       );
     } catch (error) {
       switch (error.message) {
+        case 'TEACHER_ALREADY_EXISTS':
+          throw new HttpException(
+            {
+              status: HttpStatus.CONFLICT,
+              message: 'Professor já existe',
+              error: error.message,
+            },
+            HttpStatus.CONFLICT,
+          );
         default:
           throw new HttpException(
             {
@@ -110,6 +119,15 @@ export class TeachersController {
       return await lastValueFrom(this.client.send('updateTeacher', payload));
     } catch (error) {
       switch (error.message) {
+        case 'TEACHER_ALREADY_EXISTS':
+          throw new HttpException(
+            {
+              status: HttpStatus.CONFLICT,
+              message: 'Professor já existe',
+              error: error.message,
+            },
+            HttpStatus.CONFLICT,
+          );
         default:
           throw new HttpException(
             {
@@ -133,6 +151,15 @@ export class TeachersController {
       return await lastValueFrom(this.client.send('removeTeacher', id));
     } catch (error) {
       switch (error.message) {
+        case 'TEACHER_ALREADY_EXISTS':
+          throw new HttpException(
+            {
+              status: HttpStatus.CONFLICT,
+              message: 'Professor já existe',
+              error: error.message,
+            },
+            HttpStatus.CONFLICT,
+          );
         default:
           throw new HttpException(
             {

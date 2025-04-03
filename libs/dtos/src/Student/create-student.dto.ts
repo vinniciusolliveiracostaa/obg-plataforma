@@ -6,9 +6,5 @@ export class CreateStudentDto extends IntersectionType(CreateUserDto) {
   @IsString()
   @IsNotEmpty()
   @ApiProperty()
-  userId: string;
-  @IsString()
-  @IsNotEmpty()
-  @ApiProperty()
   schoolId: string;
 }

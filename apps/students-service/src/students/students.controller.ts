@@ -8,7 +8,7 @@ export class StudentsController {
   constructor(private readonly studentsService: StudentsService) {}
 
   @MessagePattern('createStudent')
-  create(@Payload() createStudentDto: CreateStudentDto) {
+  async create(@Payload() createStudentDto: CreateStudentDto) {
     try {
       return this.studentsService.create(createStudentDto);
     } catch (error) {
@@ -17,7 +17,7 @@ export class StudentsController {
   }
 
   @MessagePattern('findAllStudents')
-  findAll() {
+  async findAll() {
     try {
       return this.studentsService.findAll();
     } catch (error) {
@@ -26,7 +26,7 @@ export class StudentsController {
   }
 
   @MessagePattern('findOneStudent')
-  findOne(@Payload() id: string) {
+  async findOne(@Payload() id: string) {
     try {
       return this.studentsService.findOne(id);
     } catch (error) {
@@ -35,7 +35,7 @@ export class StudentsController {
   }
 
   @MessagePattern('updateStudent')
-  update(
+  async update(
     @Payload() payload: { id: string; updateStudentDto: UpdateStudentDto },
   ) {
     try {
@@ -46,7 +46,7 @@ export class StudentsController {
   }
 
   @MessagePattern('removeStudent')
-  remove(@Payload() id: string) {
+  async remove(@Payload() id: string) {
     try {
       return this.studentsService.remove(id);
     } catch (error) {

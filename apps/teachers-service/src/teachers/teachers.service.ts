@@ -69,7 +69,7 @@ export class TeachersService {
     if (!teachers) {
       throw new RpcException('TEACHERS_NOT_FOUND');
     }
-    return teachers;
+    return teachers || [];
   }
 
   async update(
@@ -149,15 +149,15 @@ export class TeachersService {
       return teacher;
     }
   }
-
+  // Falta implementar
   async findOneByCpf(cpf: string): Promise<Teacher> {
     return this.findOneByField('cpf', cpf);
   }
-
+  // Falta implementar
   async findOneByEmail(email: string): Promise<Teacher> {
     return this.findOneByField('email', email);
   }
-
+  // Falta implementar
   async findOneByPhone(phone: string): Promise<Teacher> {
     return this.findOneByField('phone', phone);
   }
