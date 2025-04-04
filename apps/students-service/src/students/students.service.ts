@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ClientNats, RpcException } from '@nestjs/microservices';
-import { InjectRepository } from '@nestjs/typeorm';
-import { DeleteResult, EntityManager, Repository } from 'typeorm';
+import { DeleteResult, EntityManager } from 'typeorm';
 import { lastValueFrom } from 'rxjs';
 import { createId } from '@paralleldrive/cuid2';
 
