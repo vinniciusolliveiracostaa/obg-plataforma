@@ -52,4 +52,13 @@ export class TeachersController {
       throw new RpcException(error.message);
     }
   }
+
+  @MessagePattern('findAllTeachersBySchool')
+  async findAllTeachersBySchool(@Payload() schoolId: string) {
+    try {
+      return this.teachersService.findAllTeachersBySchool(schoolId);
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
 }

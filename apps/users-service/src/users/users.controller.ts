@@ -59,7 +59,7 @@ export class UsersController {
   ) {
     try {
       console.log('findCreateUser', payload);
-      return this.usersService.findCreateUser(
+      return this.usersService.findUserCreate(
         payload.email,
         payload.cpf,
         payload.phone,

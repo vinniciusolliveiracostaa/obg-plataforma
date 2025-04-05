@@ -17,6 +17,12 @@ export class School {
   @Column({ type: "varchar", unique: true, nullable: false })
   inep: string;
 
+  @Column({ type: "varchar", unique: true, nullable: false })
+  email: string;
+
+  @Column({ type: "varchar", unique: true, nullable: false })
+  phone: string;
+
   @CreateDateColumn()
   createdAt: Date;
 

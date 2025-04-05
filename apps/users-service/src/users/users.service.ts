@@ -5,7 +5,7 @@ import { createId } from '@paralleldrive/cuid2';
 import { lastValueFrom } from 'rxjs';
 
 import { CreateUserDto, UpdateUserDto } from '@repo/dtos/index';
-import { Student, User } from '@repo/entities/index';
+import { User } from '@repo/entities/index';
 
 @Injectable()
 export class UsersService {
@@ -76,7 +76,7 @@ export class UsersService {
         async (transactionalEntityManager) => {
           await this.findOne(id);
 
-          await transactionalEntityManager.update(Student, id, updateUserDto);
+          await transactionalEntityManager.update(User, id, updateUserDto);
 
           const updatedUser = await this.findOne(id);
 
@@ -95,7 +95,7 @@ export class UsersService {
           await this.findOne(id);
 
           const deletedResult = await transactionalEntityManager.delete(
-            Student,
+            User,
             id,
           );
 

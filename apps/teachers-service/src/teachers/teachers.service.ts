@@ -137,6 +137,18 @@ export class TeachersService {
     }
   }
 
+  async findAllTeachersBySchool(schoolId: string) {
+    try {
+      const teacherBySchool = await this.entityManager.findBy(Teacher, {
+        schoolId,
+      });
+
+      return teacherBySchool;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   // Private
   private async findTeacher(createTeacherDto: CreateTeacherDto): Promise<void> {
     const payload = {
