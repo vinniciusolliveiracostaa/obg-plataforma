@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { TeamsService } from './teams.service';
 import { TeamsController } from './teams.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
@@ -7,7 +6,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   imports: [
     ClientsModule.register([
       {
-        name: 'TEAMS_SERVICE_CONSUMER',
+        name: 'GATEWAY_CONSUMER',
         transport: Transport.NATS,
         options: {
           servers: ['nats://localhost:4222'],
@@ -16,6 +15,5 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ]),
   ],
   controllers: [TeamsController],
-  providers: [TeamsService],
 })
 export class TeamsModule {}

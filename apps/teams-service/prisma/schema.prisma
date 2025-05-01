@@ -17,7 +17,7 @@ datasource db {
 model Team {
   id         String   @id @default(cuid())
   name       String   @unique
-  studentsId String[]
+  studentsId String[] @unique
   teacherId  String
   schoolId   String
   createdAt  DateTime @default(now())

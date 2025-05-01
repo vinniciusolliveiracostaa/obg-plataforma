@@ -18,6 +18,11 @@ export class StudentsController {
     return this.studentsService.findAll();
   }
 
+  @MessagePattern('findManyStudents')
+  findMany(@Payload() ids: string[]) {
+    return this.studentsService.findMany(ids);
+  }
+
   @MessagePattern('findOneStudent')
   findOne(@Payload() id: string) {
     return this.studentsService.findOne(id);

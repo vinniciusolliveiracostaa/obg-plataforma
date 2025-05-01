@@ -1,3 +1,4 @@
+### Escolas
 POST http://localhost:8000/schools
 Content-Type: application/json
 
@@ -23,9 +24,9 @@ Content-Type: application/json
 
 {
   "name": "Teste Student",
-  "email": "teste1@teste.com",
-  "cpf": "10000000000",
-  "phone": "+5588910000001"
+  "email": "teste3@teste.com",
+  "cpf": "10000000002",
+  "phone": "+5588910000002"
 }
 ###
 GET http://localhost:8000/students
@@ -55,4 +56,24 @@ GET http://localhost:8000/teachers/cma467frc0000gd4zlfn4otri
 PATCH http://localhost:8000/teachers/cma467frc0000gd4zlfn4otri
 ###
 DELETE http://localhost:8000/teachers/cma467frc0000gd4zlfn4otri
+###
+
+### Equipes
+POST http://localhost:8000/teams
+Content-Type: application/json
+
+{
+  "name": "Teste Team 2",
+  "studentsId": ["cma4645p10000gdpqq2tm7dko", "cma5is2oe0000gd3x6lh5fbox"],
+  "teacherId": "cma467frc0000gd4zlfn4otri",
+  "schoolId": "cma2xuz4c0000gdy0a93ymrmg"
+}
+###
+GET http://localhost:8000/teams
+###
+GET http://localhost:8000/teams/cma467frc0000gd4zlfn4otri
+###
+PATCH http://localhost:8000/teams/cma467frc0000gd4zlfn4otri
+###
+DELETE http://localhost:8000/teams/cma5isut70001gdgxtgnxxplh
 ###

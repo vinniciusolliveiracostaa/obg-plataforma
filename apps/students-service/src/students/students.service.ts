@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 // noinspection ES6PreferShortImport
 import { CreateStudentDto, UpdateStudentDto } from '@repo/dtos/index';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Student } from 'generated/prisma';
+import { Prisma, Student } from 'generated/prisma';
 import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
@@ -39,6 +39,34 @@ export class StudentsService {
     try {
       return this.prisma.student.findMany({});
     } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
+  async findMany(ids: string[]): Promise<{
+    found: Student[];
+    notFound: string[];
+  }> {
+    try {
+      const students = await this.prisma.student.findMany({
+        where: { id: { in: ids } },
+      });
+
+      // Indentifica quais estudantes não foram encontrados
+      const foundIds = students.map((student) => student.id);
+      const notFoundIds = ids.filter((id) => !foundIds.includes(id));
+
+      if (students.length === 0) {
+        throw new RpcException('STUDENTS_NOT_FOUND');
+      }
+      return {
+        found: students,
+        notFound: notFoundIds,
+      };
+    } catch (error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        throw new RpcException(`DATABASE_ERROR: ${error.code}`);
+      }
       throw new RpcException(error.message);
     }
   }

@@ -2005,15 +2005,15 @@ export namespace Prisma {
   export type TeamWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     name?: string
+    studentsId?: string[]
     AND?: TeamWhereInput | TeamWhereInput[]
     OR?: TeamWhereInput[]
     NOT?: TeamWhereInput | TeamWhereInput[]
-    studentsId?: StringNullableListFilter<"Team">
     teacherId?: StringFilter<"Team"> | string
     schoolId?: StringFilter<"Team"> | string
     createdAt?: DateTimeFilter<"Team"> | Date | string
     updatedAt?: DateTimeFilter<"Team"> | Date | string
-  }, "id" | "name">
+  }, "id" | "name" | "studentsId">
 
   export type TeamOrderByWithAggregationInput = {
     id?: SortOrder
