@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Team" ALTER COLUMN "teacherId" SET NOT NULL,
+ALTER COLUMN "teacherId" SET DATA TYPE TEXT;

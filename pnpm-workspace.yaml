@@ -1,0 +1,13 @@
+packages:
+  - apps/*
+  - packages/*
+  - libs/*
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - '@prisma/client'
+  - '@prisma/engines'
+  - '@scarf/scarf'
+  - '@swc/core'
+  - core-js-pure
+  - esbuild
+  - prisma

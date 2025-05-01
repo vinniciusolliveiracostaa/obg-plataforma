@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/bitnami/postgresql
+    networks:
+      - app-network
+    restart: always
+  nats:
+    image: nats:latest
+    ports:
+      - "4222:4222"
+      - "6222:6222"
+      - "8222:8222"
+    networks:
+      - app-network
+    restart: always
+  redis:
+    image: bitnami/redis:latest
+    env_file:
+      - .env
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/bitnami/redis
+    networks:
+      - app-network
+    restart: always
+
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
