@@ -123,9 +123,24 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.SchoolScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  email: 'email',
   inep: 'inep',
+  uf: 'uf',
+  city: 'city',
+  location: 'location',
+  locality: 'locality',
+  administrativecategory: 'administrativecategory',
+  servicerestriction: 'servicerestriction',
+  address: 'address',
   phone: 'phone',
+  administrativedependence: 'administrativedependence',
+  privatecategory: 'privatecategory',
+  publicpoweragreement: 'publicpoweragreement',
+  regulation: 'regulation',
+  size: 'size',
+  teachingmodalitystage: 'teachingmodalitystage',
+  otheroffers: 'otheroffers',
+  latitude: 'latitude',
+  longitude: 'longitude',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -138,6 +153,11 @@ exports.Prisma.SortOrder = {
 exports.Prisma.QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

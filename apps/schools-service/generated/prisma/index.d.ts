@@ -882,9 +882,24 @@ export namespace Prisma {
   export type SchoolMinAggregateOutputType = {
     id: string | null
     name: string | null
-    email: string | null
     inep: string | null
+    uf: string | null
+    city: string | null
+    location: string | null
+    locality: string | null
+    administrativecategory: string | null
+    servicerestriction: string | null
+    address: string | null
     phone: string | null
+    administrativedependence: string | null
+    privatecategory: string | null
+    publicpoweragreement: string | null
+    regulation: string | null
+    size: string | null
+    teachingmodalitystage: string | null
+    otheroffers: string | null
+    latitude: string | null
+    longitude: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -892,9 +907,24 @@ export namespace Prisma {
   export type SchoolMaxAggregateOutputType = {
     id: string | null
     name: string | null
-    email: string | null
     inep: string | null
+    uf: string | null
+    city: string | null
+    location: string | null
+    locality: string | null
+    administrativecategory: string | null
+    servicerestriction: string | null
+    address: string | null
     phone: string | null
+    administrativedependence: string | null
+    privatecategory: string | null
+    publicpoweragreement: string | null
+    regulation: string | null
+    size: string | null
+    teachingmodalitystage: string | null
+    otheroffers: string | null
+    latitude: string | null
+    longitude: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
@@ -902,9 +932,24 @@ export namespace Prisma {
   export type SchoolCountAggregateOutputType = {
     id: number
     name: number
-    email: number
     inep: number
+    uf: number
+    city: number
+    location: number
+    locality: number
+    administrativecategory: number
+    servicerestriction: number
+    address: number
     phone: number
+    administrativedependence: number
+    privatecategory: number
+    publicpoweragreement: number
+    regulation: number
+    size: number
+    teachingmodalitystage: number
+    otheroffers: number
+    latitude: number
+    longitude: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -914,9 +959,24 @@ export namespace Prisma {
   export type SchoolMinAggregateInputType = {
     id?: true
     name?: true
-    email?: true
     inep?: true
+    uf?: true
+    city?: true
+    location?: true
+    locality?: true
+    administrativecategory?: true
+    servicerestriction?: true
+    address?: true
     phone?: true
+    administrativedependence?: true
+    privatecategory?: true
+    publicpoweragreement?: true
+    regulation?: true
+    size?: true
+    teachingmodalitystage?: true
+    otheroffers?: true
+    latitude?: true
+    longitude?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -924,9 +984,24 @@ export namespace Prisma {
   export type SchoolMaxAggregateInputType = {
     id?: true
     name?: true
-    email?: true
     inep?: true
+    uf?: true
+    city?: true
+    location?: true
+    locality?: true
+    administrativecategory?: true
+    servicerestriction?: true
+    address?: true
     phone?: true
+    administrativedependence?: true
+    privatecategory?: true
+    publicpoweragreement?: true
+    regulation?: true
+    size?: true
+    teachingmodalitystage?: true
+    otheroffers?: true
+    latitude?: true
+    longitude?: true
     createdAt?: true
     updatedAt?: true
   }
@@ -934,9 +1009,24 @@ export namespace Prisma {
   export type SchoolCountAggregateInputType = {
     id?: true
     name?: true
-    email?: true
     inep?: true
+    uf?: true
+    city?: true
+    location?: true
+    locality?: true
+    administrativecategory?: true
+    servicerestriction?: true
+    address?: true
     phone?: true
+    administrativedependence?: true
+    privatecategory?: true
+    publicpoweragreement?: true
+    regulation?: true
+    size?: true
+    teachingmodalitystage?: true
+    otheroffers?: true
+    latitude?: true
+    longitude?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -1017,9 +1107,24 @@ export namespace Prisma {
   export type SchoolGroupByOutputType = {
     id: string
     name: string
-    email: string
     inep: string
-    phone: string
+    uf: string
+    city: string
+    location: string | null
+    locality: string | null
+    administrativecategory: string | null
+    servicerestriction: string | null
+    address: string | null
+    phone: string | null
+    administrativedependence: string | null
+    privatecategory: string | null
+    publicpoweragreement: string | null
+    regulation: string | null
+    size: string | null
+    teachingmodalitystage: string | null
+    otheroffers: string | null
+    latitude: string | null
+    longitude: string | null
     createdAt: Date
     updatedAt: Date
     _count: SchoolCountAggregateOutputType | null
@@ -1044,9 +1149,24 @@ export namespace Prisma {
   export type SchoolSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    email?: boolean
     inep?: boolean
+    uf?: boolean
+    city?: boolean
+    location?: boolean
+    locality?: boolean
+    administrativecategory?: boolean
+    servicerestriction?: boolean
+    address?: boolean
     phone?: boolean
+    administrativedependence?: boolean
+    privatecategory?: boolean
+    publicpoweragreement?: boolean
+    regulation?: boolean
+    size?: boolean
+    teachingmodalitystage?: boolean
+    otheroffers?: boolean
+    latitude?: boolean
+    longitude?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["school"]>
@@ -1054,9 +1174,24 @@ export namespace Prisma {
   export type SchoolSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    email?: boolean
     inep?: boolean
+    uf?: boolean
+    city?: boolean
+    location?: boolean
+    locality?: boolean
+    administrativecategory?: boolean
+    servicerestriction?: boolean
+    address?: boolean
     phone?: boolean
+    administrativedependence?: boolean
+    privatecategory?: boolean
+    publicpoweragreement?: boolean
+    regulation?: boolean
+    size?: boolean
+    teachingmodalitystage?: boolean
+    otheroffers?: boolean
+    latitude?: boolean
+    longitude?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["school"]>
@@ -1064,9 +1199,24 @@ export namespace Prisma {
   export type SchoolSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    email?: boolean
     inep?: boolean
+    uf?: boolean
+    city?: boolean
+    location?: boolean
+    locality?: boolean
+    administrativecategory?: boolean
+    servicerestriction?: boolean
+    address?: boolean
     phone?: boolean
+    administrativedependence?: boolean
+    privatecategory?: boolean
+    publicpoweragreement?: boolean
+    regulation?: boolean
+    size?: boolean
+    teachingmodalitystage?: boolean
+    otheroffers?: boolean
+    latitude?: boolean
+    longitude?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["school"]>
@@ -1074,14 +1224,29 @@ export namespace Prisma {
   export type SchoolSelectScalar = {
     id?: boolean
     name?: boolean
-    email?: boolean
     inep?: boolean
+    uf?: boolean
+    city?: boolean
+    location?: boolean
+    locality?: boolean
+    administrativecategory?: boolean
+    servicerestriction?: boolean
+    address?: boolean
     phone?: boolean
+    administrativedependence?: boolean
+    privatecategory?: boolean
+    publicpoweragreement?: boolean
+    regulation?: boolean
+    size?: boolean
+    teachingmodalitystage?: boolean
+    otheroffers?: boolean
+    latitude?: boolean
+    longitude?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type SchoolOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "inep" | "phone" | "createdAt" | "updatedAt", ExtArgs["result"]["school"]>
+  export type SchoolOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "inep" | "uf" | "city" | "location" | "locality" | "administrativecategory" | "servicerestriction" | "address" | "phone" | "administrativedependence" | "privatecategory" | "publicpoweragreement" | "regulation" | "size" | "teachingmodalitystage" | "otheroffers" | "latitude" | "longitude" | "createdAt" | "updatedAt", ExtArgs["result"]["school"]>
 
   export type $SchoolPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "School"
@@ -1089,9 +1254,24 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
-      email: string
       inep: string
-      phone: string
+      uf: string
+      city: string
+      location: string | null
+      locality: string | null
+      administrativecategory: string | null
+      servicerestriction: string | null
+      address: string | null
+      phone: string | null
+      administrativedependence: string | null
+      privatecategory: string | null
+      publicpoweragreement: string | null
+      regulation: string | null
+      size: string | null
+      teachingmodalitystage: string | null
+      otheroffers: string | null
+      latitude: string | null
+      longitude: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["school"]>
@@ -1519,9 +1699,24 @@ export namespace Prisma {
   interface SchoolFieldRefs {
     readonly id: FieldRef<"School", 'String'>
     readonly name: FieldRef<"School", 'String'>
-    readonly email: FieldRef<"School", 'String'>
     readonly inep: FieldRef<"School", 'String'>
+    readonly uf: FieldRef<"School", 'String'>
+    readonly city: FieldRef<"School", 'String'>
+    readonly location: FieldRef<"School", 'String'>
+    readonly locality: FieldRef<"School", 'String'>
+    readonly administrativecategory: FieldRef<"School", 'String'>
+    readonly servicerestriction: FieldRef<"School", 'String'>
+    readonly address: FieldRef<"School", 'String'>
     readonly phone: FieldRef<"School", 'String'>
+    readonly administrativedependence: FieldRef<"School", 'String'>
+    readonly privatecategory: FieldRef<"School", 'String'>
+    readonly publicpoweragreement: FieldRef<"School", 'String'>
+    readonly regulation: FieldRef<"School", 'String'>
+    readonly size: FieldRef<"School", 'String'>
+    readonly teachingmodalitystage: FieldRef<"School", 'String'>
+    readonly otheroffers: FieldRef<"School", 'String'>
+    readonly latitude: FieldRef<"School", 'String'>
+    readonly longitude: FieldRef<"School", 'String'>
     readonly createdAt: FieldRef<"School", 'DateTime'>
     readonly updatedAt: FieldRef<"School", 'DateTime'>
   }
@@ -1907,9 +2102,24 @@ export namespace Prisma {
   export const SchoolScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    email: 'email',
     inep: 'inep',
+    uf: 'uf',
+    city: 'city',
+    location: 'location',
+    locality: 'locality',
+    administrativecategory: 'administrativecategory',
+    servicerestriction: 'servicerestriction',
+    address: 'address',
     phone: 'phone',
+    administrativedependence: 'administrativedependence',
+    privatecategory: 'privatecategory',
+    publicpoweragreement: 'publicpoweragreement',
+    regulation: 'regulation',
+    size: 'size',
+    teachingmodalitystage: 'teachingmodalitystage',
+    otheroffers: 'otheroffers',
+    latitude: 'latitude',
+    longitude: 'longitude',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -1931,6 +2141,14 @@ export namespace Prisma {
   };
 
   export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -1989,9 +2207,24 @@ export namespace Prisma {
     NOT?: SchoolWhereInput | SchoolWhereInput[]
     id?: StringFilter<"School"> | string
     name?: StringFilter<"School"> | string
-    email?: StringFilter<"School"> | string
     inep?: StringFilter<"School"> | string
-    phone?: StringFilter<"School"> | string
+    uf?: StringFilter<"School"> | string
+    city?: StringFilter<"School"> | string
+    location?: StringNullableFilter<"School"> | string | null
+    locality?: StringNullableFilter<"School"> | string | null
+    administrativecategory?: StringNullableFilter<"School"> | string | null
+    servicerestriction?: StringNullableFilter<"School"> | string | null
+    address?: StringNullableFilter<"School"> | string | null
+    phone?: StringNullableFilter<"School"> | string | null
+    administrativedependence?: StringNullableFilter<"School"> | string | null
+    privatecategory?: StringNullableFilter<"School"> | string | null
+    publicpoweragreement?: StringNullableFilter<"School"> | string | null
+    regulation?: StringNullableFilter<"School"> | string | null
+    size?: StringNullableFilter<"School"> | string | null
+    teachingmodalitystage?: StringNullableFilter<"School"> | string | null
+    otheroffers?: StringNullableFilter<"School"> | string | null
+    latitude?: StringNullableFilter<"School"> | string | null
+    longitude?: StringNullableFilter<"School"> | string | null
     createdAt?: DateTimeFilter<"School"> | Date | string
     updatedAt?: DateTimeFilter<"School"> | Date | string
   }
@@ -1999,32 +2232,77 @@ export namespace Prisma {
   export type SchoolOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    email?: SortOrder
     inep?: SortOrder
-    phone?: SortOrder
+    uf?: SortOrder
+    city?: SortOrder
+    location?: SortOrderInput | SortOrder
+    locality?: SortOrderInput | SortOrder
+    administrativecategory?: SortOrderInput | SortOrder
+    servicerestriction?: SortOrderInput | SortOrder
+    address?: SortOrderInput | SortOrder
+    phone?: SortOrderInput | SortOrder
+    administrativedependence?: SortOrderInput | SortOrder
+    privatecategory?: SortOrderInput | SortOrder
+    publicpoweragreement?: SortOrderInput | SortOrder
+    regulation?: SortOrderInput | SortOrder
+    size?: SortOrderInput | SortOrder
+    teachingmodalitystage?: SortOrderInput | SortOrder
+    otheroffers?: SortOrderInput | SortOrder
+    latitude?: SortOrderInput | SortOrder
+    longitude?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type SchoolWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    email?: string
     inep?: string
-    phone?: string
     AND?: SchoolWhereInput | SchoolWhereInput[]
     OR?: SchoolWhereInput[]
     NOT?: SchoolWhereInput | SchoolWhereInput[]
     name?: StringFilter<"School"> | string
+    uf?: StringFilter<"School"> | string
+    city?: StringFilter<"School"> | string
+    location?: StringNullableFilter<"School"> | string | null
+    locality?: StringNullableFilter<"School"> | string | null
+    administrativecategory?: StringNullableFilter<"School"> | string | null
+    servicerestriction?: StringNullableFilter<"School"> | string | null
+    address?: StringNullableFilter<"School"> | string | null
+    phone?: StringNullableFilter<"School"> | string | null
+    administrativedependence?: StringNullableFilter<"School"> | string | null
+    privatecategory?: StringNullableFilter<"School"> | string | null
+    publicpoweragreement?: StringNullableFilter<"School"> | string | null
+    regulation?: StringNullableFilter<"School"> | string | null
+    size?: StringNullableFilter<"School"> | string | null
+    teachingmodalitystage?: StringNullableFilter<"School"> | string | null
+    otheroffers?: StringNullableFilter<"School"> | string | null
+    latitude?: StringNullableFilter<"School"> | string | null
+    longitude?: StringNullableFilter<"School"> | string | null
     createdAt?: DateTimeFilter<"School"> | Date | string
     updatedAt?: DateTimeFilter<"School"> | Date | string
-  }, "id" | "email" | "inep" | "phone">
+  }, "id" | "inep">
 
   export type SchoolOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    email?: SortOrder
     inep?: SortOrder
-    phone?: SortOrder
+    uf?: SortOrder
+    city?: SortOrder
+    location?: SortOrderInput | SortOrder
+    locality?: SortOrderInput | SortOrder
+    administrativecategory?: SortOrderInput | SortOrder
+    servicerestriction?: SortOrderInput | SortOrder
+    address?: SortOrderInput | SortOrder
+    phone?: SortOrderInput | SortOrder
+    administrativedependence?: SortOrderInput | SortOrder
+    privatecategory?: SortOrderInput | SortOrder
+    publicpoweragreement?: SortOrderInput | SortOrder
+    regulation?: SortOrderInput | SortOrder
+    size?: SortOrderInput | SortOrder
+    teachingmodalitystage?: SortOrderInput | SortOrder
+    otheroffers?: SortOrderInput | SortOrder
+    latitude?: SortOrderInput | SortOrder
+    longitude?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: SchoolCountOrderByAggregateInput
@@ -2038,9 +2316,24 @@ export namespace Prisma {
     NOT?: SchoolScalarWhereWithAggregatesInput | SchoolScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"School"> | string
     name?: StringWithAggregatesFilter<"School"> | string
-    email?: StringWithAggregatesFilter<"School"> | string
     inep?: StringWithAggregatesFilter<"School"> | string
-    phone?: StringWithAggregatesFilter<"School"> | string
+    uf?: StringWithAggregatesFilter<"School"> | string
+    city?: StringWithAggregatesFilter<"School"> | string
+    location?: StringNullableWithAggregatesFilter<"School"> | string | null
+    locality?: StringNullableWithAggregatesFilter<"School"> | string | null
+    administrativecategory?: StringNullableWithAggregatesFilter<"School"> | string | null
+    servicerestriction?: StringNullableWithAggregatesFilter<"School"> | string | null
+    address?: StringNullableWithAggregatesFilter<"School"> | string | null
+    phone?: StringNullableWithAggregatesFilter<"School"> | string | null
+    administrativedependence?: StringNullableWithAggregatesFilter<"School"> | string | null
+    privatecategory?: StringNullableWithAggregatesFilter<"School"> | string | null
+    publicpoweragreement?: StringNullableWithAggregatesFilter<"School"> | string | null
+    regulation?: StringNullableWithAggregatesFilter<"School"> | string | null
+    size?: StringNullableWithAggregatesFilter<"School"> | string | null
+    teachingmodalitystage?: StringNullableWithAggregatesFilter<"School"> | string | null
+    otheroffers?: StringNullableWithAggregatesFilter<"School"> | string | null
+    latitude?: StringNullableWithAggregatesFilter<"School"> | string | null
+    longitude?: StringNullableWithAggregatesFilter<"School"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"School"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"School"> | Date | string
   }
@@ -2048,9 +2341,24 @@ export namespace Prisma {
   export type SchoolCreateInput = {
     id?: string
     name: string
-    email: string
     inep: string
-    phone: string
+    uf: string
+    city: string
+    location?: string | null
+    locality?: string | null
+    administrativecategory?: string | null
+    servicerestriction?: string | null
+    address?: string | null
+    phone?: string | null
+    administrativedependence?: string | null
+    privatecategory?: string | null
+    publicpoweragreement?: string | null
+    regulation?: string | null
+    size?: string | null
+    teachingmodalitystage?: string | null
+    otheroffers?: string | null
+    latitude?: string | null
+    longitude?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -2058,9 +2366,24 @@ export namespace Prisma {
   export type SchoolUncheckedCreateInput = {
     id?: string
     name: string
-    email: string
     inep: string
-    phone: string
+    uf: string
+    city: string
+    location?: string | null
+    locality?: string | null
+    administrativecategory?: string | null
+    servicerestriction?: string | null
+    address?: string | null
+    phone?: string | null
+    administrativedependence?: string | null
+    privatecategory?: string | null
+    publicpoweragreement?: string | null
+    regulation?: string | null
+    size?: string | null
+    teachingmodalitystage?: string | null
+    otheroffers?: string | null
+    latitude?: string | null
+    longitude?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -2068,9 +2391,24 @@ export namespace Prisma {
   export type SchoolUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     inep?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    locality?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    servicerestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativedependence?: NullableStringFieldUpdateOperationsInput | string | null
+    privatecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    publicpoweragreement?: NullableStringFieldUpdateOperationsInput | string | null
+    regulation?: NullableStringFieldUpdateOperationsInput | string | null
+    size?: NullableStringFieldUpdateOperationsInput | string | null
+    teachingmodalitystage?: NullableStringFieldUpdateOperationsInput | string | null
+    otheroffers?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableStringFieldUpdateOperationsInput | string | null
+    longitude?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2078,9 +2416,24 @@ export namespace Prisma {
   export type SchoolUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     inep?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    locality?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    servicerestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativedependence?: NullableStringFieldUpdateOperationsInput | string | null
+    privatecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    publicpoweragreement?: NullableStringFieldUpdateOperationsInput | string | null
+    regulation?: NullableStringFieldUpdateOperationsInput | string | null
+    size?: NullableStringFieldUpdateOperationsInput | string | null
+    teachingmodalitystage?: NullableStringFieldUpdateOperationsInput | string | null
+    otheroffers?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableStringFieldUpdateOperationsInput | string | null
+    longitude?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2088,9 +2441,24 @@ export namespace Prisma {
   export type SchoolCreateManyInput = {
     id?: string
     name: string
-    email: string
     inep: string
-    phone: string
+    uf: string
+    city: string
+    location?: string | null
+    locality?: string | null
+    administrativecategory?: string | null
+    servicerestriction?: string | null
+    address?: string | null
+    phone?: string | null
+    administrativedependence?: string | null
+    privatecategory?: string | null
+    publicpoweragreement?: string | null
+    regulation?: string | null
+    size?: string | null
+    teachingmodalitystage?: string | null
+    otheroffers?: string | null
+    latitude?: string | null
+    longitude?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -2098,9 +2466,24 @@ export namespace Prisma {
   export type SchoolUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     inep?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    locality?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    servicerestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativedependence?: NullableStringFieldUpdateOperationsInput | string | null
+    privatecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    publicpoweragreement?: NullableStringFieldUpdateOperationsInput | string | null
+    regulation?: NullableStringFieldUpdateOperationsInput | string | null
+    size?: NullableStringFieldUpdateOperationsInput | string | null
+    teachingmodalitystage?: NullableStringFieldUpdateOperationsInput | string | null
+    otheroffers?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableStringFieldUpdateOperationsInput | string | null
+    longitude?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2108,9 +2491,24 @@ export namespace Prisma {
   export type SchoolUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     inep?: StringFieldUpdateOperationsInput | string
-    phone?: StringFieldUpdateOperationsInput | string
+    uf?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    location?: NullableStringFieldUpdateOperationsInput | string | null
+    locality?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    servicerestriction?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    phone?: NullableStringFieldUpdateOperationsInput | string | null
+    administrativedependence?: NullableStringFieldUpdateOperationsInput | string | null
+    privatecategory?: NullableStringFieldUpdateOperationsInput | string | null
+    publicpoweragreement?: NullableStringFieldUpdateOperationsInput | string | null
+    regulation?: NullableStringFieldUpdateOperationsInput | string | null
+    size?: NullableStringFieldUpdateOperationsInput | string | null
+    teachingmodalitystage?: NullableStringFieldUpdateOperationsInput | string | null
+    otheroffers?: NullableStringFieldUpdateOperationsInput | string | null
+    latitude?: NullableStringFieldUpdateOperationsInput | string | null
+    longitude?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -2130,6 +2528,21 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2141,12 +2554,32 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type SchoolCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    email?: SortOrder
     inep?: SortOrder
+    uf?: SortOrder
+    city?: SortOrder
+    location?: SortOrder
+    locality?: SortOrder
+    administrativecategory?: SortOrder
+    servicerestriction?: SortOrder
+    address?: SortOrder
     phone?: SortOrder
+    administrativedependence?: SortOrder
+    privatecategory?: SortOrder
+    publicpoweragreement?: SortOrder
+    regulation?: SortOrder
+    size?: SortOrder
+    teachingmodalitystage?: SortOrder
+    otheroffers?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -2154,9 +2587,24 @@ export namespace Prisma {
   export type SchoolMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    email?: SortOrder
     inep?: SortOrder
+    uf?: SortOrder
+    city?: SortOrder
+    location?: SortOrder
+    locality?: SortOrder
+    administrativecategory?: SortOrder
+    servicerestriction?: SortOrder
+    address?: SortOrder
     phone?: SortOrder
+    administrativedependence?: SortOrder
+    privatecategory?: SortOrder
+    publicpoweragreement?: SortOrder
+    regulation?: SortOrder
+    size?: SortOrder
+    teachingmodalitystage?: SortOrder
+    otheroffers?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -2164,9 +2612,24 @@ export namespace Prisma {
   export type SchoolMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    email?: SortOrder
     inep?: SortOrder
+    uf?: SortOrder
+    city?: SortOrder
+    location?: SortOrder
+    locality?: SortOrder
+    administrativecategory?: SortOrder
+    servicerestriction?: SortOrder
+    address?: SortOrder
     phone?: SortOrder
+    administrativedependence?: SortOrder
+    privatecategory?: SortOrder
+    publicpoweragreement?: SortOrder
+    regulation?: SortOrder
+    size?: SortOrder
+    teachingmodalitystage?: SortOrder
+    otheroffers?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -2189,6 +2652,24 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -2207,6 +2688,10 @@ export namespace Prisma {
     set?: string
   }
 
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -2223,6 +2708,20 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -2262,6 +2761,34 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

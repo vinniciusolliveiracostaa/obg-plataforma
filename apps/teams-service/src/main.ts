@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
+import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(
@@ -8,11 +9,12 @@ async function bootstrap() {
     {
       transport: Transport.NATS,
       options: {
-        name: 'TEAMS_SERVICE',
+        name: 'TEAMS-SERVICE',
         servers: ['nats://localhost:4222'],
       },
     },
   );
+  app.useGlobalPipes(new ValidationPipe());
   await app.listen();
 }
 bootstrap();

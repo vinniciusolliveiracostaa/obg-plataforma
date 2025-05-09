@@ -15,11 +15,26 @@ datasource db {
 }
 
 model School {
-  id        String   @id @default(cuid())
-  name      String
-  email     String   @unique
-  inep      String   @unique
-  phone     String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                       String   @id @default(cuid())
+  name                     String
+  inep                     String   @unique
+  uf                       String
+  city                     String
+  location                 String?
+  locality                 String?
+  administrativecategory   String?
+  servicerestriction       String?
+  address                  String?
+  phone                    String?
+  administrativedependence String?
+  privatecategory          String?
+  publicpoweragreement     String?
+  regulation               String?
+  size                     String?
+  teachingmodalitystage    String?
+  otheroffers              String?
+  latitude                 String?
+  longitude                String?
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
 }

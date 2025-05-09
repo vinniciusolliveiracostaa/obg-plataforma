@@ -1,31 +1,64 @@
-import { ApiProperty } from "@nestjs/swagger";
-import {
-  IsEmail,
-  IsNotEmpty,
-  IsPhoneNumber,
-  IsString,
-  Length,
-} from "class-validator";
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateSchoolDto {
   @IsString()
   @IsNotEmpty()
-  @ApiProperty({ name: "Nome", description: "Nome da escola" })
   name: string;
-
-  @IsEmail()
-  @IsNotEmpty()
-  @ApiProperty({ name: "Email", description: "Email da escola" })
-  email: string;
 
   @IsString()
   @IsNotEmpty()
-  @Length(8, 8)
-  @ApiProperty({ name: "INEP", description: "INEP da escola" })
   inep: string;
 
-  @IsPhoneNumber("BR")
+  @IsString()
   @IsNotEmpty()
-  @ApiProperty({ name: "Telefone", description: "Telefone da escola" })
+  uf: string;
+
+  @IsString()
+  @IsNotEmpty()
+  city: string;
+
+  @IsString()
+  location: string;
+
+  @IsString()
+  locality: string;
+
+  @IsString()
+  administrativecategory: string;
+
+  @IsString()
+  servicerestriction: string;
+
+  @IsString()
+  address: string;
+
+  @IsString()
   phone: string;
+
+  @IsString()
+  administrativedependence: string;
+
+  @IsString()
+  privatecategory: string;
+
+  @IsString()
+  publicpoweragreement: string;
+
+  @IsString()
+  regulation: string;
+
+  @IsString()
+  size: string;
+
+  @IsString()
+  teachingmodalitystage: string;
+
+  @IsString()
+  otheroffers: string;
+
+  @IsString()
+  latitude: string;
+
+  @IsString()
+  longitude: string;
 }

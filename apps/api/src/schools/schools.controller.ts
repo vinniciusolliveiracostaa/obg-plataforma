@@ -9,12 +9,17 @@ import {
   Param,
   Patch,
   Post,
+  UnprocessableEntityException,
+  UploadedFile,
+  UseInterceptors,
 } from '@nestjs/common';
 import { lastValueFrom } from 'rxjs';
 import { ClientNats } from '@nestjs/microservices';
-// noinspection ES6PreferShortImport
-import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos/index';
+import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { Express } from 'express';
+import * as cuid2 from '@paralleldrive/cuid2';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @ApiTags('Escolas')
 @Controller('schools')
@@ -137,5 +142,64 @@ export class SchoolsController {
           );
       }
     }
+  }
+
+  @Post('upload')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      fileFilter: (_req, file, cb) => {
+        if (file.mimetype !== 'text/csv') {
+          return cb(
+            new UnprocessableEntityException(
+              `Tipo Inválido: ${file.mimetype}. Esperando: text/csv`,
+            ),
+            false,
+          );
+        }
+        cb(null, true);
+      },
+      limits: {
+        fileSize: 100 * 1024 * 1024, // 100 MB
+      },
+    }),
+  )
+  async uploadFiles(
+    @UploadedFile()
+    file: Express.Multer.File,
+  ) {
+    console.log('Arquivo recebido:', file.originalname);
+
+    const fileId = cuid2.createId(); // Gera um ID único(cuid) para o arquivo
+    const chunkSize = 900; // 900 KB por chunk
+    const totalChunks = Math.ceil(file.size / chunkSize);
+
+    // Divide o arquivo em chunks
+    const fileBuffer = file.buffer; // O arquivo é recebido como buffer
+    for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex++) {
+      const start = chunkIndex * chunkSize;
+      const end = Math.min(start + chunkSize, file.size);
+      const chunk = fileBuffer.slice(start, end);
+
+      // Criar metadados do chunk
+      const chunkMetadata = {
+        fileId,
+        chunkIndex,
+        totalChunks,
+        originalName: file.originalname,
+        mimetype: file.mimetype,
+      };
+
+      console.log(`Enviando chunk ${chunkIndex + 1} de ${totalChunks}`);
+
+      // Publicar o chunk via NATS
+      await lastValueFrom(
+        this.client.emit('importSchools', {
+          metadata: chunkMetadata,
+          data: chunk.toString('base64'),
+        }),
+      );
+    }
+    console.log('Upload completo. Todos os chunks foram enviados.');
+    return { message: 'Arquivo enviado com sucesso!', fileId };
   }
 }

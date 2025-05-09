@@ -1,36 +1,50 @@
-// noinspection ES6PreferShortImport
-
 import { Controller } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos';
 import { SchoolsService } from './schools.service';
-import { CreateSchoolDto, UpdateSchoolDto } from '@repo/dtos/index';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
+import { SchoolsCsvService } from './schools-csv.service';
+import { ChunkMetadata } from '@repo/interfaces';
 
 @Controller()
 export class SchoolsController {
-  constructor(private readonly schoolsService: SchoolsService) {}
+  constructor(
+    private readonly schoolsService: SchoolsService,
+    private readonly schoolsCsvService: SchoolsCsvService,
+  ) {}
 
   @MessagePattern('createSchool')
-  create(@Payload() createSchoolDto: CreateSchoolDto) {
-    return this.schoolsService.create(createSchoolDto);
+  async create(@Payload() createSchoolDto: CreateSchoolDto) {
+    return await this.schoolsService.create(createSchoolDto);
+  }
+
+  @EventPattern('importSchools')
+  async import(@Payload() data: { metadata: ChunkMetadata; data: string }) {
+    //console.log(data.fileBuffer);
+    return await this.schoolsCsvService.createManySchoolsFromCsv(data);
   }
 
   @MessagePattern('findAllSchools')
-  findAll() {
-    return this.schoolsService.findAll();
+  async findAll() {
+    return await this.schoolsService.findAll();
   }
 
   @MessagePattern('findOneSchool')
-  findOne(@Payload() id: string) {
-    return this.schoolsService.findOne(id);
+  async findOne(@Payload() id: string) {
+    return await this.schoolsService.findOne(id);
   }
 
   @MessagePattern('updateSchool')
-  update(@Payload() payload: { id: string; updateSchoolDto: UpdateSchoolDto }) {
-    return this.schoolsService.update(payload.id, payload.updateSchoolDto);
+  async update(
+    @Payload() payload: { id: string; updateSchoolDto: UpdateSchoolDto },
+  ) {
+    return await this.schoolsService.update(
+      payload.id,
+      payload.updateSchoolDto,
+    );
   }
 
   @MessagePattern('removeSchool')
-  remove(@Payload() id: string) {
-    return this.schoolsService.remove(id);
+  async remove(@Payload() id: string) {
+    return await this.schoolsService.remove(id);
   }
 }
