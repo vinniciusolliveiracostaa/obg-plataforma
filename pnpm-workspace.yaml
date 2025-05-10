@@ -8,6 +8,7 @@ onlyBuiltDependencies:
   - '@prisma/engines'
   - '@scarf/scarf'
   - '@swc/core'
+  - argon2
   - core-js-pure
   - esbuild
   - prisma
