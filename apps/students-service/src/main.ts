@@ -9,8 +9,8 @@ async function bootstrap() {
     {
       transport: Transport.NATS,
       options: {
-        name: 'STUDENTS-SERVICE',
         servers: ['nats://localhost:4222'],
+        queue: 'STUDENTS-SERVICE',
       },
     },
   );

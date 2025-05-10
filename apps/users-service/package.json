@@ -20,12 +20,15 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@repo/enums": "workspace:*",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
+    "@nestjs/mapped-types": "*",
     "@nestjs/core": "^11.0.1",
     "@nestjs/microservices": "^11.1.0",
     "@nestjs/platform-express": "^11.0.1",
     "@nestjs/swagger": "^11.2.0",
+    "@prisma/client": "6.7.0",
     "@repo/dtos": "workspace:*",
     "argon2": "^0.43.0",
     "class-transformer": "^0.5.1",

@@ -24,8 +24,9 @@ export class SchoolsController {
   }
 
   @MessagePattern('findAllSchools')
-  async findAll() {
-    return await this.schoolsService.findAll();
+  async findAll(@Payload() data: { page: number; pageSize: number }) {
+    console.log(data.page, data.pageSize);
+    return await this.schoolsService.findAll(data.page, data.pageSize);
   }
 
   @MessagePattern('findOneSchool')

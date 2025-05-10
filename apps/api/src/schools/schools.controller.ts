@@ -9,6 +9,7 @@ import {
   Param,
   Patch,
   Post,
+  Query,
   UnprocessableEntityException,
   UploadedFile,
   UseInterceptors,
@@ -51,11 +52,15 @@ export class SchoolsController {
   @Get()
   @ApiOperation({
     summary: 'Obter Escolas',
-    description: 'Obter todas as Escolas',
+    description: 'Obter todas as Escolas por página e tamanho da página',
   })
-  async findAll() {
+  async findAll(
+    @Query('page') page: number,
+    @Query('pageSize') pageSize: number,
+  ) {
     try {
-      return await lastValueFrom(this.client.send('findAllSchools', {}));
+      const data = { page, pageSize };
+      return await lastValueFrom(this.client.send('findAllSchools', data));
     } catch (error) {
       switch (error.message) {
         default:
