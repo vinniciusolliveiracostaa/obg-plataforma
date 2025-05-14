@@ -6,13 +6,20 @@ Content-Type: application/json
   "name": "Teste",
   "email": "test@example.com",
   "password": "Teste123?",
-  "role": "TEACHER",
-  "cpf": "12345678901"
+  "role": "TEACHER"
 }
 ###
 GET http://localhost:8000/users
 ###
-GET http://localhost:8000/users/cma5zoonp0000gd1zrkvwxgah
+GET http://localhost:8000/users/cmanuylv30001gd3wkbabxm4e
 ###
-DELETE http://localhost:8000/users/cma6ymu4e0000gd0khposiflb
+DELETE http://localhost:8000/users/cmanuylv30001gd3wkbabxm4e
 ###
+PATCH http://localhost:8000/users/cmanuylv30001gd3wkbabxm4e
+Content-Type: application/json
+
+{
+  "name": "Teste",
+  "email": "test@example.com",
+    "password": "Teste1234?"
+}

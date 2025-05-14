@@ -10,7 +10,7 @@ export class UsersController {
   @MessagePattern('createUser')
   async create(@Payload() createUserDto: CreateUserDto) {
     try {
-      await this.usersService.create(createUserDto);
+      return await this.usersService.create(createUserDto);
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -19,7 +19,7 @@ export class UsersController {
   @MessagePattern('findAllUsers')
   async findAll() {
     try {
-      await this.usersService.findAll();
+      return await this.usersService.findAll();
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -28,7 +28,7 @@ export class UsersController {
   @MessagePattern('findOneUser')
   async findOne(@Payload() id: string) {
     try {
-      await this.usersService.findOne(id);
+      return await this.usersService.findOne(id);
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -39,7 +39,7 @@ export class UsersController {
     @Payload() payload: { id: string; updateUserDto: UpdateUserDto },
   ) {
     try {
-      await this.usersService.update(payload.id, payload.updateUserDto);
+      return await this.usersService.update(payload.id, payload.updateUserDto);
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -48,7 +48,7 @@ export class UsersController {
   @MessagePattern('removeUser')
   async remove(@Payload() id: string) {
     try {
-      await this.usersService.remove(id);
+      return await this.usersService.remove(id);
     } catch (error) {
       throw new RpcException(error.message);
     }

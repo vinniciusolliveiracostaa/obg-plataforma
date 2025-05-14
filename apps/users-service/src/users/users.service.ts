@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UserRole, User } from 'generated/prisma';
+import { User, UserRole } from 'generated/prisma';
 import { CreateUserDto, UpdateUserDto } from '@repo/dtos';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { PrismaService } from '../prisma/prisma.service';
@@ -42,7 +42,7 @@ export class UsersService {
 
   async findAll(): Promise<Omit<User, 'password'>[]> {
     try {
-      return await this.prisma.user.findMany();
+      return await this.prisma.user.findMany({});
     } catch (error) {
       throw new RpcException(error.message);
     }
