@@ -52,7 +52,7 @@ import {
 } from "@/components/ui/select";
 import { z } from "zod";
 import { CSS } from "@dnd-kit/utilities";
-import { getSchools } from "@/app/(private)/(dashboard)/schools/components/data-table/get-schools";
+import { getSchools } from "./schools-axios";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 import { Button } from "@/components/ui/button";
 import {
@@ -62,7 +62,6 @@ import {
   ChevronsLeftIcon,
   ChevronsRightIcon,
   ColumnsIcon,
-  PlusIcon,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -70,6 +69,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import AddSchoolDialog from "@/app/(private)/(dashboard)/schools/components/data-table/add-school-dialog";
 
 function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
@@ -99,6 +99,7 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
 export function DataTable() {
   const [data, setData] = React.useState<SchoolSchemaType[]>([]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // noinspection JSUnusedLocalSymbols
   const [total, setTotal] = React.useState(0);
   const [totalPages, setTotalPages] = React.useState(0);
   const [rowSelection, setRowSelection] = React.useState({});
@@ -218,10 +219,7 @@ export function DataTable() {
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button variant="outline" size="sm">
-            <PlusIcon />
-            <span className="hidden lg:inline">Adicionar</span>
-          </Button>
+          <AddSchoolDialog />
         </div>
       </div>
       <TabsContent

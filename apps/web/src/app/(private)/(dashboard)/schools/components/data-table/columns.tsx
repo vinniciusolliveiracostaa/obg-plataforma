@@ -2,7 +2,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { SchoolSchemaType } from "@repo/schemas";
 import * as React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
-import { TableCellViewer } from "./table-cell-viewer";
+import SchoolDialog from "./school-dialog";
 
 export const columns: ColumnDef<SchoolSchemaType>[] = [
   {
@@ -34,8 +34,11 @@ export const columns: ColumnDef<SchoolSchemaType>[] = [
   {
     accessorKey: "name",
     header: "Escola",
+    // cell: ({ row }) => {
+    //   return <TableCellViewer item={row.original} />;
+    // },
     cell: ({ row }) => {
-      return <TableCellViewer item={row.original} />;
+      return <SchoolDialog item={row.original} />;
     },
     enableHiding: false,
   },

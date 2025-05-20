@@ -23,3 +23,15 @@ Content-Type: application/json
   "email": "test@example.com",
     "password": "Teste1234?"
 }
+
+### Schools
+GET http://localhost:8000/schools?page=1&pageSize=10
+###
+GET http://localhost:8000/schools/cmahci71t0000gd29axi4yk1k
+###
+PATCH localhost:8000/schools/cmahci71t0000gd29axi4yk1k
+Content-Type: application/json
+
+{
+  "uf": "RO"
+}

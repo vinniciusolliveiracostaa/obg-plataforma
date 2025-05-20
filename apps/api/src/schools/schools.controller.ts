@@ -110,6 +110,7 @@ export class SchoolsController {
   ) {
     try {
       const payload = { id, updateSchoolDto };
+      console.log(payload);
       return await lastValueFrom(this.client.send('updateSchool', payload));
     } catch (error) {
       switch (error.message) {
