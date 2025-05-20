@@ -98,7 +98,8 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
 
 export function DataTable() {
   const [data, setData] = React.useState<SchoolSchemaType[]>([]);
-  const [_total, setTotal] = React.useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [total, setTotal] = React.useState(0);
   const [totalPages, setTotalPages] = React.useState(0);
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
