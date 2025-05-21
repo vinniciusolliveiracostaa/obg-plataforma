@@ -98,8 +98,8 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
 
 export function DataTable() {
   const [data, setData] = React.useState<SchoolSchemaType[]>([]);
+  // noinspection JSUnusedLocalSymbolsq
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  // noinspection JSUnusedLocalSymbols
   const [total, setTotal] = React.useState(0);
   const [totalPages, setTotalPages] = React.useState(0);
   const [rowSelection, setRowSelection] = React.useState({});
