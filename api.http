@@ -1,0 +1,55 @@
+### Escolas
+### Criar Escolas
+POST http://localhost:8000/schools
+Content-Type: application/json
+
+{
+  "name": "EEEE ABNAEL MACHADO DE LIMA - CENE",
+  "inep": "11000023",
+  "uf": "RO",
+  "city": "Porto Velho",
+  "location": "Urbana",
+  "locality": "A escola não está em área de localização diferenciada",
+  "administrativeCategory": "Pública",
+  "serviceRestriction": "ESCOLA ATENDE EXCLUSIVAMENTE ALUNOS COM DEFICIÊNCIA",
+  "address": "AVENIDA AMAZONAS, 6492 ZONA LESTE. TIRADENTES. 76824-556 Porto Velho - RO.",
+  "phone": "(69)992222374",
+  "administrativeDependence": "Estadual",
+  "privateCategory": "Não Informado",
+  "publicPowerAgreement": "Não",
+  "regulation": "Não",
+  "size": "Entre 51 e 200 matrículas de escolarização",
+  "teachingModalityStage": "Ensino Fundamental",
+  "otherOffers": "Atendimento Educacional Especializado",
+  "latitude": "-8.758459",
+  "longitude": "-63.8540109"
+}
+
+### Obter Escolas
+GET http://localhost:8000/schools?page=1&pageSize=10
+
+### Obter Escola por CUID
+GET http://localhost:8000/schools/cmazzlf7o0000gdujv389d5z8
+
+### Atualizar Escola
+PATCH http://localhost:8000/schools/cmazzlf7o0000gdujv389d5z8
+Content-Type: application/json
+
+{
+  "uf": "RO"
+}
+
+### Deletar Escola
+DELETE http://localhost:8000/schools/cmazzlf7o0000gdujv389d5z8
+
+### Upload Escolas via CSV
+POST http://localhost:8000/schools/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+
+< /home/vinni/Downloads/file%20(1).csv
+--boundary--
+###

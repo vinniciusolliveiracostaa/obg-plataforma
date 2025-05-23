@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+  - libs/*
+ignoredBuiltDependencies:
+  - '@swc/core'
+onlyBuiltDependencies:
+  - '@nestjs/core'
