@@ -1,3 +1,38 @@
+### Autenticação
+### Login
+POST localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "email": "teste@teste.com",
+    "password": "Teste1234$"
+}
+###
+### Usuários
+### Criar Usuário
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+  "name": "teste",
+  "email": "teste@teste.com",
+  "password": "Teste1234$",
+  "role": "ADMIN"
+}
+### Obter Usuários
+GET localhost:8000/users?page=1&pageSize=10
+### Obter Usuário por ID
+GET localhost:8000/users/cmb1cqw350000gddcli90dk5f
+### Atualizar Usuário
+PATCH localhost:8000/users/cmb1cqw350000gddcli90dk5f
+Content-Type: application/json
+
+{
+  "email": "teste1@teste.com",
+  "password": "Teste1234@"
+}
+### Deletar Usuário
+DELETE localhost:8000/users/cmb1cqw350000gddcli90dk5f
 ### Escolas
 ### Criar Escolas
 POST http://localhost:8000/schools
