@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SchoolSchema } from "@repo/schemas";
+import { schoolSchema } from "@obg/schemas";
 import {
   Sheet,
   SheetContent,
@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 export function TableCellViewer({
   item,
 }: {
-  item: z.infer<typeof SchoolSchema>;
+  item: z.infer<typeof schoolSchema>;
 }) {
   return (
     <Sheet>

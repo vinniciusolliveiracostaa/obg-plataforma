@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { createSchool } from "@/app/(private)/(dashboard)/schools/components/data-table/schools-axios";
 import { toast } from "sonner";
-import { SchoolSchemaType } from "@repo/schemas";
+import { SchoolSchemaType } from "@obg/schemas";
 
 export default function AddSchoolDialog() {
   return (

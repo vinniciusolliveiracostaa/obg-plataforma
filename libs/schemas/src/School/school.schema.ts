@@ -54,7 +54,7 @@ export const schoolsResponseSchema = z.object({
 });
 
 // Tipos inferidos dos schemas - use esses tipos para validação de dados
-export type School = z.infer<typeof schoolSchema>;
+export type SchoolSchemaType = z.infer<typeof schoolSchema>;
 export type SchoolsResponse = z.infer<typeof schoolsResponseSchema>;
 export type CreateSchoolDto = z.infer<typeof createSchoolSchema>;
 export type UpdateSchoolDto = z.infer<typeof updateSchoolSchema>;

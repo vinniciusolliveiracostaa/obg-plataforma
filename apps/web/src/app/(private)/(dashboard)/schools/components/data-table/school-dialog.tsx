@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SchoolSchema } from "@repo/schemas";
+import { schoolSchema } from "@obg/schemas";
 import {
   Dialog,
   DialogContent,
@@ -19,7 +19,7 @@ import { toast } from "sonner";
 export default function SchoolDialog({
   item,
 }: {
-  item: z.infer<typeof SchoolSchema>;
+  item: z.infer<typeof schoolSchema>;
 }) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -99,7 +99,7 @@ export default function SchoolDialog({
                   <Input
                     id="administrativedependence"
                     name="administrativedependence"
-                    defaultValue={item.administrativedependence}
+                    defaultValue={item.administrativeDependence}
                   />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -107,7 +107,7 @@ export default function SchoolDialog({
                   <Input
                     id="privatecategory"
                     name="privatecategory"
-                    defaultValue={item.privatecategory}
+                    defaultValue={item.privateCategory}
                   />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -115,7 +115,7 @@ export default function SchoolDialog({
                   <Input
                     id="administrativecategory"
                     name="administrativecategory"
-                    defaultValue={item.administrativecategory}
+                    defaultValue={item.administrativeCategory}
                   />
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function SchoolDialog({
                   <Input
                     id="publicpoweragreement"
                     name="publicpoweragreement"
-                    defaultValue={item.publicpoweragreement}
+                    defaultValue={item.publicPowerAgreement}
                   />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -148,7 +148,7 @@ export default function SchoolDialog({
                 <Input
                   id="teachingmodalitystage"
                   name="teachingmodalitystage"
-                  defaultValue={item.teachingmodalitystage}
+                  defaultValue={item.teachingModalityStage}
                 />
               </div>
               <div>
@@ -156,7 +156,7 @@ export default function SchoolDialog({
                 <Input
                   id="otheroffers"
                   name="otheroffers"
-                  defaultValue={item.otheroffers}
+                  defaultValue={item.otherOffers}
                 />
               </div>
               <div>
@@ -168,7 +168,7 @@ export default function SchoolDialog({
                 <Input
                   id="servicerestriction"
                   name="servicerestriction"
-                  defaultValue={item.servicerestriction}
+                  defaultValue={item.serviceRestriction}
                 />
               </div>
             </div>

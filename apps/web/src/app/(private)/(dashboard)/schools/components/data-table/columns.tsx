@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { SchoolSchemaType } from "@repo/schemas";
+import { SchoolSchemaType } from "@obg/schemas";
 import * as React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import SchoolDialog from "./school-dialog";

@@ -1,5 +1,5 @@
 "use client";
-import { School, SchoolSchema } from "@repo/schemas";
+import { schoolSchema, SchoolSchemaType } from "@obg/schemas";
 import React from "react";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 import {
@@ -71,7 +71,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import AddSchoolDialog from "@/app/(private)/(dashboard)/schools/components/data-table/add-school-dialog";
 
-function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
+function DraggableRow({ row }: { row: Row<z.infer<typeof schoolSchema>> }) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
     id: row.original.id,
   });
@@ -97,7 +97,7 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof SchoolSchema>> }) {
 }
 
 export function DataTable() {
-  const [data, setData] = React.useState<School[]>([]);
+  const [data, setData] = React.useState<SchoolSchemaType[]>([]);
   // noinspection JSUnusedLocalSymbolsq
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [total, setTotal] = React.useState(0);
