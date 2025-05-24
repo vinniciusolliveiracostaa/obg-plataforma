@@ -26,6 +26,9 @@
   "dependencies": {
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
+    "@obg/enums": "workspace:*",
+    "@obg/schemas": "workspace:*",
+    "express": "^5.1.0",
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {

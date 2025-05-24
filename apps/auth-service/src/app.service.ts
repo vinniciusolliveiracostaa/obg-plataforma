@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { AuthLoginDto } from '@obg/schemas';
+import { UserSchemaType } from '@obg/schemas';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { lastValueFrom } from 'rxjs';
 import * as argon2 from 'argon2';
@@ -12,34 +12,37 @@ export class AppService {
     @Inject('AUTH_SERVICE_CONSUMER') private client: ClientProxy,
   ) {}
 
-  async login(authLoginDto: AuthLoginDto) {
+  async login(user: UserSchemaType) {
     try {
-      const user = await lastValueFrom(
-        this.client.send('findOneUserByEmail', authLoginDto.email),
-      );
-
-      if (!user) {
-        throw new RpcException('INVALID_CREDENTIALS');
-      }
-
-      const isPasswordValid = await argon2.verify(
-        user.password,
-        authLoginDto.password,
-      );
-
-      if (!isPasswordValid) {
-        throw new RpcException('INVALID_CREDENTIALS');
-      }
-
-      const token = await this.jwtService.signAsync({
+      const payload = {
+        sub: user.id,
         name: user.name,
         email: user.email,
         role: user.role,
-        sub: user.id,
-      });
-      return { accessToken: token };
+        permissions: user.permissions,
+      };
+      return {
+        access_token: this.jwtService.sign(payload),
+      };
     } catch (error) {
       throw new RpcException(error.message);
     }
+  }
+
+  async validateUser(email: string, password: string): Promise<UserSchemaType> {
+    const user = await lastValueFrom(
+      this.client.send('findOneUserByEmail', email),
+    );
+    if (user) {
+      const isPasswordValid = await argon2.verify(user.password, password);
+
+      if (isPasswordValid) {
+        return {
+          ...user,
+          password: undefined,
+        };
+      }
+    }
+    throw new RpcException('INVALID_CREDENTIALS');
   }
 }

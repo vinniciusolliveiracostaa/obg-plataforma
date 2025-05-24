@@ -32,15 +32,18 @@ importers:
       '@nestjs/microservices':
         specifier: ^11.1.1
         version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.1)(cache-manager@6.4.3)(ioredis@5.6.1)(nats@2.29.3)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/passport':
+        specifier: ^11.0.5
+        version: 11.0.5(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
       '@nestjs/platform-express':
-        specifier: ^11.1.1
+        specifier: ^11.0.1
         version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.1)
       '@nestjs/swagger':
         specifier: ^11.2.0
         version: 11.2.0(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.1)(reflect-metadata@0.2.2)
-      '@obg/enums':
+      '@obg/decorators':
         specifier: workspace:*
-        version: link:../../libs/enums
+        version: link:../../libs/decorators
       '@obg/interfaces':
         specifier: workspace:*
         version: link:../../libs/interfaces
@@ -56,6 +59,15 @@ importers:
       nats:
         specifier: ^2.29.3
         version: 2.29.3
+      passport:
+        specifier: ^0.7.0
+        version: 0.7.0
+      passport-jwt:
+        specifier: ^4.0.1
+        version: 4.0.1
+      passport-local:
+        specifier: ^1.0.0
+        version: 1.0.0
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -96,6 +108,12 @@ importers:
       '@types/node':
         specifier: ^22.10.7
         version: 22.15.21
+      '@types/passport-jwt':
+        specifier: ^4.0.1
+        version: 4.0.1
+      '@types/passport-local':
+        specifier: ^1.0.38
+        version: 1.0.38
       '@types/supertest':
         specifier: ^6.0.2
         version: 6.0.3
@@ -162,18 +180,21 @@ importers:
       '@nestjs/platform-express':
         specifier: ^11.0.1
         version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.1)
+      '@obg/interfaces':
+        specifier: workspace:*
+        version: link:../../libs/interfaces
       '@obg/schemas':
         specifier: workspace:*
         version: link:../../libs/schemas
       argon2:
         specifier: ^0.43.0
         version: 0.43.0
+      dotenv:
+        specifier: ^16.5.0
+        version: 16.5.0
       nats:
         specifier: ^2.29.3
         version: 2.29.3
-      passport-jwt:
-        specifier: ^4.0.1
-        version: 4.0.1
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -211,9 +232,6 @@ importers:
       '@types/node':
         specifier: ^22.10.7
         version: 22.15.21
-      '@types/passport-jwt':
-        specifier: ^4.0.1
-        version: 4.0.1
       '@types/supertest':
         specifier: ^6.0.2
         version: 6.0.3
@@ -941,6 +959,49 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
+  libs/decorators:
+    dependencies:
+      '@nestjs/common':
+        specifier: ^11.0.1
+        version: 11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/core':
+        specifier: ^11.0.1
+        version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.1)(@nestjs/platform-express@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      reflect-metadata:
+        specifier: ^0.2.2
+        version: 0.2.2
+    devDependencies:
+      '@nestjs/schematics':
+        specifier: ^11.0.0
+        version: 11.0.5(chokidar@4.0.3)(typescript@5.8.3)
+      '@types/node':
+        specifier: ^22.15.3
+        version: 22.15.21
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.31.1
+        version: 8.32.1(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
+      '@typescript-eslint/parser':
+        specifier: ^8.31.1
+        version: 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
+      eslint:
+        specifier: ^9.25.1
+        version: 9.27.0(jiti@2.4.2)
+      eslint-config-prettier:
+        specifier: ^10.1.2
+        version: 10.1.5(eslint@9.27.0(jiti@2.4.2))
+      eslint-plugin-prettier:
+        specifier: ^5.2.2
+        version: 5.4.0(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@9.27.0(jiti@2.4.2)))(eslint@9.27.0(jiti@2.4.2))(prettier@3.5.3)
+      globals:
+        specifier: ^16.0.0
+        version: 16.1.0
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
   libs/dtos:
     dependencies:
       '@nestjs/common':
@@ -1027,49 +1088,6 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
 
-  libs/guards:
-    dependencies:
-      '@nestjs/common':
-        specifier: ^11.0.1
-        version: 11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core':
-        specifier: ^11.0.1
-        version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.1)(@nestjs/platform-express@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      reflect-metadata:
-        specifier: ^0.2.2
-        version: 0.2.2
-    devDependencies:
-      '@nestjs/schematics':
-        specifier: ^11.0.0
-        version: 11.0.5(chokidar@4.0.3)(typescript@5.8.3)
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.15.21
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.1
-        version: 8.32.1(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
-      '@typescript-eslint/parser':
-        specifier: ^8.31.1
-        version: 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
-      eslint:
-        specifier: ^9.25.1
-        version: 9.27.0(jiti@2.4.2)
-      eslint-config-prettier:
-        specifier: ^10.1.2
-        version: 10.1.5(eslint@9.27.0(jiti@2.4.2))
-      eslint-plugin-prettier:
-        specifier: ^5.2.2
-        version: 5.4.0(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@9.27.0(jiti@2.4.2)))(eslint@9.27.0(jiti@2.4.2))(prettier@3.5.3)
-      globals:
-        specifier: ^16.0.0
-        version: 16.1.0
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-
   libs/interfaces:
     dependencies:
       '@nestjs/common':
@@ -1078,6 +1096,15 @@ importers:
       '@nestjs/core':
         specifier: ^11.0.1
         version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.1)(@nestjs/platform-express@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@obg/enums':
+        specifier: workspace:*
+        version: link:../enums
+      '@obg/schemas':
+        specifier: workspace:*
+        version: link:../schemas
+      express:
+        specifier: ^5.1.0
+        version: 5.1.0
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1176,49 +1203,6 @@ importers:
       zod:
         specifier: ^3.25.20
         version: 3.25.23
-    devDependencies:
-      '@nestjs/schematics':
-        specifier: ^11.0.0
-        version: 11.0.5(chokidar@4.0.3)(typescript@5.8.3)
-      '@types/node':
-        specifier: ^22.15.3
-        version: 22.15.21
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^8.31.1
-        version: 8.32.1(@typescript-eslint/parser@8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
-      '@typescript-eslint/parser':
-        specifier: ^8.31.1
-        version: 8.32.1(eslint@9.27.0(jiti@2.4.2))(typescript@5.8.3)
-      eslint:
-        specifier: ^9.25.1
-        version: 9.27.0(jiti@2.4.2)
-      eslint-config-prettier:
-        specifier: ^10.1.2
-        version: 10.1.5(eslint@9.27.0(jiti@2.4.2))
-      eslint-plugin-prettier:
-        specifier: ^5.2.2
-        version: 5.4.0(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@9.27.0(jiti@2.4.2)))(eslint@9.27.0(jiti@2.4.2))(prettier@3.5.3)
-      globals:
-        specifier: ^16.0.0
-        version: 16.1.0
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-
-  libs/strategies:
-    dependencies:
-      '@nestjs/common':
-        specifier: ^11.0.1
-        version: 11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      '@nestjs/core':
-        specifier: ^11.0.1
-        version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.1)(@nestjs/platform-express@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
-      reflect-metadata:
-        specifier: ^0.2.2
-        version: 0.2.2
     devDependencies:
       '@nestjs/schematics':
         specifier: ^11.0.0
@@ -2166,6 +2150,12 @@ packages:
         optional: true
       nats:
         optional: true
+
+  '@nestjs/passport@11.0.5':
+    resolution: {integrity: sha512-ulQX6mbjlws92PIM15Naes4F4p2JoxGnIJuUsdXQPT+Oo2sqQmENEZXM7eYuimocfHnKlcfZOuyzbA33LwUlOQ==}
+    peerDependencies:
+      '@nestjs/common': ^10.0.0 || ^11.0.0
+      passport: ^0.5.0 || ^0.6.0 || ^0.7.0
 
   '@nestjs/platform-express@11.1.1':
     resolution: {integrity: sha512-IUxk380qnUtz0PCRQ5i+o9UHlGMrFzGPIJxDwyt3JZZwx2AngOlcEcm5e+7YeJQEr2QYX2QyC4tUQg0zde+D7A==}
@@ -3146,6 +3136,9 @@ packages:
   '@types/passport-jwt@4.0.1':
     resolution: {integrity: sha512-Y0Ykz6nWP4jpxgEUYq8NoVZeCQPo1ZndJLfapI249g1jHChvRfZRO/LS3tqu26YgAS/laI1qx98sYGz0IalRXQ==}
 
+  '@types/passport-local@1.0.38':
+    resolution: {integrity: sha512-nsrW4A963lYE7lNTv9cr5WmiUD1ibYJvWrpE13oxApFsRt77b0RdtZvKbCdNIY4v/QZ6TRQWaDDEwV1kCTmcXg==}
+
   '@types/passport-strategy@0.2.38':
     resolution: {integrity: sha512-GC6eMqqojOooq993Tmnmp7AUTbbQSgilyvpCYQjT+H6JfG/g6RGc7nXEniZlp0zyKJ0WUdOiZWLBZft9Yug1uA==}
 
@@ -4084,6 +4077,10 @@ packages:
 
   dotenv@16.4.7:
     resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+    engines: {node: '>=12'}
+
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
   dunder-proto@1.0.1:
@@ -5637,8 +5634,16 @@ packages:
   passport-jwt@4.0.1:
     resolution: {integrity: sha512-UCKMDYhNuGOBE9/9Ycuoyh7vP6jpeTp/+sfMJl7nLff/t6dps+iaeE0hhNkKN8/HZHcJ7lCdOyDxHdDoxoSvdQ==}
 
+  passport-local@1.0.0:
+    resolution: {integrity: sha512-9wCE6qKznvf9mQYYbgJ3sVOHmCWoUNMVFoZzNoznmISbhnNNPhN9xfY3sLmScHMetEJeoY7CXwfhCe7argfQow==}
+    engines: {node: '>= 0.4.0'}
+
   passport-strategy@1.0.0:
     resolution: {integrity: sha512-CB97UUvDKJde2V0KDWWB3lyf6PC3FaZP7YxZ2G8OAtn9p4HI9j9JLP9qjOGZFvyl8uwNT8qM+hGnz/n16NI7oA==}
+    engines: {node: '>= 0.4.0'}
+
+  passport@0.7.0:
+    resolution: {integrity: sha512-cPLl+qZpSc+ireUvt+IzqbED1cHHkDoVYMo30jbJIdOOjQ1MQYZBPiNvmi8UM6lJuOpTPXJGZQk0DtC4y61MYQ==}
     engines: {node: '>= 0.4.0'}
 
   path-exists@4.0.0:
@@ -5667,6 +5672,9 @@ packages:
   path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
+
+  pause@0.0.1:
+    resolution: {integrity: sha512-KG8UEiEVkR3wGEb4m5yZkVCzigAD+cVEJck2CzYZO37ZGJfctvVptVO192MwrtPhzONn6go8ylnOdMhKqi4nfg==}
 
   peek-readable@5.4.2:
     resolution: {integrity: sha512-peBp3qZyuS6cNIJ2akRNG1uo1WJ1d0wTxg/fxMdZ0BqCVhx242bSFHM9eNqflfJVS9SsgkzgT/1UgnsurBOTMg==}
@@ -6580,6 +6588,10 @@ packages:
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  utils-merge@1.0.1:
+    resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
+    engines: {node: '>= 0.4.0'}
 
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
@@ -7710,6 +7722,11 @@ snapshots:
       ioredis: 5.6.1
       nats: 2.29.3
 
+  '@nestjs/passport@11.0.5(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)':
+    dependencies:
+      '@nestjs/common': 11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      passport: 0.7.0
+
   '@nestjs/platform-express@11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.1)':
     dependencies:
       '@nestjs/common': 11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -8640,6 +8657,12 @@ snapshots:
   '@types/passport-jwt@4.0.1':
     dependencies:
       '@types/jsonwebtoken': 9.0.7
+      '@types/passport-strategy': 0.2.38
+
+  '@types/passport-local@1.0.38':
+    dependencies:
+      '@types/express': 5.0.2
+      '@types/passport': 1.0.17
       '@types/passport-strategy': 0.2.38
 
   '@types/passport-strategy@0.2.38':
@@ -9653,9 +9676,11 @@ snapshots:
 
   dotenv-expand@12.0.1:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.5.0
 
   dotenv@16.4.7: {}
+
+  dotenv@16.5.0: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -11532,7 +11557,17 @@ snapshots:
       jsonwebtoken: 9.0.2
       passport-strategy: 1.0.0
 
+  passport-local@1.0.0:
+    dependencies:
+      passport-strategy: 1.0.0
+
   passport-strategy@1.0.0: {}
+
+  passport@0.7.0:
+    dependencies:
+      passport-strategy: 1.0.0
+      pause: 0.0.1
+      utils-merge: 1.0.1
 
   path-exists@4.0.0: {}
 
@@ -11550,6 +11585,8 @@ snapshots:
   path-to-regexp@8.2.0: {}
 
   path-type@4.0.0: {}
+
+  pause@0.0.1: {}
 
   peek-readable@5.4.2: {}
 
@@ -12566,6 +12603,8 @@ snapshots:
       react: 19.1.0
 
   util-deprecate@1.0.2: {}
+
+  utils-merge@1.0.1: {}
 
   v8-compile-cache-lib@3.0.1: {}
 
