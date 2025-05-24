@@ -967,6 +967,12 @@ importers:
       '@nestjs/core':
         specifier: ^11.0.1
         version: 11.1.1(@nestjs/common@11.1.1(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/microservices@11.1.1)(@nestjs/platform-express@11.1.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@obg/interfaces':
+        specifier: workspace:*
+        version: link:../interfaces
+      '@obg/schemas':
+        specifier: workspace:*
+        version: link:../schemas
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2

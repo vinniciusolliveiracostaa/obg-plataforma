@@ -4,110 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="fix(data-table): remover aviso de variável não utilizada para estado total">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/prisma/prisma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/prisma/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/schools/schools-csv.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/common/tsconfig.lib.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/administrative-category.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/administrative-dependence.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/locality.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/location.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/private-category.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/service-restriction.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/uf.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/enums/src/user-roles.enum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/interfaces/src/chunkMetadata.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/interfaces/src/fileChunks.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/pipes/src/Zod/zod.pipe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-administrative-category.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-administrative-dependence.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-latitude-longitude.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-locality.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-location.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-private-category.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school-service-restriction.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/School/school.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/UF/uf.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma-1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/.npmrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/fonts/GeistMonoVF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/fonts/GeistVF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/page.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/next.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/file-text.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/turborepo-dark.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/turborepo-light.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/docs/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/fonts/GeistMonoVF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/fonts/GeistVF.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/page.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/next.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/file-text.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/turborepo-dark.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/turborepo-light.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/apps/web/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/eslint-config/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/eslint-config/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/eslint-config/next.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/eslint-config/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/eslint-config/react-internal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/typescript-config/base.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/typescript-config/nextjs.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/typescript-config/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/typescript-config/react-library.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/eslint.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/src/button.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/src/card.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/src/code.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/turbo/generators/config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/packages/ui/turbo/generators/templates/component.hbs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/pnpm-workspace.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/obg-plataforma/turbo.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/teste-shared-lib-nest/teste" beforeDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações">
+      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,15 +61,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.api/Dockerfile.executor": "Run",
+    "HTTP Request.api | #2.executor": "Run",
     "HTTP Request.api | #7.executor": "Run",
     "HTTP Request.api | #8.executor": "Run",
+    "HTTP Request.api | Atualizar Escola.executor": "Run",
+    "HTTP Request.api | Atualizar Usuário.executor": "Run",
+    "HTTP Request.api | Autenticação.executor": "Run",
+    "HTTP Request.api | Escolas.executor": "Run",
+    "HTTP Request.api | Obter Escola por CUID.executor": "Run",
+    "HTTP Request.api | Obter Escolas.executor": "Run",
+    "HTTP Request.api | Obter Usuário por ID.executor": "Run",
+    "HTTP Request.api | Obter Usuários.executor": "Run",
     "HTTP Request.api | Schools.executor": "Run",
+    "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.schools-csv.service.ts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/libs/interfaces/src",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/api/src/guards",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -180,6 +91,7 @@
     "npm.build.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
     "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.language.and.region",
     "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
@@ -187,59 +99,49 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/libs/interfaces/src" />
-      <recent name="$PROJECT_DIR$/apps/schools-service/src/schools" />
-      <recent name="$PROJECT_DIR$/libs/enums/src" />
-      <recent name="$PROJECT_DIR$/libs/schemas/src" />
-      <recent name="$PROJECT_DIR$/libs/schemas/src/School" />
+      <recent name="$PROJECT_DIR$/apps/api/src/guards" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/libs/schemas" />
+      <recent name="$PROJECT_DIR$/libs/pipes" />
+      <recent name="$PROJECT_DIR$/libs/interfaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/components/data-table" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/.components/data-table" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.schools-csv.service.ts">
-    <configuration name="api | Schools" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Schools" index="6">
+  <component name="RunManager" selected="HTTP Request.api | Autenticação">
+    <configuration name="api | Atualizar Usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Atualizar Usuário" index="5" runType="Executar requisição única">
       <method v="2" />
     </configuration>
-    <configuration name="api | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="#7" index="7">
+    <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Executar requisição única">
       <method v="2" />
     </configuration>
-    <configuration name="schools-csv.service.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/apps/schools-service/src/schools/schools-csv.service.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/apps/schools-service/src/schools">
+    <configuration name="api | Obter Usuário por ID" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuário por ID" index="4" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="3" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="#2" index="2" runType="Executar requisição única">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
-      <method v="2" />
-    </configuration>
-    <configuration name="api/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
-        <settings>
-          <option name="containerName" value="" />
-          <option name="sourceFilePath" value="apps/api/Dockerfile" />
-        </settings>
+        <settings />
       </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/apps/api/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.schools-csv.service.ts" />
-        <item itemvalue="Docker.api/Dockerfile" />
-        <item itemvalue="npm.build" />
-        <item itemvalue="HTTP Request.api | #7" />
-        <item itemvalue="HTTP Request.api | Schools" />
+        <item itemvalue="HTTP Request.api | Autenticação" />
+        <item itemvalue="HTTP Request.api | #2" />
+        <item itemvalue="HTTP Request.api | Obter Usuários" />
+        <item itemvalue="HTTP Request.api | Atualizar Usuário" />
+        <item itemvalue="HTTP Request.api | Obter Usuário por ID" />
       </list>
     </recent_temporary>
   </component>
@@ -276,6 +178,7 @@
       <workItem from="1747849824977" duration="619000" />
       <workItem from="1747919605058" duration="10000" />
       <workItem from="1747924415856" duration="17244000" />
+      <workItem from="1747945328772" duration="52399000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -317,7 +220,55 @@
       <option name="project" value="LOCAL" />
       <updated>1747830154043</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados">
+      <option name="closed" value="true" />
+      <created>1747976698427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747976698427</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: adicione o arquivo .gitignore para excluir artefatos de construção, logs e arquivos de ambiente">
+      <option name="closed" value="true" />
+      <created>1747978020905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747978020905</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies">
+      <option name="closed" value="true" />
+      <created>1747979263278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747979263278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: update zod version to 3.25.23 in pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1747979477423</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747979477423</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores.">
+      <option name="closed" value="true" />
+      <created>1748043079573</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748043079573</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações">
+      <option name="closed" value="true" />
+      <created>1748059987553</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748059987553</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +292,13 @@
     <MESSAGE value="feat: ajustar estado total na tabela de dados e atualizar saídas de build no Turbo" />
     <MESSAGE value="feat(schools): implementar diálogos de adição e edição de escolas com funcionalidade de importação de CSV" />
     <MESSAGE value="fix(data-table): remover aviso de variável não utilizada para estado total" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(data-table): remover aviso de variável não utilizada para estado total" />
+    <MESSAGE value="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados" />
+    <MESSAGE value="feat: adicione o arquivo .gitignore para excluir artefatos de construção, logs e arquivos de ambiente" />
+    <MESSAGE value="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies" />
+    <MESSAGE value="fix: update zod version to 3.25.23 in pnpm-lock.yaml" />
+    <MESSAGE value="feat: add authentication and user management modules with schemas and controllers" />
+    <MESSAGE value="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores." />
+    <MESSAGE value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
   </component>
 </project>

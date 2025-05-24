@@ -7,7 +7,12 @@ Content-Type: application/json
     "email": "teste@teste.com",
     "password": "Teste1234$"
 }
-###
+> {% client.global.set("token", response.body.access_token); %}
+
+
+### Profile
+GET localhost:8000/auth/profile
+Authorization: Bearer {{token}}
 ### Usuários
 ### Criar Usuário
 POST http://localhost:8000/users
@@ -21,6 +26,7 @@ Content-Type: application/json
 }
 ### Obter Usuários
 GET localhost:8000/users?page=1&pageSize=10
+Authorization: Bearer {{token}}
 ### Obter Usuário por ID
 GET localhost:8000/users/cmb1cqw350000gddcli90dk5f
 ### Atualizar Usuário

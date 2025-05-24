@@ -1,5 +1,6 @@
 import {
   Controller,
+  Get,
   HttpException,
   HttpStatus,
   Inject,
@@ -9,9 +10,10 @@ import {
 } from '@nestjs/common';
 import { firstValueFrom } from 'rxjs';
 import { ClientProxy } from '@nestjs/microservices';
-import { IsPublic } from '@obg/decorators';
+import { CurrentUSer, IsPublic } from '@obg/decorators';
 import { AuthRequest } from '@obg/interfaces';
 import { LocalAuthGuard } from '../guards/local.guard';
+import { UserSchemaType } from '@obg/schemas';
 
 @Controller('auth')
 export class AuthController {
@@ -40,5 +42,12 @@ export class AuthController {
           );
       }
     }
+  }
+
+  @Get('/profile')
+  async profile(
+    @CurrentUSer() currentUser: UserSchemaType,
+  ): Promise<UserSchemaType> {
+    return currentUser;
   }
 }

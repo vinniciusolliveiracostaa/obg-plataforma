@@ -24,6 +24,8 @@
     "dist"
   ],
   "dependencies": {
+    "@obg/interfaces": "workspace:*",
+    "@obg/schemas": "workspace:*",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
     "reflect-metadata": "^0.2.2"
