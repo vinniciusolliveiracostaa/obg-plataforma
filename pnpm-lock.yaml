@@ -11,6 +11,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      prisma:
+        specifier: ^6.8.2
+        version: 6.8.2(typescript@5.8.2)
       turbo:
         specifier: ^2.5.3
         version: 2.5.3
@@ -11658,6 +11661,13 @@ snapshots:
       prisma: 6.8.2(typescript@5.8.3)
       tslib: 2.8.1
       typescript: 5.8.3
+
+  prisma@6.8.2(typescript@5.8.2):
+    dependencies:
+      '@prisma/config': 6.8.2
+      '@prisma/engines': 6.8.2
+    optionalDependencies:
+      typescript: 5.8.2
 
   prisma@6.8.2(typescript@5.8.3):
     dependencies:

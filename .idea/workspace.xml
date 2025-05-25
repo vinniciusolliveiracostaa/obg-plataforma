@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
-      <change afterPath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/decorators/src/required-roles.decorator.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/decorators/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/decorators/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/schools-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="development" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,6 +66,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.api/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yaml.nats: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
     "HTTP Request.api | #2.executor": "Run",
     "HTTP Request.api | #7.executor": "Run",
     "HTTP Request.api | #8.executor": "Run",
@@ -90,7 +90,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
-    "last_opened_file_path": "/home/vinni/Downloads/Mermaid-0.0.25_IJ.243.zip",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/vinni/WebstormProjects/obg-plataforma/apps/users-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -99,21 +100,21 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
     "npm.build.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\vinni\\WebstormProjects\\obg-plataforma\\node_modules\\prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "settings.nodejs",
     "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\users-service" />
+      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\teachers-service" />
+      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\students-service" />
       <recent name="$PROJECT_DIR$/apps/api/src/guards" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/libs/schemas" />
-      <recent name="$PROJECT_DIR$/libs/pipes" />
-      <recent name="$PROJECT_DIR$/libs/interfaces" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
@@ -123,20 +124,17 @@
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.api | Obter Usuários">
-    <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Executar requisição única">
+  <component name="RunManager" selected="Docker.docker-compose.yaml.redis: Compose Deployment">
+    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="3">
       <method v="2" />
     </configuration>
-    <configuration name="api | Obter Usuário por ID" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuário por ID" index="4" runType="Executar requisição única">
+    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3">
       <method v="2" />
     </configuration>
-    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="3" runType="Executar requisição única">
-      <method v="2" />
-    </configuration>
-    <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2" runType="Executar requisição única">
-      <method v="2" />
-    </configuration>
-    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Executar requisição única">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
@@ -145,13 +143,53 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yaml.nats: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="nats" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml.postgres: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="postgres" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml.redis: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yaml.nats: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yaml.postgres: Compose Deployment" />
         <item itemvalue="HTTP Request.api | Obter Usuários" />
         <item itemvalue="HTTP Request.api | Usuários" />
-        <item itemvalue="HTTP Request.api | Autenticação" />
-        <item itemvalue="HTTP Request.api | Profile" />
-        <item itemvalue="HTTP Request.api | Obter Usuário por ID" />
       </list>
     </recent_temporary>
   </component>
@@ -193,6 +231,7 @@
       <workItem from="1748084005967" duration="356000" />
       <workItem from="1748084374318" duration="476000" />
       <workItem from="1748187729045" duration="3147000" />
+      <workItem from="1748211687639" duration="2414000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
