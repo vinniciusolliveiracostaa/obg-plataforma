@@ -1,7 +1,7 @@
 # OBG Plataforma - Olimpíada Brasileira de Geografia
 
 <p align="center">
-  <img src="./assets/logo.png" alt="OBG Platform Logo" width="200"/>
+  <img src="./apps/web/src/app/icon.ico" alt="OBG Platform Logo" width="200"/>
 </p>
 
 <p align="center">
@@ -101,10 +101,10 @@ sequenceDiagram
 ```mermaid
 graph TB
     %% Definição de estilos
-    classDef container fill:#e1eafe,stroke:#333,stroke-width:2px;
-    classDef service fill:#b2d8d8,stroke:#008080,stroke-width:2px;
-    classDef database fill:#ffebcd,stroke:#deb887,stroke-width:2px;
-    classDef client fill:#98fb98,stroke:#006400,stroke-width:2px;
+    classDef container fill:#000f1,stroke:#333,stroke-width:2px;
+    classDef service fill:#000f1,stroke:#008080,stroke-width:2px;
+    classDef database fill:#000f1,stroke:#deb887,stroke-width:2px;
+    classDef client fill:#000f1,stroke:#006400,stroke-width:2px;
 
     %% Camada de Cliente
     subgraph clients[Client Applications]
@@ -241,5 +241,5 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ---
 
 <p align="center">
-  Desenvolvido com 💙 por Vinnicius Oliveira Costa
+  Desenvolvido com 💙 por <a href="https://github.com/vinniciusolliveiracostaa">Vinicius Oliveira Costa</a>
 </p>

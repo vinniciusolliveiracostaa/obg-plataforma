@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
+      <change afterPath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/decorators/src/required-roles.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/decorators/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/decorators/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,15 +80,17 @@
     "HTTP Request.api | Obter Escolas.executor": "Run",
     "HTTP Request.api | Obter Usuário por ID.executor": "Run",
     "HTTP Request.api | Obter Usuários.executor": "Run",
+    "HTTP Request.api | Profile.executor": "Run",
     "HTTP Request.api | Schools.executor": "Run",
     "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "HTTP Request.api | Usuários.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.schools-csv.service.ts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/api/src/guards",
+    "last_opened_file_path": "/home/vinni/Downloads/Mermaid-0.0.25_IJ.243.zip",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -92,7 +102,7 @@
     "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.language.and.region",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -113,10 +123,7 @@
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.api | Autenticação">
-    <configuration name="api | Atualizar Usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Atualizar Usuário" index="5" runType="Executar requisição única">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="HTTP Request.api | Obter Usuários">
     <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Executar requisição única">
       <method v="2" />
     </configuration>
@@ -126,7 +133,10 @@
     <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="3" runType="Executar requisição única">
       <method v="2" />
     </configuration>
-    <configuration name="api | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="#2" index="2" runType="Executar requisição única">
+    <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Executar requisição única">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
@@ -137,10 +147,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.api | Autenticação" />
-        <item itemvalue="HTTP Request.api | #2" />
         <item itemvalue="HTTP Request.api | Obter Usuários" />
-        <item itemvalue="HTTP Request.api | Atualizar Usuário" />
+        <item itemvalue="HTTP Request.api | Usuários" />
+        <item itemvalue="HTTP Request.api | Autenticação" />
+        <item itemvalue="HTTP Request.api | Profile" />
         <item itemvalue="HTTP Request.api | Obter Usuário por ID" />
       </list>
     </recent_temporary>
@@ -179,6 +189,10 @@
       <workItem from="1747919605058" duration="10000" />
       <workItem from="1747924415856" duration="17244000" />
       <workItem from="1747945328772" duration="52399000" />
+      <workItem from="1748071561597" duration="8627000" />
+      <workItem from="1748084005967" duration="356000" />
+      <workItem from="1748084374318" duration="476000" />
+      <workItem from="1748187729045" duration="3147000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -268,7 +282,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748059987553</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente">
+      <option name="closed" value="true" />
+      <created>1748078683103</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748078683103</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
+      <option name="closed" value="true" />
+      <created>1748083386623</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748083386623</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +329,8 @@
     <MESSAGE value="feat: add authentication and user management modules with schemas and controllers" />
     <MESSAGE value="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores." />
     <MESSAGE value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
+    <MESSAGE value="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente" />
+    <MESSAGE value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
   </component>
 </project>

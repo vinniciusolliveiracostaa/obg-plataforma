@@ -22,8 +22,11 @@ import {
 } from '@obg/schemas';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { lastValueFrom } from 'rxjs';
+import { UserRole } from '@obg/enums';
+import { RequiredRoles } from '@obg/decorators';
 
 @ApiTags('Usuários')
+@RequiredRoles(UserRole.ADMIN)
 @Controller('users')
 export class UsersController {
   constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}

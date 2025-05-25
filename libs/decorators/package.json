@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "@obg/interfaces": "workspace:*",
+    "@obg/enums": "workspace:*",
     "@obg/schemas": "workspace:*",
     "@nestjs/common": "^11.0.1",
     "@nestjs/core": "^11.0.1",
