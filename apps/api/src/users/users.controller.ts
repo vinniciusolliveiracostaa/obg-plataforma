@@ -39,7 +39,8 @@ export class UsersController {
   @UsePipes(new ZodValidationPipe(createUserSchema))
   async create(@Body() createUserDto: CreateUserDto) {
     try {
-      return await lastValueFrom(this.client.send('createUser', createUserDto));
+      return console.log('createUserDto', createUserDto);
+      //return await lastValueFrom(this.client.send('createUser', createUserDto));
     } catch (error) {
       switch (error.message) {
         default:

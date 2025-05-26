@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="fix: remove outdated Prisma version from pnpm-lock.yaml">
+      <change afterPath="$PROJECT_DIR$/libs/schemas/src/Teacher/teacher.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/.prettierrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/nest-cli.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/dtos/tsconfig.lib.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/user.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/user.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo/generators/config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo/generators/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo/generators/templates/turborepo-generators.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/Student/student.schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="vinniciusolliveiracostaa &lt;vinnicius.olliveira.costaa@outlook.com.br&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="development" />
@@ -91,6 +105,8 @@
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "23.11.1",
+    "javascript.nodejs.core.library.typings.version": "22.15.21",
     "last_opened_file_path": "C:/Users/vinni/WebstormProjects/obg-plataforma/apps/users-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -98,13 +114,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
+    "nodejs_interpreter_path": "wsl://archlinux@/home/vinni/.local/share/fnm/aliases/default/bin/node",
+    "nodejs_package_manager_path": "\\usr\\bin\\pnpm",
     "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\vinni\\WebstormProjects\\obg-plataforma\\node_modules\\prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
+    "ts.external.directory.path": "C:\\Users\\vinni\\WebstormProjects\\obg-plataforma\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -124,11 +142,8 @@
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml.redis: Compose Deployment">
-    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="3">
-      <method v="2" />
-    </configuration>
-    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3">
+  <component name="RunManager" selected="HTTP Request.api | Autenticação">
+    <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -183,13 +198,23 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="HTTP Request.api | Autenticação" />
         <item itemvalue="Docker.docker-compose.yaml.redis: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yaml.nats: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.postgres: Compose Deployment" />
-        <item itemvalue="HTTP Request.api | Obter Usuários" />
-        <item itemvalue="HTTP Request.api | Usuários" />
+        <item itemvalue="Docker.docker-compose.yaml.nats: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +256,9 @@
       <workItem from="1748084005967" duration="356000" />
       <workItem from="1748084374318" duration="476000" />
       <workItem from="1748187729045" duration="3147000" />
-      <workItem from="1748211687639" duration="2414000" />
+      <workItem from="1748211687639" duration="3449000" />
+      <workItem from="1748261371657" duration="8778000" />
+      <workItem from="1748276964726" duration="893000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -337,7 +364,31 @@
       <option name="project" value="LOCAL" />
       <updated>1748083386623</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: adicionando comandos Prisma ao package.json para migração e implantação">
+      <option name="closed" value="true" />
+      <created>1748214276458</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214276458</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: adicionando comandos Prisma ao package.json para migração e implantação">
+      <option name="closed" value="true" />
+      <created>1748214346663</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214346663</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: remove outdated Prisma version from pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1748214637550</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214637550</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,6 +421,8 @@
     <MESSAGE value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
     <MESSAGE value="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente" />
     <MESSAGE value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
+    <MESSAGE value="feat: adicionando comandos Prisma ao package.json para migração e implantação" />
+    <MESSAGE value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
   </component>
 </project>
