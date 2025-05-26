@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UserSchemaType } from '@obg/schemas';
+import { BaseUserDto } from '@obg/schemas';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { lastValueFrom } from 'rxjs';
 import * as argon2 from 'argon2';
@@ -12,7 +12,7 @@ export class AppService {
     @Inject('AUTH_SERVICE_CONSUMER') private client: ClientProxy,
   ) {}
 
-  async login(user: UserSchemaType) {
+  async login(user: BaseUserDto) {
     try {
       const payload = {
         sub: user.id,
@@ -29,7 +29,7 @@ export class AppService {
     }
   }
 
-  async validateUser(email: string, password: string): Promise<UserSchemaType> {
+  async validateUser(email: string, password: string): Promise<BaseUserDto> {
     const user = await lastValueFrom(
       this.client.send('findOneUserByEmail', email),
     );

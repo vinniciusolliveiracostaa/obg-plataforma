@@ -13,7 +13,7 @@ import { ClientProxy } from '@nestjs/microservices';
 import { CurrentUSer, IsPublic } from '@obg/decorators';
 import { AuthRequest } from '@obg/interfaces';
 import { LocalAuthGuard } from '../guards/local.guard';
-import { UserSchemaType } from '@obg/schemas';
+import { BaseUserDto } from '@obg/schemas';
 
 @Controller('auth')
 export class AuthController {
@@ -45,9 +45,7 @@ export class AuthController {
   }
 
   @Get('/profile')
-  async profile(
-    @CurrentUSer() currentUser: UserSchemaType,
-  ): Promise<UserSchemaType> {
+  async profile(@CurrentUSer() currentUser: BaseUserDto): Promise<BaseUserDto> {
     return currentUser;
   }
 }

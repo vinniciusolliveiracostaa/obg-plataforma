@@ -1,0 +1,15 @@
+import { baseUserSchema } from '../base/base-user.schema';
+import { z } from 'zod';
+import { UserRole } from '@obg/enums';
+
+export const teacherUserSchema = baseUserSchema
+  .extend({
+    role: z.literal(UserRole.TEACHER),
+    cpf: z.string().length(11, 'CPF must be at least 11 characters long'),
+  })
+  .strict();
+
+export const createTeacherUserSchema = teacherUserSchema.omit({ id: true });
+export const updateTeacherUserSchema = teacherUserSchema
+  .partial()
+  .omit({ id: true });

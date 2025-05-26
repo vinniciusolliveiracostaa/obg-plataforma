@@ -15,10 +15,10 @@ import {
 import { ClientProxy } from '@nestjs/microservices';
 import { ZodValidationPipe } from '@obg/pipes';
 import {
-  CreateUserDto,
-  createUserSchema,
-  UpdateUserDto,
-  updateUserSchema,
+  CreateBaseUserDto,
+  createBaseUserSchema,
+  UpdateBaseUserDto,
+  updateBaseUserSchema,
 } from '@obg/schemas';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { lastValueFrom } from 'rxjs';
@@ -36,10 +36,10 @@ export class UsersController {
     summary: 'Criar Usuário',
     description: 'Cria um usuário',
   })
-  @UsePipes(new ZodValidationPipe(createUserSchema))
-  async create(@Body() createUserDto: CreateUserDto) {
+  @UsePipes(new ZodValidationPipe(createBaseUserSchema))
+  async create(@Body() createBaseUserDto: CreateBaseUserDto) {
     try {
-      return console.log('createUserDto', createUserDto);
+      return console.log('createUserDto', createBaseUserDto);
       //return await lastValueFrom(this.client.send('createUser', createUserDto));
     } catch (error) {
       switch (error.message) {
@@ -113,9 +113,10 @@ export class UsersController {
   })
   async update(
     @Param('id') id: string,
-    @Body(new ZodValidationPipe(updateUserSchema)) updateUserDto: UpdateUserDto,
+    @Body(new ZodValidationPipe(updateBaseUserSchema))
+    updateBaseUserDto: UpdateBaseUserDto,
   ) {
-    const payload = { id, updateUserDto };
+    const payload = { id, updateBaseUserDto };
     try {
       return await lastValueFrom(this.client.send('updateUser', payload));
     } catch (error) {

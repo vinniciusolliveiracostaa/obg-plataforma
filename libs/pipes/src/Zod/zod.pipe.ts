@@ -3,26 +3,35 @@ import {
   BadRequestException,
   PipeTransform,
 } from '@nestjs/common';
-import { ZodSchema } from 'zod';
+import { ZodError, ZodType } from 'zod';
 
 export class ZodValidationPipe implements PipeTransform {
-  constructor(private schema: ZodSchema) {}
+  constructor(private schema: ZodType<any, any, any>) {}
 
   transform(value: any, metadata: ArgumentMetadata) {
     const result = this.schema.safeParse(value);
 
     if (!result.success) {
-      const message = this.formatZodError(result.error);
-      throw new BadRequestException(message); // .message vai conter esse texto
+      throw new BadRequestException({
+        statusCode: 400,
+        message: 'Validation failed',
+        error: this.formatZodError(result.error),
+      });
     }
 
     return result.data;
   }
 
-  private formatZodError(error: any): string {
-    return Object.values(error.flatten().fieldErrors)
-      .flat()
-      .filter(Boolean)
-      .join('; ');
+  private formatZodError(error: ZodError): Record<string, string[]> {
+    const fieldErrors = error.flatten().fieldErrors;
+    const formatted: Record<string, string[]> = {};
+
+    for (const key in fieldErrors) {
+      if (fieldErrors[key]) {
+        formatted[key] = fieldErrors[key] as string[];
+      }
+    }
+
+    return formatted;
   }
 }

@@ -4,7 +4,7 @@ POST localhost:8000/auth/login
 Content-Type: application/json
 
 {
-    "email": "teste2@teste.com",
+    "email": "teste@teste.com",
     "password": "Teste1234$"
 }
 > {% client.global.set("token", response.body.access_token); %}
@@ -17,16 +17,17 @@ Authorization: Bearer {{token}}
 ### Criar Usuário
 POST http://localhost:8000/users
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "name": "teste",
-  "email": "teste2@teste.com",
+  "email": "teste3@teste.com",
   "password": "Teste1234$",
-  "role": "USER"
+  "role": "ADMIN"
 }
 ### Obter Usuários
 GET localhost:8000/users?page=1&pageSize=10
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbWIzdWh2bDkwMDAwZ2QxdDN2cnlsZmtwIiwibmFtZSI6InRlc3RlIiwiZW1haWwiOiJ0ZXN0ZTJAdGVzdGUuY29tIiwicm9sZSI6IlVTRVIiLCJwZXJtaXNzaW9ucyI6bnVsbCwiaWF0IjoxNzQ4MTg4ODc3LCJleHAiOjE3NDgxOTI0Nzd9.xIA3ojneoR-kI_rg5pj-IetlhmQaHWu9HUTPrxNP4XM
+Authorization: Bearer {{token}}
 ### Obter Usuário por ID
 GET localhost:8000/users/cmb1cqw350000gddcli90dk5f
 ### Atualizar Usuário
