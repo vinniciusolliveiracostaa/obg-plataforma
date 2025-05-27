@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@nestjs/schematics": "^11.0.0",
+    "@types/express": "^5.0.2",
     "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",

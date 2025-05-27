@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CreateUserDto, UpdateUserDto } from '@obg/schemas';
+import { CreateBaseUserDto, UpdateBaseUserDto } from '@obg/schemas';
 import { MessagePattern, Payload, RpcException } from '@nestjs/microservices';
 
 @Controller()
@@ -8,9 +8,9 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @MessagePattern('createUser')
-  async create(@Payload() createUserDto: CreateUserDto) {
+  async create(@Payload() createBaseUserDto: CreateBaseUserDto) {
     try {
-      return await this.appService.create(createUserDto);
+      return await this.appService.create(createBaseUserDto);
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -45,10 +45,13 @@ export class AppController {
 
   @MessagePattern('updateUser')
   async update(
-    @Payload() payload: { id: string; updateUserDto: UpdateUserDto },
+    @Payload() payload: { id: string; updateBaseUserDto: UpdateBaseUserDto },
   ) {
     try {
-      return await this.appService.update(payload.id, payload.updateUserDto);
+      return await this.appService.update(
+        payload.id,
+        payload.updateBaseUserDto,
+      );
     } catch (error) {
       throw new RpcException(error.message);
     }

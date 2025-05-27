@@ -13,3 +13,7 @@ export const createTeacherUserSchema = teacherUserSchema.omit({ id: true });
 export const updateTeacherUserSchema = teacherUserSchema
   .partial()
   .omit({ id: true });
+
+export type TeacherUserDto = z.infer<typeof teacherUserSchema>;
+export type CreateTeacherUserDto = z.infer<typeof createTeacherUserSchema>;
+export type UpdateTeacherUserDto = z.infer<typeof updateTeacherUserSchema>;

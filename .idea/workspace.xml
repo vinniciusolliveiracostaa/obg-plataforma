@@ -4,28 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/admin/admin.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/base-user-discriminated.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/base/base-user.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/base/user-role.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/common/response.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/user/user.schema.ts" afterDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/local.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/guards/local.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pipes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pipes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pipes/src/Zod/zod.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pipes/src/Zod/zod.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/Student/student.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/Teacher/teacher.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/user.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/userRole.schema.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/decorators/src/current-user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/src/current-user.decorator.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/interfaces/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/interfaces/src/authRequest.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/src/authRequest.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +114,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.11.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.15.21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vinni/WebstormProjects/obg-plataforma/apps/users-service&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/students-service/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -138,11 +140,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/students-service/src" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\users-service" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\teachers-service" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\students-service" />
       <recent name="$PROJECT_DIR$/apps/api/src/guards" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
@@ -190,9 +192,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.api | Usuários" />
+        <item itemvalue="HTTP Request.api | Autenticação" />
         <item itemvalue="HTTP Request.api | Obter Usuários" />
         <item itemvalue="HTTP Request.api | Profile" />
-        <item itemvalue="HTTP Request.api | Autenticação" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -239,7 +241,8 @@
       <workItem from="1748261371657" duration="8778000" />
       <workItem from="1748276964726" duration="893000" />
       <workItem from="1748286286033" duration="617000" />
-      <workItem from="1748286916371" duration="3422000" />
+      <workItem from="1748286916371" duration="10417000" />
+      <workItem from="1748351602415" duration="611000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -369,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748214637550</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28">
+      <option name="closed" value="true" />
+      <created>1748293651884</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748293651884</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +415,7 @@
     <MESSAGE value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
     <MESSAGE value="feat: adicionando comandos Prisma ao package.json para migração e implantação" />
     <MESSAGE value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
+    <MESSAGE value="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28" />
   </component>
 </project>

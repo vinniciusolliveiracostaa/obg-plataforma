@@ -1,33 +1,46 @@
-import { Injectable } from '@nestjs/common';
-import { CreateUserDto, UpdateUserDto } from '@obg/schemas';
-import { RpcException } from '@nestjs/microservices';
+import { Inject, Injectable } from '@nestjs/common';
+import { CreateBaseUserDto, UpdateBaseUserDto } from '@obg/schemas';
+import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { PrismaService } from './prisma/prisma.service';
 import { User } from 'generated/prisma';
 import * as argon2 from 'argon2';
 
 @Injectable()
 export class AppService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    @Inject('USERS_SERVICE_PROVIDER') private client: ClientProxy,
+  ) {}
 
-  async create(createUserDto: CreateUserDto) {
+  async create(createBaseUserDto: CreateBaseUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const existingUser = await tx.user.findUnique({
-          where: { email: createUserDto.email },
+          where: { email: createBaseUserDto.email },
         });
 
         if (existingUser) {
           throw new RpcException('USER_ALREADY_EXISTS');
         }
 
-        const hashedPassword = argon2.hash(createUserDto.password);
+        const hashedPassword = argon2.hash(createBaseUserDto.password);
 
-        return tx.user.create({
+        const createdUser = tx.user.create({
           data: {
-            ...createUserDto,
+            name: createBaseUserDto.name,
+            email: createBaseUserDto.email,
+            role: createBaseUserDto.role,
             password: await hashedPassword,
           },
         });
+
+        // Emitir evento de usuário criado
+
+        const { password, ...teacherUserDto } = createBaseUserDto;
+
+        this.client.emit('createdUser', teacherUserDto);
+
+        return createdUser;
       });
     } catch (error) {
       throw new RpcException(error.message);
@@ -94,7 +107,7 @@ export class AppService {
     }
   }
 
-  async update(id: string, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateBaseUserDto: UpdateBaseUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
         // Verificar se o usuário existe
@@ -107,14 +120,16 @@ export class AppService {
         }
 
         // Verifica se a senha está sendo atualizada
-        if (updateUserDto.password) {
-          updateUserDto.password = await argon2.hash(updateUserDto.password);
+        if (updateBaseUserDto.password) {
+          updateBaseUserDto.password = await argon2.hash(
+            updateBaseUserDto.password,
+          );
         }
 
         // Atualiza o usuário
         return tx.user.update({
           where: { id },
-          data: { ...updateUserDto },
+          data: { ...updateBaseUserDto },
         });
       });
     } catch (error) {

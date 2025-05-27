@@ -23,12 +23,8 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req: AuthRequest) {
-    console.log(req.user);
     try {
-      const user = await firstValueFrom(
-        this.client.send('authLogin', req.user),
-      );
-      return user;
+      return await firstValueFrom(this.client.send('authLogin', req.user));
     } catch (error) {
       switch (error.message) {
         default:

@@ -21,9 +21,10 @@ Authorization: Bearer {{token}}
 
 {
   "name": "teste",
-  "email": "teste3@teste.com",
+  "email": "teste5@teste.com",
   "password": "Teste1234$",
-  "role": "ADMIN"
+  "role": "TEACHER",
+  "cpf": "12345678901"
 }
 ### Obter Usuários
 GET localhost:8000/users?page=1&pageSize=10

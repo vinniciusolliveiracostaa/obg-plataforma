@@ -10,6 +10,14 @@ const allowedOrigins = [
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  // Express Session descomentado se for necessário manter a sessão do usuário
+  // app.use(
+  //   session({
+  //     secret: 'my-secret',
+  //     resave: false,
+  //     saveUninitialized: false,
+  //   }),
+  // );
   app.enableCors({
     origin: (origin, callback) => {
       // Permitir requisições sem origin (como curl ou extensões)
