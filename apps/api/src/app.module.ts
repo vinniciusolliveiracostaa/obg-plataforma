@@ -8,6 +8,8 @@ import { PassportModule } from '@nestjs/passport';
 import { APP_GUARD } from '@nestjs/core';
 import { JwtAuthGuard } from './guards/jwt.guard';
 import { RolesGuard } from './guards/roles.guard';
+import { TeachersModule } from './teachers/teachers.module';
+import { StudentsModule } from './students/students.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { RolesGuard } from './guards/roles.guard';
     AuthModule,
     UsersModule,
     PassportModule,
+    TeachersModule,
+    StudentsModule,
   ],
   providers: [
     {

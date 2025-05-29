@@ -17,3 +17,19 @@ export const updateTeacherUserSchema = teacherUserSchema
 export type TeacherUserDto = z.infer<typeof teacherUserSchema>;
 export type CreateTeacherUserDto = z.infer<typeof createTeacherUserSchema>;
 export type UpdateTeacherUserDto = z.infer<typeof updateTeacherUserSchema>;
+
+// Schema e tipo para input de criação de usuário
+export const createTeacherUserInputSchema = createTeacherUserSchema.omit({
+  role: true,
+});
+export type CreateTeacherUserInputDto = z.infer<
+  typeof createTeacherUserInputSchema
+>;
+
+// Schema para e tipo input de atualização de usuário
+export const updateTeacherUserInputSchema = updateTeacherUserSchema.omit({
+  role: true,
+});
+export type UpdateTeacherUserInputDto = z.infer<
+  typeof updateTeacherUserInputSchema
+>;

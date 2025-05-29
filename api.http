@@ -96,3 +96,15 @@ Content-Type: text/csv
 < /home/vinni/Downloads/file%20(1).csv
 --boundary--
 ###
+
+### Professores
+### Criar Professor
+POST http://localhost:8000/teachers
+Content-Type: application/json
+
+{
+  "name": "Teacher",
+  "email": "teacher@teste.com",
+  "password": "Teste1234$",
+  "cpf": "12345678901"
+}

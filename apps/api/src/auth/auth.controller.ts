@@ -14,7 +14,9 @@ import { CurrentUSer, IsPublic } from '@obg/decorators';
 import { AuthRequest } from '@obg/interfaces';
 import { LocalAuthGuard } from '../guards/local.guard';
 import { BaseUserDto } from '@obg/schemas';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Autenticação')
 @Controller('auth')
 export class AuthController {
   constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
@@ -22,6 +24,10 @@ export class AuthController {
   @IsPublic()
   @UseGuards(LocalAuthGuard)
   @Post('login')
+  @ApiOperation({
+    summary: 'Login',
+    description: 'Realiza o login do usuário',
+  })
   async login(@Request() req: AuthRequest) {
     try {
       return await firstValueFrom(this.client.send('authLogin', req.user));

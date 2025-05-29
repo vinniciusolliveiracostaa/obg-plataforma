@@ -4,31 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/local.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/guards/local.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/decorators/src/current-user.decorator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/src/current-user.decorator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/interfaces/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/interfaces/src/authRequest.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/src/authRequest.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,60 +66,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.api/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.nats: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #7.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #8.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Atualizar Escola.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Atualizar Usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Autenticação.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Escolas.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Escola por CUID.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Escolas.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Usuário por ID.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Usuários.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Profile.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Schools.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Upload Escolas via CSV.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Usuários.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.schools-csv.service.ts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.11.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.15.21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/students-service/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/usr/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;/usr/bin/pnpm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.api/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yaml.nats: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
+    "HTTP Request.api | #14.executor": "Run",
+    "HTTP Request.api | #2.executor": "Run",
+    "HTTP Request.api | #7.executor": "Run",
+    "HTTP Request.api | #8.executor": "Run",
+    "HTTP Request.api | Atualizar Escola.executor": "Run",
+    "HTTP Request.api | Atualizar Usuário.executor": "Run",
+    "HTTP Request.api | Autenticação.executor": "Run",
+    "HTTP Request.api | Escolas.executor": "Run",
+    "HTTP Request.api | Obter Escola por CUID.executor": "Run",
+    "HTTP Request.api | Obter Escolas.executor": "Run",
+    "HTTP Request.api | Obter Usuário por ID.executor": "Run",
+    "HTTP Request.api | Obter Usuários.executor": "Run",
+    "HTTP Request.api | Profile.executor": "Run",
+    "HTTP Request.api | Schools.executor": "Run",
+    "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "HTTP Request.api | Usuários.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.schools-csv.service.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "23.11.0",
+    "javascript.nodejs.core.library.typings.version": "22.15.21",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/students-service/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/usr/bin/node",
+    "nodejs_package_manager_path": "/usr/bin/pnpm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TypeScript&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TypeScript"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/students-service/src" />
@@ -154,7 +137,7 @@
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.api | Usuários">
+  <component name="RunManager" selected="HTTP Request.api | #14">
     <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -165,6 +148,9 @@
       <method v="2" />
     </configuration>
     <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | #14" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="#14" index="14" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -179,23 +165,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.api | #14" />
         <item itemvalue="HTTP Request.api | Usuários" />
         <item itemvalue="HTTP Request.api | Autenticação" />
         <item itemvalue="HTTP Request.api | Obter Usuários" />
         <item itemvalue="HTTP Request.api | Profile" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +218,8 @@
       <workItem from="1748276964726" duration="893000" />
       <workItem from="1748286286033" duration="617000" />
       <workItem from="1748286916371" duration="10417000" />
-      <workItem from="1748351602415" duration="611000" />
+      <workItem from="1748351602415" duration="933000" />
+      <workItem from="1748536523236" duration="4373000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -380,7 +357,23 @@
       <option name="project" value="LOCAL" />
       <updated>1748293651884</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências">
+      <option name="closed" value="true" />
+      <created>1748379604611</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748379604611</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências">
+      <option name="closed" value="true" />
+      <created>1748379659476</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748379659476</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,6 +409,7 @@
     <MESSAGE value="feat: adicionando comandos Prisma ao package.json para migração e implantação" />
     <MESSAGE value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
     <MESSAGE value="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28" />
+    <MESSAGE value="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências" />
   </component>
 </project>
