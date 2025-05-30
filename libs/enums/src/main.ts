@@ -23,3 +23,16 @@ export * from './service-restriction.enum';
 
 // Private Category Enum
 export * from './private-category.enum';
+
+
+// Gender Enum
+export * from './gender.enum';
+
+// Race Enum
+export * from './race.enum';
+
+// Special Categories Enum
+export * from './special-categories.enum';
+
+// Level of Education Enum
+export * from './level-of-education.enum';

@@ -70,6 +70,7 @@ Content-Type: application/json
 
 ### Obter Escolas
 GET http://localhost:8000/schools?page=1&pageSize=10
+Authorization: Bearer {{token}}
 
 ### Obter Escola por CUID
 GET http://localhost:8000/schools/cmazzlf7o0000gdujv389d5z8

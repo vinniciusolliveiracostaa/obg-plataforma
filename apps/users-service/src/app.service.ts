@@ -36,9 +36,9 @@ export class AppService {
 
         // Emitir evento de usuário criado
 
-        const { password, ...teacherUserDto } = createBaseUserDto;
+        const { password, ...payload } = createBaseUserDto;
 
-        this.client.emit('createdUser', teacherUserDto);
+        this.client.emit('createdUser', payload);
 
         return createdUser;
       });

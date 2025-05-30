@@ -1,11 +1,27 @@
 import { baseUserSchema } from '../base/base-user.schema';
 import { z } from 'zod';
-import { UserRole } from '@obg/enums';
+import { GenderEnum, RaceEnum, UserRole } from '@obg/enums';
+
+export const specialCategoriesSchema = z.enum([
+  'INDIGENOUS',
+  'RIVERSIDECOMUNITIES',
+  'BLACKPOPULATION',
+  'QUILOMBOLA',
+  'PCD',
+  'OTHERTRADITIONALCOMMUNITIES',
+]);
 
 export const teacherUserSchema = baseUserSchema
   .extend({
     role: z.literal(UserRole.TEACHER),
     cpf: z.string().length(11, 'CPF must be at least 11 characters long'),
+    phone: z.string().optional(),
+    birthDate: z.date(),
+    gender: z.nativeEnum(GenderEnum),
+    colorRace: z.nativeEnum(RaceEnum),
+    specialCategories: z.array(specialCategoriesSchema).default([]),
+    schoolsId: z.array(z.string().cuid()).default([]),
+    teamsId: z.string().cuid().array().optional(),
   })
   .strict();
 

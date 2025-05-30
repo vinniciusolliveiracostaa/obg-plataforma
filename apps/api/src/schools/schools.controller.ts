@@ -29,6 +29,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 import * as cuid2 from '@paralleldrive/cuid2';
 import { ChunkMetadata } from '@obg/interfaces';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { IsPublic } from '@obg/decorators';
 
 @ApiTags('Escolas')
 @Controller('schools')
@@ -58,6 +59,7 @@ export class SchoolsController {
     }
   }
 
+  @IsPublic() // Temporário
   @Get()
   @ApiOperation({
     summary: 'Obter Escolas',

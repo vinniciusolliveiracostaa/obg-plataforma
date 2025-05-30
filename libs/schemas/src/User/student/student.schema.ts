@@ -1,11 +1,39 @@
 import { z } from 'zod';
-import { UserRole } from '@obg/enums';
+import {
+  GenderEnum,
+  RaceEnum,
+  SpecialCategoriesEnum,
+  UserRole,
+} from '@obg/enums';
 import { baseUserSchema } from '../base/base-user.schema';
 
 export const studentUserSchema = baseUserSchema
   .extend({
     role: z.literal(UserRole.STUDENT),
     cpf: z.string().length(11, 'CPF must be at least 11 characters long'),
+    nis: z.string().optional(),
+    motherName: z
+      .string()
+      .min(3, 'Mother name must be at least 3 characters long'),
+    phone: z.string().optional(),
+    birthDate: z
+      .string()
+      .optional()
+      .refine(
+        (date) => {
+          if (!date) return true; // If date is not provided, skip validation
+          const parsedDate = new Date(date);
+          return !isNaN(parsedDate.getTime());
+        },
+        {
+          message: 'Birth date must be a valid date string',
+        },
+      ),
+    gender: z.nativeEnum(GenderEnum),
+    colorRace: z.nativeEnum(RaceEnum),
+    specialCategories: z.nativeEnum(SpecialCategoriesEnum),
+    schoolId: z.string().cuid(),
+    teamId: z.string().cuid(),
   })
   .strict();
 

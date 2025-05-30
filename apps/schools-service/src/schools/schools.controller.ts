@@ -35,6 +35,15 @@ export class SchoolsController {
     }
   }
 
+  @MessagePattern('findManySchools')
+  async findManu(@Payload() schoolsId: string[]) {
+    try {
+      return await this.schoolsService.findMany(schoolsId);
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   @MessagePattern('findOneSchool')
   async findOne(@Payload() id: string) {
     try {

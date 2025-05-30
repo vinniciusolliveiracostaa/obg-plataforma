@@ -45,7 +45,7 @@ enum LevelOfEducation {
 }
 
 model Student {
-  id                String              @id @default(cuid())
+  id                String              @id
   name              String
   email             String              @unique
   cpf               String              @unique

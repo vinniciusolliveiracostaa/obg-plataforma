@@ -79,6 +79,29 @@ export class SchoolsService {
     }
   }
 
+  async findMany(schoolsId: string[]): Promise<School[]> {
+    try {
+      if (!Array.isArray(schoolsId) || schoolsId.length === 0) {
+        throw new RpcException('SCHOOL_IDS_MUST_BE_A_NON_EMPTY_ARRAY');
+      }
+
+      const schools = await this.prisma.school.findMany({
+        where: { id: { in: schoolsId } },
+      });
+
+      const foundIds = schools.map((school) => school.id);
+      const missingIds = schoolsId.filter((id) => !foundIds.includes(id));
+
+      if (missingIds.length > 0) {
+        throw new RpcException(`SCHOOLS_NOT_FOUND: ${missingIds.join(', ')}`);
+      }
+
+      return schools;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   async findOne(id: string): Promise<School> {
     try {
       const school = await this.prisma.school.findUnique({ where: { id: id } });
