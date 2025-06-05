@@ -46,8 +46,10 @@ export class AuthController {
     }
   }
 
+  @IsPublic()
   @Get('/profile')
   async profile(@CurrentUSer() currentUser: BaseUserDto): Promise<BaseUserDto> {
+    console.log(currentUser);
     return currentUser;
   }
 }

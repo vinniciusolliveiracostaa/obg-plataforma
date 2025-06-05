@@ -91,7 +91,7 @@ export class AppService {
     }
   }
 
-  async findOne(id: string) {
+  async findOne(id: string): Promise<Teacher> {
     try {
       const teacher = await this.prisma.teacher.findUnique({
         where: { id: id },
@@ -107,7 +107,10 @@ export class AppService {
     }
   }
 
-  async update(id: string, updateTeacherUserDto: UpdateTeacherUserDto) {
+  async update(
+    id: string,
+    updateTeacherUserDto: UpdateTeacherUserDto,
+  ): Promise<Teacher> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         // Verifica se o professor existe
