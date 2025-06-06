@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor">
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/special-categories.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/main.ts" afterDir="false" />
-    </list>
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
