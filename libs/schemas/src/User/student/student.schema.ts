@@ -6,15 +6,7 @@ import {
   UserRole,
 } from '@obg/enums';
 import { baseUserSchema } from '../base/base-user.schema';
-
-export const specialCategoriesSchema = z.enum([
-  'INDIGENOUS',
-  'RIVERSIDECOMUNITIES',
-  'BLACKPOPULATION',
-  'QUILOMBOLA',
-  'PCD',
-  'OTHERTRADITIONALCOMMUNITIES',
-]);
+import { specialCategoriesSchema } from '../special-categories.schema';
 
 export const studentUserSchema = baseUserSchema
   .extend({

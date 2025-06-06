@@ -1,15 +1,7 @@
 import { baseUserSchema } from '../base/base-user.schema';
 import { z } from 'zod';
 import { GenderEnum, RaceEnum, UserRole } from '@obg/enums';
-
-export const specialCategoriesSchema = z.enum([
-  'INDIGENOUS',
-  'RIVERSIDECOMUNITIES',
-  'BLACKPOPULATION',
-  'QUILOMBOLA',
-  'PCD',
-  'OTHERTRADITIONALCOMMUNITIES',
-]);
+import { specialCategoriesSchema } from '../special-categories.schema';
 
 export const teacherUserSchema = baseUserSchema
   .extend({

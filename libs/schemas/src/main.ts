@@ -20,3 +20,4 @@ export * from './User/admin/admin.schema';
 export * from './User/student/student.schema';
 export * from './User/teacher/teacher.schema';
 export * from './User/base-user-discriminated.schema';
+export * from './User/special-categories.schema';
