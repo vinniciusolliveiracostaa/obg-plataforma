@@ -71,9 +71,7 @@ export class AppService {
       page = parseInt(page as unknown as string);
       pageSize = parseInt(pageSize as unknown as string);
       if (pageSize > MAX_PAGE_SIZE) {
-        throw new RpcException(
-          `O tamanho máximo da página é ${MAX_PAGE_SIZE}.`,
-        );
+        throw new RpcException('PAGE_SIZE_TOO_LARGE');
       }
 
       const total = await this.prisma.teacher.count(); // Conta o total de registros

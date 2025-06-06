@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +222,8 @@
       <workItem from="1748536523236" duration="13046000" />
       <workItem from="1748554312290" duration="7688000" />
       <workItem from="1748712808322" duration="695000" />
-      <workItem from="1749151907133" duration="1159000" />
+      <workItem from="1749151907133" duration="1488000" />
+      <workItem from="1749210962608" duration="2748000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -397,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748566783875</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores">
+      <option name="closed" value="true" />
+      <created>1749164091230</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1749164091230</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,6 +449,7 @@
     <MESSAGE value="feat(api): implementar operações CRUD para estudantes e professores&#10;&#10;- Criado StudentsController e TeachersController para lidar com requisições relacionadas a estudantes e professores.&#10;- Adicionados endpoints para criar, atualizar, recuperar e deletar estudantes e professores.&#10;- Adicionada validação utilizando Zod para os dados de entrada em ambos os controladores.&#10;- Integrada documentação Swagger para melhor visibilidade da API.&#10;- Atualizado app.module.ts para incluir StudentsModule e TeachersModule.&#10;- Aprimorado o tratamento de erros nos controladores para retornar os códigos de status HTTP apropriados.&#10;- Atualizados os schemas de estudantes e professores para incluir tipos de entrada sem os campos de role.&#10;- Modificado api.http para incluir os novos endpoints de criação de professores." />
     <MESSAGE value="feat: adicionar autorização ao endpoint de listagem de escolas&#10;&#10;feat: tornar temporariamente público o endpoint &quot;Obter Escolas&quot;&#10;&#10;feat: implementar pattern de mensagem findManySchools no serviço de escolas&#10;&#10;feat: adicionar método findMany no SchoolsService para busca em massa de escolas&#10;&#10;fix: remover valor padrão dos IDs de Student e Teacher no schema do Prisma&#10;&#10;feat: atualizar controllers de estudante e professor para lidar com novas estruturas de payload&#10;&#10;feat: aprimorar serviços de estudante e professor com tratamento de erros e validações adequadas&#10;&#10;feat: adicionar mensagens NATS para criação e atualização de professores&#10;&#10;feat: introduzir enums para gênero, raça e categorias especiais&#10;&#10;feat: estender schemas de estudante e professor com novos campos e validações&#10;&#10;chore: criar migration para definir valor padrão de teamsId no modelo Teacher&#10;&#10;feat: implementar módulo NATS para comunicação entre microsserviços" />
     <MESSAGE value="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados" />
+    <MESSAGE value="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores" />
   </component>
 </project>

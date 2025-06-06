@@ -37,13 +37,6 @@ enum SpecialCategories {
   OTHERTRADITIONALCOMMUNITIES
 }
 
-enum LevelOfEducation {
-  EF9
-  EM1
-  EM2
-  EM3
-}
-
 model Teacher {
   id                String              @id
   name              String

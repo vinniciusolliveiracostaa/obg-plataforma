@@ -1,11 +1,20 @@
 import { z } from 'zod';
 import {
   GenderEnum,
+  LevelOfEducationEnum,
   RaceEnum,
-  SpecialCategoriesEnum,
   UserRole,
 } from '@obg/enums';
 import { baseUserSchema } from '../base/base-user.schema';
+
+export const specialCategoriesSchema = z.enum([
+  'INDIGENOUS',
+  'RIVERSIDECOMUNITIES',
+  'BLACKPOPULATION',
+  'QUILOMBOLA',
+  'PCD',
+  'OTHERTRADITIONALCOMMUNITIES',
+]);
 
 export const studentUserSchema = baseUserSchema
   .extend({
@@ -16,22 +25,11 @@ export const studentUserSchema = baseUserSchema
       .string()
       .min(3, 'Mother name must be at least 3 characters long'),
     phone: z.string().optional(),
-    birthDate: z
-      .string()
-      .optional()
-      .refine(
-        (date) => {
-          if (!date) return true; // If date is not provided, skip validation
-          const parsedDate = new Date(date);
-          return !isNaN(parsedDate.getTime());
-        },
-        {
-          message: 'Birth date must be a valid date string',
-        },
-      ),
+    birthDate: z.date(),
+    levelOfEducation: z.nativeEnum(LevelOfEducationEnum),
     gender: z.nativeEnum(GenderEnum),
     colorRace: z.nativeEnum(RaceEnum),
-    specialCategories: z.nativeEnum(SpecialCategoriesEnum),
+    specialCategories: z.array(specialCategoriesSchema).default([]),
     schoolId: z.string().cuid(),
     teamId: z.string().cuid(),
   })
