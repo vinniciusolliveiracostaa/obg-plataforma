@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor">
+      <change afterPath="$PROJECT_DIR$/libs/schemas/src/User/special-categories.schema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +222,8 @@
       <workItem from="1748554312290" duration="7688000" />
       <workItem from="1748712808322" duration="695000" />
       <workItem from="1749151907133" duration="1488000" />
-      <workItem from="1749210962608" duration="2748000" />
+      <workItem from="1749210962608" duration="3247000" />
+      <workItem from="1749219168775" duration="3927000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -409,7 +409,31 @@
       <option name="project" value="LOCAL" />
       <updated>1749164091230</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="feat: aprimorar configuração do workspace, adicionar NATS para comunicação e implementar operações CRUD para estudantes">
+      <option name="closed" value="true" />
+      <created>1749213777780</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1749213777780</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: adicionar analytics da Vercel e aprimorar layout da aplicação">
+      <option name="closed" value="true" />
+      <created>1749243409578</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749243409578</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor">
+      <option name="closed" value="true" />
+      <created>1749245930695</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749245930695</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +451,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários" />
     <MESSAGE value="feat: adicionar recursos de gerenciamento escolar com tabela de dados e validação de esquema" />
     <MESSAGE value="feat: implementar CORS para permitir origens específicas e melhorar a segurança da API" />
     <MESSAGE value="feat: ajustar estado total na tabela de dados e atualizar saídas de build no Turbo" />
@@ -450,6 +473,9 @@
     <MESSAGE value="feat: adicionar autorização ao endpoint de listagem de escolas&#10;&#10;feat: tornar temporariamente público o endpoint &quot;Obter Escolas&quot;&#10;&#10;feat: implementar pattern de mensagem findManySchools no serviço de escolas&#10;&#10;feat: adicionar método findMany no SchoolsService para busca em massa de escolas&#10;&#10;fix: remover valor padrão dos IDs de Student e Teacher no schema do Prisma&#10;&#10;feat: atualizar controllers de estudante e professor para lidar com novas estruturas de payload&#10;&#10;feat: aprimorar serviços de estudante e professor com tratamento de erros e validações adequadas&#10;&#10;feat: adicionar mensagens NATS para criação e atualização de professores&#10;&#10;feat: introduzir enums para gênero, raça e categorias especiais&#10;&#10;feat: estender schemas de estudante e professor com novos campos e validações&#10;&#10;chore: criar migration para definir valor padrão de teamsId no modelo Teacher&#10;&#10;feat: implementar módulo NATS para comunicação entre microsserviços" />
     <MESSAGE value="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados" />
     <MESSAGE value="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores" />
+    <MESSAGE value="feat: aprimorar configuração do workspace, adicionar NATS para comunicação e implementar operações CRUD para estudantes" />
+    <MESSAGE value="feat: adicionar analytics da Vercel e aprimorar layout da aplicação" />
+    <MESSAGE value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
   </component>
 </project>

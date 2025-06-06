@@ -5,6 +5,14 @@
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
+      <excludeFolder url="file://$MODULE_DIR$/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/api/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/schools-service/generated/prisma" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/students-service/generated/prisma" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/teachers-service/generated/prisma" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/users-service/generated/prisma" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/dtos/dist" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
