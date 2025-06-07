@@ -17,7 +17,7 @@ export const studentUserSchema = baseUserSchema
       .string()
       .min(3, 'Mother name must be at least 3 characters long'),
     phone: z.string().optional(),
-    birthDate: z.date(),
+    birthDate: z.preprocess((arg) => new Date(arg as string), z.date()),
     levelOfEducation: z.nativeEnum(LevelOfEducationEnum),
     gender: z.nativeEnum(GenderEnum),
     colorRace: z.nativeEnum(RaceEnum),
@@ -51,3 +51,9 @@ export const updateStudentUserInputSchema = updateStudentUserSchema.omit({
 export type UpdateStudentUserInputDto = z.infer<
   typeof updateStudentUserInputSchema
 >;
+// Schema para a resposta da API (lista de estudantes)
+export const studentsResponseSchema = z.object({
+  data: z.array(studentUserSchema),
+  total: z.number(),
+  totalPages: z.number(),
+});

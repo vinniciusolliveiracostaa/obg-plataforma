@@ -8,7 +8,7 @@ export const teacherUserSchema = baseUserSchema
     role: z.literal(UserRole.TEACHER),
     cpf: z.string().length(11, 'CPF must be at least 11 characters long'),
     phone: z.string().optional(),
-    birthDate: z.date(),
+    birthDate: z.preprocess((arg) => new Date(arg as string), z.date()),
     gender: z.nativeEnum(GenderEnum),
     colorRace: z.nativeEnum(RaceEnum),
     specialCategories: z.array(specialCategoriesSchema).default([]),
@@ -41,3 +41,9 @@ export const updateTeacherUserInputSchema = updateTeacherUserSchema.omit({
 export type UpdateTeacherUserInputDto = z.infer<
   typeof updateTeacherUserInputSchema
 >;
+// Schema para a resposta da API (lista de professores)
+export const teachersResponseSchema = z.object({
+  data: z.array(teacherUserSchema),
+  total: z.number(),
+  totalPages: z.number(),
+});

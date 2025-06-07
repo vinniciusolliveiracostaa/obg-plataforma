@@ -1,9 +1,10 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { StudentUserDto, UpdateStudentUserDto } from '@obg/schemas';
+import { StudentUserDto, Team, UpdateStudentUserDto } from '@obg/schemas';
 import { PrismaService } from './prisma/prisma.service';
 import { SpecialCategoriesType } from '@obg/enums';
 import { SpecialCategories, Student } from 'generated/prisma';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class AppService {
@@ -14,14 +15,14 @@ export class AppService {
 
   async create(studentUserDto: StudentUserDto): Promise<Student> {
     try {
-      return await this.prisma.$transaction(async (tx) => {
+      const createdStudent = await this.prisma.$transaction(async (tx) => {
         const mapToSpecialCategories = (
           categories: SpecialCategoriesType[],
         ): SpecialCategories[] => {
           return categories as unknown as SpecialCategories[];
         };
 
-        const createdStudent = await tx.student.create({
+        return await tx.student.create({
           data: {
             id: studentUserDto.id,
             name: studentUserDto.name,
@@ -41,12 +42,18 @@ export class AppService {
             teamId: studentUserDto.teamId,
           },
         });
-
-        this.client.emit('studentCreated', createdStudent);
-
-        return createdStudent;
       });
+
+      // Emitindo o evento de criação de estudante.
+      this.client.emit('createdStudent', {
+        createdStudent,
+        originService: 'students-service',
+        performedBy: 'system',
+      });
+
+      return createdStudent;
     } catch (error) {
+      this.client.emit('failedToCreateStudent', error.message);
       throw new RpcException(error.message);
     }
   }
@@ -60,7 +67,7 @@ export class AppService {
       page = parseInt(page as unknown as string);
       pageSize = parseInt(pageSize as unknown as string);
       if (pageSize > MAX_PAGE_SIZE) {
-        throw new RpcException('PAGE_SIZE_TOO_LARGE');
+        throw new RpcException('PAGE_SIZE_EXCEEDED');
       }
 
       const total = await this.prisma.student.count(); // Conta o total de registros
@@ -72,8 +79,15 @@ export class AppService {
 
       const result = { data, total, totalPages };
 
+      // Emitindo o evento de estudantes encontrados.
+      this.client.emit('foundStudents', {
+        data,
+        originService: 'students-service',
+        performedBy: 'system',
+      });
       return result;
     } catch (error) {
+      this.client.emit('failedToFindStudents', error.message);
       throw new RpcException(error.message);
     }
   }
@@ -88,8 +102,15 @@ export class AppService {
         throw new RpcException('STUDENT_NOT_FOUND');
       }
 
+      // Emitindo o evento de estudante encontrado.
+      this.client.emit('foundStudent', {
+        student,
+        originService: 'students-service',
+        performedBy: 'system',
+      });
       return student;
     } catch (error) {
+      this.client.emit('failedToFindStudent', error.message);
       throw new RpcException(error.message);
     }
   }
@@ -99,7 +120,7 @@ export class AppService {
     updateStudentUserDto: UpdateStudentUserDto,
   ): Promise<Student> {
     try {
-      return await this.prisma.$transaction(async (tx) => {
+      const updateStudent = await this.prisma.$transaction(async (tx) => {
         const mapToSpecialCategories = (
           categories: SpecialCategoriesType[],
         ): SpecialCategories[] => {
@@ -112,30 +133,70 @@ export class AppService {
           );
         }
 
-        const updatedStudent = await tx.student.update({
+        return await tx.student.update({
           where: { id: id },
           data: {
             ...updateStudentUserDto,
           },
         });
-
-        this.client.emit('studentUpdated', updatedStudent);
-
-        return updatedStudent;
       });
+      // Emitindo o evento de atualização de estudante.
+      this.client.emit('updatedStudent', {
+        updateStudent,
+        originService: 'students-service',
+        performedBy: 'system',
+      });
+      return updateStudent;
     } catch (error) {
+      this.client.emit('failedToUpdateStudent', error.message);
       throw new RpcException(error.message);
     }
   }
 
   async remove(id: string): Promise<{ message: string }> {
     try {
-      return await this.prisma.$transaction(async (tx) => {
+      const deleteStudent = await this.prisma.$transaction(async (tx) => {
+        const existingStudent = await tx.student.findUnique({
+          where: { id: id },
+        });
+
+        if (!existingStudent) {
+          throw new RpcException('STUDENT_NOT_FOUND');
+        }
+
+        const findStudentTeam = await lastValueFrom(
+          this.client.send('findOneTeam', existingStudent.teamId),
+        );
+
+        if (findStudentTeam) {
+          throw new RpcException('STUDENT_BELONGS_TO_A_TEAM');
+        }
+
         await tx.student.delete({ where: { id: id } });
 
-        this.client.emit('studentDeleted', id);
+        return existingStudent;
+      });
 
-        return { message: 'STUDENT_REMOVED_SUCCESSFULLY' };
+      // Emitindo o evento de estudante removido.
+      this.client.emit('deletedStudent', {
+        deleteStudent,
+        originService: 'students-service',
+        performedBy: 'system',
+      });
+      return { message: 'STUDENT_REMOVED_SUCCESSFULLY' };
+    } catch (error) {
+      this.client.emit('failedToDeleteStudent', error.message);
+      throw new RpcException(error.message);
+    }
+  }
+
+  // Não concluída, mas a intenção é lidar com a remoção de estudantes quando uma equipe é excluída.
+  async handleDeletedTeam(team: Team) {
+    try {
+      return await this.prisma.$transaction(async (tx) => {
+        const existingStudents = await tx.student.findMany({
+          where: { id: { in: team.studentsId } },
+        });
       });
     } catch (error) {
       throw new RpcException(error.message);

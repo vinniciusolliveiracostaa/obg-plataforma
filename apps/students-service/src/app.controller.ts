@@ -6,7 +6,8 @@ import {
   Payload,
   RpcException,
 } from '@nestjs/microservices';
-import { StudentUserDto, UpdateStudentUserDto } from '@obg/schemas';
+import { StudentUserDto, Team, UpdateStudentUserDto } from '@obg/schemas';
+import { UserRole } from '@obg/enums';
 
 @Controller()
 export class AppController {
@@ -15,6 +16,9 @@ export class AppController {
   @EventPattern('createdUser')
   async create(@Payload() studentUserDto: StudentUserDto) {
     try {
+      if (studentUserDto.role !== UserRole.STUDENT) {
+        return; // Ignora se o role não for STUDENT
+      }
       return await this.appService.create(studentUserDto);
     } catch (error) {
       throw new RpcException(error.message);
@@ -61,6 +65,15 @@ export class AppController {
   async remove(@Payload() id: string) {
     try {
       return await this.appService.remove(id);
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
+  @EventPattern('deletedTeam')
+  async handleDeletedTeam(@Payload() teamId: Team) {
+    try {
+      return await this.appService.handleDeletedTeam(teamId);
     } catch (error) {
       throw new RpcException(error.message);
     }

@@ -4,7 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar CRUD e novo serviço para equipes">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250607145733_init/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607170046_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607174644_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/schemas/src/Team/team.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/obg-plataforma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/obg-plataforma.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +54,12 @@
       <list>
         <option value="Dockerfile" />
       </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
     </option>
   </component>
   <component name="Git.Settings">
@@ -59,68 +104,72 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.api/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.nats: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yaml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #14.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #7.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | #8.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Atualizar Escola.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Atualizar Usuário.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Autenticação.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Escolas.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Escola por CUID.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Escolas.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Usuário por ID.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Obter Usuários.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Profile.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Schools.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Upload Escolas via CSV.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.api | Usuários.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.schools-csv.service.ts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.11.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.15.21&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/students-service/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/usr/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;/usr/bin/pnpm&quot;,
-    &quot;npm.build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.api/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yaml.nats: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
+    "HTTP Request.All in api.executor": "Run",
+    "HTTP Request.api | #14.executor": "Run",
+    "HTTP Request.api | #2.executor": "Run",
+    "HTTP Request.api | #7.executor": "Run",
+    "HTTP Request.api | #8.executor": "Run",
+    "HTTP Request.api | Atualizar Escola.executor": "Run",
+    "HTTP Request.api | Atualizar Usuário.executor": "Run",
+    "HTTP Request.api | Autenticação.executor": "Run",
+    "HTTP Request.api | Escolas.executor": "Run",
+    "HTTP Request.api | Obter Escola por CUID.executor": "Run",
+    "HTTP Request.api | Obter Escolas.executor": "Run",
+    "HTTP Request.api | Obter Usuário por ID.executor": "Run",
+    "HTTP Request.api | Obter Usuários.executor": "Run",
+    "HTTP Request.api | Profile.executor": "Run",
+    "HTTP Request.api | Schools.executor": "Run",
+    "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "HTTP Request.api | Usuários.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.schools-csv.service.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "23.11.0",
+    "javascript.nodejs.core.library.typings.version": "22.15.21",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/teams-service/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/usr/bin/node",
+    "nodejs_package_manager_path": "/usr/bin/pnpm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.prisma",
+    "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;TypeScript&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TypeScript"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/teams-service/src" />
+      <recent name="$PROJECT_DIR$/apps/teams-service" />
       <recent name="$PROJECT_DIR$/apps/students-service/src" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\users-service" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\teachers-service" />
-      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\students-service" />
-      <recent name="$PROJECT_DIR$/apps/api/src/guards" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
@@ -130,14 +179,14 @@
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.api | Profile">
-    <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="api | Escolas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Escolas" index="8" runType="Run single request">
+  <component name="RunManager" selected="HTTP Request.api | Usuários">
+    <configuration name="All in api" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api.http">
       <method v="2" />
     </configuration>
     <configuration name="api | Obter Escolas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Escolas" index="9" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="4" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2" runType="Run single request">
@@ -160,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.api | Profile" />
-        <item itemvalue="HTTP Request.api | Autenticação" />
         <item itemvalue="HTTP Request.api | Usuários" />
+        <item itemvalue="HTTP Request.All in api" />
         <item itemvalue="HTTP Request.api | Obter Escolas" />
-        <item itemvalue="HTTP Request.api | Escolas" />
+        <item itemvalue="HTTP Request.api | Obter Usuários" />
+        <item itemvalue="HTTP Request.api | Profile" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +267,8 @@
       <workItem from="1749151907133" duration="1488000" />
       <workItem from="1749210962608" duration="3247000" />
       <workItem from="1749219168775" duration="3927000" />
+      <workItem from="1749302335000" duration="6321000" />
+      <workItem from="1749316434065" duration="7083000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -427,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749245930695</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="feat: adicionar Vercel Speed Insights ao layout da aplicação">
+      <option name="closed" value="true" />
+      <created>1749247605926</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1749247605926</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,8 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: adicionar recursos de gerenciamento escolar com tabela de dados e validação de esquema" />
-    <MESSAGE value="feat: implementar CORS para permitir origens específicas e melhorar a segurança da API" />
     <MESSAGE value="feat: ajustar estado total na tabela de dados e atualizar saídas de build no Turbo" />
     <MESSAGE value="feat(schools): implementar diálogos de adição e edição de escolas com funcionalidade de importação de CSV" />
     <MESSAGE value="fix(data-table): remover aviso de variável não utilizada para estado total" />
@@ -470,6 +527,8 @@
     <MESSAGE value="feat: aprimorar configuração do workspace, adicionar NATS para comunicação e implementar operações CRUD para estudantes" />
     <MESSAGE value="feat: adicionar analytics da Vercel e aprimorar layout da aplicação" />
     <MESSAGE value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
+    <MESSAGE value="feat: adicionar Vercel Speed Insights ao layout da aplicação" />
+    <MESSAGE value="feat: implementar CRUD e novo serviço para equipes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar CRUD e novo serviço para equipes" />
   </component>
 </project>

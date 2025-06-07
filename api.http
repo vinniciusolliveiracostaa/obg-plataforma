@@ -21,10 +21,16 @@ Authorization: Bearer {{token}}
 
 {
   "name": "teste",
-  "email": "teste5@teste.com",
+  "email": "teste7@teste.com",
   "password": "Teste1234$",
-  "role": "TEACHER",
-  "cpf": "12345678901"
+  "role": "STUDENT",
+  "cpf": "12345678901",
+  "motherName": "Teste Mãe",
+  "phone": "88123456789",
+  "birthDate": "2024-06-07",
+  "gender": "MALE",
+  "colorRace": "WHITE",
+  "schoolId": "cmb0ai1ta0000gdm1g1ebguhk"
 }
 ### Obter Usuários
 GET localhost:8000/users?page=1&pageSize=10

@@ -1,33 +1,22 @@
 import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
-import {
-  EventPattern,
-  MessagePattern,
-  Payload,
-  RpcException,
-} from '@nestjs/microservices';
-import { TeacherUserDto, UpdateTeacherUserDto } from '@obg/schemas';
-import { UserRole } from '@obg/enums';
+import { MessagePattern, Payload, RpcException } from '@nestjs/microservices';
+import { CreateTeamDto, UpdateTeamDto } from '@obg/schemas';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @EventPattern('createdUser')
-  async create(@Payload() teacherUserDto: TeacherUserDto) {
+  @MessagePattern('createTeam')
+  async create(@Payload() createTeamDto: CreateTeamDto) {
     try {
-      if (teacherUserDto.role !== UserRole.TEACHER) {
-        return; // Ignora se o role não for TEACHER
-      }
-
-      console.log(teacherUserDto);
-      return await this.appService.create(teacherUserDto);
+      return await this.appService.create(createTeamDto);
     } catch (error) {
       throw new RpcException(error.message);
     }
   }
 
-  @MessagePattern('findAllTeachers')
+  @MessagePattern('findAllTeams')
   async findAll(@Payload() payload: { page: number; pageSize: number }) {
     try {
       return await this.appService.findAll(payload.page, payload.pageSize);
@@ -36,7 +25,7 @@ export class AppController {
     }
   }
 
-  @MessagePattern('findOneTeacher')
+  @MessagePattern('findOneTeam')
   async findOne(@Payload() id: string) {
     try {
       return await this.appService.findOne(id);
@@ -45,25 +34,18 @@ export class AppController {
     }
   }
 
-  @EventPattern('updatedUser')
+  @MessagePattern('updateTeam')
   async update(
-    @Payload()
-    payload: {
-      id: string;
-      updateTeacherUserDto: UpdateTeacherUserDto;
-    },
+    @Payload() payload: { id: string; updateTeamDto: UpdateTeamDto },
   ) {
     try {
-      return await this.appService.update(
-        payload.id,
-        payload.updateTeacherUserDto,
-      );
+      return await this.appService.update(payload.id, payload.updateTeamDto);
     } catch (error) {
       throw new RpcException(error.message);
     }
   }
 
-  @EventPattern('removedUser')
+  @MessagePattern('removeTeam')
   async remove(@Payload() id: string) {
     try {
       return await this.appService.remove(id);

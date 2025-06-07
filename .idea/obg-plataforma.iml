@@ -13,6 +13,8 @@
       <excludeFolder url="file://$MODULE_DIR$/apps/teachers-service/generated/prisma" />
       <excludeFolder url="file://$MODULE_DIR$/apps/users-service/generated/prisma" />
       <excludeFolder url="file://$MODULE_DIR$/libs/dtos/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/teams-service/generated/prisma" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
