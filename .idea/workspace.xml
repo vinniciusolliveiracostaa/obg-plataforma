@@ -4,45 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar CRUD e novo serviço para equipes">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250607145733_init/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607170046_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607174644_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/migration_lock.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/schema.prisma" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/nats/nats.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/schemas/src/Team/team.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/obg-plataforma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/obg-plataforma.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar configuração JWT e atualizar dependências no package.json">
+      <change afterPath="$PROJECT_DIR$/apps/api/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/student/student.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/schools-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/decorators/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/enums/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/enums/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/interfaces/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/pipes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pipes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,23 +120,23 @@
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "23.11.0",
-    "javascript.nodejs.core.library.typings.version": "22.15.21",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/teams-service/src",
+    "javascript.nodejs.core.library.configured.version": "23.11.1",
+    "javascript.nodejs.core.library.typings.version": "22.15.30",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/usr/bin/node",
-    "nodejs_package_manager_path": "/usr/bin/pnpm",
+    "nodejs_interpreter_path": "/home/vinni/.local/share/fnm/aliases/default/bin/node",
+    "nodejs_package_manager_path": "pnpm",
     "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.prisma",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -165,11 +151,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api" />
       <recent name="$PROJECT_DIR$/apps/teams-service/src" />
       <recent name="$PROJECT_DIR$/apps/teams-service" />
       <recent name="$PROJECT_DIR$/apps/students-service/src" />
       <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\users-service" />
-      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\teachers-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
@@ -183,16 +169,16 @@
     <configuration name="All in api" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api.http">
       <method v="2" />
     </configuration>
-    <configuration name="api | Obter Escolas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Escolas" index="9" runType="Run single request">
+    <configuration name="api | Obter Escolas" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Escolas" index="9">
       <method v="2" />
     </configuration>
-    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="4" runType="Run single request">
+    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="4">
       <method v="2" />
     </configuration>
-    <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2" runType="Run single request">
+    <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2">
       <method v="2" />
     </configuration>
-    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Run single request">
+    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3">
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
@@ -220,7 +206,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
       </set>
     </attachedChunks>
   </component>
@@ -269,6 +255,10 @@
       <workItem from="1749219168775" duration="3927000" />
       <workItem from="1749302335000" duration="6321000" />
       <workItem from="1749316434065" duration="7083000" />
+      <workItem from="1749445581983" duration="62000" />
+      <workItem from="1749445663924" duration="30000" />
+      <workItem from="1749445715723" duration="121000" />
+      <workItem from="1749445845384" duration="1003000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -504,7 +494,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: ajustar estado total na tabela de dados e atualizar saídas de build no Turbo" />
+    <option name="CODE_SMELLS_PROFILE" value="Project Default" />
     <MESSAGE value="feat(schools): implementar diálogos de adição e edição de escolas com funcionalidade de importação de CSV" />
     <MESSAGE value="fix(data-table): remover aviso de variável não utilizada para estado total" />
     <MESSAGE value="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados" />
@@ -529,6 +519,7 @@
     <MESSAGE value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
     <MESSAGE value="feat: adicionar Vercel Speed Insights ao layout da aplicação" />
     <MESSAGE value="feat: implementar CRUD e novo serviço para equipes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar CRUD e novo serviço para equipes" />
+    <MESSAGE value="feat: adicionar configuração JWT e atualizar dependências no package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar configuração JWT e atualizar dependências no package.json" />
   </component>
 </project>

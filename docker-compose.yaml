@@ -31,17 +31,17 @@ services:
       - app-network
     restart: always
 
-  api:
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
-    ports:
-      - 8000:8000
-    env_file:
-        - .env
-    depends_on:
-        - nats
-    restart: always
+  #api:
+  #  build:
+  #    context: .
+  #    dockerfile: ./apps/api/Dockerfile
+  #  ports:
+  #    - 8000:8000
+  #  env_file:
+  #      - .env
+  #  depends_on:
+  #      - nats
+  #  restart: always
 
 
 
