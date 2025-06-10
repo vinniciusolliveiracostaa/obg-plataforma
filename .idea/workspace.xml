@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar configuração JWT e atualizar dependências no package.json">
-      <change afterPath="$PROJECT_DIR$/apps/api/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/errors/src/AppException.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/errors/src/user/UserAlreadyExists.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/utils/src/wrap-rpc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/decorators/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/decorators/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/enums/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/enums/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/interfaces/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/interfaces/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/pipes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/pipes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/.env.example" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,13 +98,14 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.schools-csv.service.ts.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "23.11.1",
-    "javascript.nodejs.core.library.typings.version": "22.15.30",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/api",
+    "javascript.nodejs.core.library.typings.version": "24.0.0",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/users-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -136,7 +119,7 @@
     "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.language.and.region",
     "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
@@ -151,18 +134,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/apps/api" />
-      <recent name="$PROJECT_DIR$/apps/teams-service/src" />
+      <recent name="$PROJECT_DIR$/apps/users-service" />
       <recent name="$PROJECT_DIR$/apps/teams-service" />
-      <recent name="$PROJECT_DIR$/apps/students-service/src" />
-      <recent name="C:\Users\vinni\WebstormProjects\obg-plataforma\apps\users-service" />
+      <recent name="$PROJECT_DIR$/apps/teachers-service" />
+      <recent name="$PROJECT_DIR$/apps/students-service" />
+      <recent name="$PROJECT_DIR$/apps/schools-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/libs/errors/src/user" />
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/components/data-table" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/.components/data-table" />
-      <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)" />
     </key>
   </component>
   <component name="RunManager" selected="HTTP Request.api | Usuários">
@@ -259,6 +242,11 @@
       <workItem from="1749445663924" duration="30000" />
       <workItem from="1749445715723" duration="121000" />
       <workItem from="1749445845384" duration="1003000" />
+      <workItem from="1749528050511" duration="126000" />
+      <workItem from="1749528296674" duration="50000" />
+      <workItem from="1749528355430" duration="427000" />
+      <workItem from="1749528792675" duration="616000" />
+      <workItem from="1749536745176" duration="1316000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
