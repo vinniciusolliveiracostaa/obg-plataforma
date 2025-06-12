@@ -4,197 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="">
-      <change afterPath="$PROJECT_DIR$/apps/api/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/jwt.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/local.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/roles.guard.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/strategies/jwt.strategy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/strategies/local.strategy.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/api/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/jwt/jwt.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/auth-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/nest-cli.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/nats/nats.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/tsconfig.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/observability-service/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/prisma/migrations/20250610184933_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/nats/nats.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/schools-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/students-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/teams-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/prisma/migrations/20250610163642_/migration.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/src/redis/redis.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/test/app.e2e-spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/users-service/test/jest-e2e.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/exception-filters/.prettierrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/exception-filters/eslint.config.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/exception-filters/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/exception-filters/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/exception-filters/src/rpc-exception.filter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/jwt.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/local.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/guards/roles.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/nats/nats.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/nats/nats.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/schools/schools.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/schools/schools.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/strategies/jwt.strategy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/strategies/local.strategy.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/students/students.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/students/students.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/students/students.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/students/students.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/teachers/teachers.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/teachers/teachers.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/prisma/migrations/20250522230839_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/prisma/migrations/20250522231058_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/schools/schools-csv.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/schools/schools.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/schools/schools.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/schools/schools.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/prisma/migrations/20250523043934_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/nats/nats.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/nats/nats.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250523043958_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250529204038_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250607145733_init/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/nats/nats.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/nats/nats.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607170046_/migration.sql" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250610193134_/migration.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250607174644_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/migration_lock.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/prisma/schema.prisma" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/nats/nats.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/nats/nats.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/prisma/migrations/20250523044539_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/prisma/migrations/20250523210758_/migration.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/nats/nats.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/nats/nats.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/apps/observability-service/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/observability-service/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/exception-filters/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/src/AppException.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/src/user/UserAlreadyExists.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/exception-filters/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/errors/tsconfig.lib.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/exception-filters/tsconfig.lib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/libs/utils/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/utils/src/wrap-rpc.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -432,7 +242,7 @@
       <workItem from="1749528792675" duration="616000" />
       <workItem from="1749536745176" duration="2407000" />
       <workItem from="1749569958742" duration="10823000" />
-      <workItem from="1749595577661" duration="16162000" />
+      <workItem from="1749595577661" duration="16610000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -658,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749538285909</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção.">
+      <option name="closed" value="true" />
+      <created>1749739381448</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1749739381448</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,7 +495,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="fix(data-table): remover aviso de variável não utilizada para estado total" />
     <MESSAGE value="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados" />
     <MESSAGE value="feat: adicione o arquivo .gitignore para excluir artefatos de construção, logs e arquivos de ambiente" />
     <MESSAGE value="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies" />
@@ -702,6 +519,7 @@
     <MESSAGE value="feat: implementar CRUD e novo serviço para equipes" />
     <MESSAGE value="feat: adicionar configuração JWT e atualizar dependências no package.json" />
     <MESSAGE value="feat: adicionar tratamento de exceções personalizadas e configuração de JWT" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar tratamento de exceções personalizadas e configuração de JWT" />
+    <MESSAGE value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
   </component>
 </project>
