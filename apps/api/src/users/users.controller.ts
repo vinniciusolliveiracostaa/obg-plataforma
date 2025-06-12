@@ -18,15 +18,15 @@ import {
   updateBaseUserSchema,
 } from '@obg/schemas';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { RequiredRoles } from '@obg/decorators';
-import { UserRole } from '@obg/enums';
+import { IsPublic } from '@obg/decorators';
 
 @ApiTags('Usuários')
-@RequiredRoles(UserRole.ADMIN)
+//@RequiredRoles(UserRole.ADMIN)
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @IsPublic()
   @Post()
   @UsePipes(new ZodValidationPipe(createBaseUserSchema))
   @ApiOperation({
@@ -71,6 +71,7 @@ export class UsersController {
     return await this.usersService.update(id, data);
   }
 
+  @IsPublic()
   @Delete(':id')
   @ApiOperation({
     summary: 'Remover Usuário',

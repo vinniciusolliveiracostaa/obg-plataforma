@@ -4,26 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar cache para paginacao de usuários, equipes e professores">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações.">
+      <change afterPath="$PROJECT_DIR$/apps/notification-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notification-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notification-service/templates/welcome.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/auth/strategies/local.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/auth/strategies/local.strategy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/schools/schools.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/students/students.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/students/students.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/teams/teams.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +94,7 @@
     "HTTP Request.api | Atualizar Escola.executor": "Run",
     "HTTP Request.api | Atualizar Usuário.executor": "Run",
     "HTTP Request.api | Autenticação.executor": "Run",
+    "HTTP Request.api | Deletar Usuário.executor": "Run",
     "HTTP Request.api | Escolas.executor": "Run",
     "HTTP Request.api | Obter Escola por CUID.executor": "Run",
     "HTTP Request.api | Obter Escolas.executor": "Run",
@@ -107,6 +103,7 @@
     "HTTP Request.api | Profile.executor": "Run",
     "HTTP Request.api | Schools.executor": "Run",
     "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "HTTP Request.api | Usuários (1).executor": "Run",
     "HTTP Request.api | Usuários.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Node.js.schools-csv.service.ts.executor": "Run",
@@ -119,7 +116,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "javascript.nodejs.core.library.configured.version": "23.11.1",
     "javascript.nodejs.core.library.typings.version": "24.0.0",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma copia",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/notification-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -148,31 +145,31 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/notification-service" />
+      <recent name="$PROJECT_DIR$/apps/notification-service/src" />
       <recent name="$PROJECT_DIR$/apps/schools-service/src" />
       <recent name="$PROJECT_DIR$/apps/schools-service" />
       <recent name="$PROJECT_DIR$/apps/students-service" />
-      <recent name="$PROJECT_DIR$/apps/teachers-service" />
-      <recent name="$PROJECT_DIR$/apps/students-service/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/notification-service" />
       <recent name="$PROJECT_DIR$/libs/errors/src/user" />
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/components/data-table" />
-      <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/.components/data-table" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.teachers-service &gt; app.service.ts">
+  <component name="RunManager" selected="HTTP Request.api | Usuários (1)">
     <configuration name="api | Atualizar Usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Atualizar Usuário" index="6" runType="Executar requisição única">
       <method v="2" />
     </configuration>
     <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Executar requisição única">
       <method v="2" />
     </configuration>
-    <configuration name="api | Profile" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Profile" index="2" runType="Executar requisição única">
+    <configuration name="api | Deletar Usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Deletar Usuário" index="7" runType="Executar requisição única">
       <method v="2" />
     </configuration>
-    <configuration name="api | Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3">
+    <configuration name="api | Usuários (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Executar requisição única">
       <method v="2" />
     </configuration>
     <configuration name="teachers-service &gt; app.service.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/apps/teachers-service/src">
@@ -192,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.api | Usuários (1)" />
+        <item itemvalue="HTTP Request.api | Deletar Usuário" />
+        <item itemvalue="HTTP Request.api | Atualizar Usuário" />
         <item itemvalue="Node.js.teachers-service &gt; app.service.ts" />
         <item itemvalue="HTTP Request.api | Autenticação" />
-        <item itemvalue="HTTP Request.api | Atualizar Usuário" />
-        <item itemvalue="HTTP Request.api | Profile" />
-        <item itemvalue="HTTP Request.api | Usuários" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +259,7 @@
       <workItem from="1749528792675" duration="616000" />
       <workItem from="1749536745176" duration="2407000" />
       <workItem from="1749569958742" duration="10823000" />
-      <workItem from="1749595577661" duration="20764000" />
+      <workItem from="1749595577661" duration="29438000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -512,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749740762677</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações.">
+      <option name="closed" value="true" />
+      <created>1749761340833</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1749761340833</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -531,7 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies" />
     <MESSAGE value="fix: update zod version to 3.25.23 in pnpm-lock.yaml" />
     <MESSAGE value="feat: add authentication and user management modules with schemas and controllers" />
     <MESSAGE value="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores." />
@@ -556,6 +560,7 @@
     <MESSAGE value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
     <MESSAGE value="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml" />
     <MESSAGE value="feat: implementar cache para paginacao de usuários, equipes e professores" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar cache para paginacao de usuários, equipes e professores" />
+    <MESSAGE value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
   </component>
 </project>

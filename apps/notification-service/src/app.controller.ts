@@ -1,12 +1,14 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
+import { EventPattern } from '@nestjs/microservices';
+import { BaseUserDto } from '@obg/schemas';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @EventPattern('user.created')
+  async handleUserCreated(data: BaseUserDto) {
+    return await this.appService.handleUserCreated(data);
   }
 }

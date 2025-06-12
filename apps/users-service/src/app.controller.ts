@@ -33,7 +33,7 @@ export class AppController {
     return await this.appService.update(payload.id, payload.data);
   }
 
-  @MessagePattern('user.delete')
+  @MessagePattern('user.remove')
   async delete(@Payload() id: string) {
     return await this.appService.delete(id);
   }
