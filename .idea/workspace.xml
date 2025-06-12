@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -242,7 +249,7 @@
       <workItem from="1749528792675" duration="616000" />
       <workItem from="1749536745176" duration="2407000" />
       <workItem from="1749569958742" duration="10823000" />
-      <workItem from="1749595577661" duration="16610000" />
+      <workItem from="1749595577661" duration="17716000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -476,7 +483,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749739381448</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1749739725050</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1749739725050</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados" />
     <MESSAGE value="feat: adicione o arquivo .gitignore para excluir artefatos de construção, logs e arquivos de ambiente" />
     <MESSAGE value="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies" />
     <MESSAGE value="fix: update zod version to 3.25.23 in pnpm-lock.yaml" />
@@ -520,6 +534,7 @@
     <MESSAGE value="feat: adicionar configuração JWT e atualizar dependências no package.json" />
     <MESSAGE value="feat: adicionar tratamento de exceções personalizadas e configuração de JWT" />
     <MESSAGE value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
+    <MESSAGE value="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml" />
   </component>
 </project>

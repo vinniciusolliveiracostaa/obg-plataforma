@@ -42,6 +42,19 @@ export class AppService {
   ): Promise<{ data: Team[]; total: number; totalPages: number }> {
     const MAX_PAGE_SIZE = 1000;
     try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `teams:page=${page}:pageSize=${pageSize}`;
+      const cached = await this.cacheManager.get<{
+        data: Team[];
+        total: number;
+        totalPages: number;
+      }>(cacheKey);
+
+      // Se os dados estiverem no cache, retorna eles.
+      if (cached) {
+        return cached;
+      }
+
       page = parseInt(page as unknown as string);
       pageSize = parseInt(pageSize as unknown as string);
       if (pageSize > MAX_PAGE_SIZE) {
@@ -57,6 +70,9 @@ export class AppService {
 
       const result = { data, total, totalPages };
 
+      // Armazenar o resultado no cache.
+      await this.cacheManager.set(cacheKey, result, ttl);
+
       return result;
     } catch (error) {
       throw new RpcException(error.message);
@@ -65,11 +81,23 @@ export class AppService {
 
   async findOne(id: string): Promise<Team> {
     try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `team:${id}`;
+
+      const cached = await this.cacheManager.get<Team>(cacheKey);
+      // Se os dados estiverem no cache, retorna eles.
+      if (cached) {
+        return cached;
+      }
+
       const team = await this.prisma.team.findUnique({ where: { id: id } });
 
       if (!team) {
         throw new RpcException('TEAM_NOT_FOUND');
       }
+
+      await this.cacheManager.set(cacheKey, team, ttl);
+
       return team;
     } catch (error) {
       throw new RpcException(error.message);

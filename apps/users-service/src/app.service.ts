@@ -4,11 +4,14 @@ import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { PrismaService } from './prisma/prisma.service';
 import { User } from 'generated/prisma';
 import * as argon2 from 'argon2';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Cache } from 'cache-manager';
 
 @Injectable()
 export class AppService {
   constructor(
     @Inject('USERS_SERVICE_CONSUMER') private client: ClientProxy,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private prisma: PrismaService,
   ) {}
 
@@ -53,6 +56,19 @@ export class AppService {
   ): Promise<{ data: User[]; total: number; totalPages: number }> {
     const MAX_PAGE_SIZE = 1000;
     try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `users:page=${page}:pageSize=${pageSize}`;
+      const cached = await this.cacheManager.get<{
+        data: User[];
+        total: number;
+        totalPages: number;
+      }>(cacheKey);
+
+      // Se os dados estiverem no cache, retorna eles.
+      if (cached) {
+        return cached;
+      }
+
       page = parseInt(page as unknown as string);
       pageSize = parseInt(pageSize as unknown as string);
       if (pageSize > MAX_PAGE_SIZE) {
@@ -68,7 +84,11 @@ export class AppService {
 
       const totalPages = Math.ceil(total / pageSize);
 
-      return { data, total, totalPages };
+      const result = { data, total, totalPages };
+
+      await this.cacheManager.set(cacheKey, result, ttl);
+
+      return result;
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -76,11 +96,20 @@ export class AppService {
 
   async findOne(id: string) {
     try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `user:${id}`;
+      const cached = await this.cacheManager.get<User>(cacheKey);
+      // Se o usuário estiver no cache, retorna ele.
+      if (cached) {
+        return cached;
+      }
       const user = await this.prisma.user.findUnique({ where: { id: id } });
 
       if (!user) {
         throw new RpcException('USER_NOT_FOUND');
       }
+
+      await this.cacheManager.set(cacheKey, user, ttl);
 
       return user;
     } catch (error) {

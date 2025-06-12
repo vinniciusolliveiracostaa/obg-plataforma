@@ -59,6 +59,15 @@ export class AppService {
         return cached;
       }
 
+      page = parseInt(page as unknown as string);
+      pageSize = parseInt(pageSize as unknown as string);
+
+      if (pageSize > MAX_PAGE_SIZE) {
+        throw new RpcException(
+          `O tamanho máximo da página é ${MAX_PAGE_SIZE}.`,
+        );
+      }
+
       const total = await this.prisma.student.count(); // Contar o total de registros.
       const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados.
 
