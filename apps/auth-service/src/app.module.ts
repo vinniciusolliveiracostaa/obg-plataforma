@@ -1,26 +1,17 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { NatsModule } from './nats/nats.module';
-import { JwtModule } from '@nestjs/jwt';
+import { RedisModule } from './redis/redis.module';
+import { JwtModuleModule } from './jwt/jwt.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     NatsModule,
-    JwtModule.registerAsync({
-      imports: [ConfigModule],
-      useFactory: (configService: ConfigService) => ({
-        global: true,
-        secret: configService.get('JWT_SECRET'),
-        signOptions: {
-          algorithm: 'HS256',
-          expiresIn: configService.get('JWT_EXPIRES_IN'),
-        },
-      }),
-      inject: [ConfigService],
-    }),
+    RedisModule,
+    JwtModuleModule,
   ],
   controllers: [AppController],
   providers: [AppService],

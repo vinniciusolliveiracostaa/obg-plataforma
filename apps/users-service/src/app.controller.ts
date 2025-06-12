@@ -1,68 +1,40 @@
 import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 import { CreateBaseUserDto, UpdateBaseUserDto } from '@obg/schemas';
-import { MessagePattern, Payload, RpcException } from '@nestjs/microservices';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @MessagePattern('createUser')
-  async create(@Payload() createBaseUserDto: CreateBaseUserDto) {
-    try {
-      return await this.appService.create(createBaseUserDto);
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+  async create(@Payload() data: CreateBaseUserDto) {
+    return await this.appService.create(data);
   }
 
   @MessagePattern('findAllUsers')
   async findAll(@Payload() payload: { page: number; pageSize: number }) {
-    try {
-      return await this.appService.findAll(payload.page, payload.pageSize);
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+    return await this.appService.findAll(payload.page, payload.pageSize);
   }
 
   @MessagePattern('findOneUser')
-  async findOne(id: string) {
-    try {
-      return await this.appService.findOne(id);
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+  async findOne(@Payload() id: string) {
+    return await this.appService.findOne(id);
   }
 
   @MessagePattern('findOneUserByEmail')
   async findOneByEmail(@Payload() email: string) {
-    try {
-      return await this.appService.findOneByEmail(email);
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+    console.log('findOneByEmail', email);
+    return await this.appService.findOneByEmail(email);
   }
 
   @MessagePattern('updateUser')
-  async update(
-    @Payload() payload: { id: string; updateBaseUserDto: UpdateBaseUserDto },
-  ) {
-    try {
-      return await this.appService.update(
-        payload.id,
-        payload.updateBaseUserDto,
-      );
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+  async update(@Payload() payload: { id: string; data: UpdateBaseUserDto }) {
+    return await this.appService.update(payload.id, payload.data);
   }
 
   @MessagePattern('deleteUser')
-  async delete(id: string) {
-    try {
-      return await this.appService.delete(id);
-    } catch (error) {
-      throw new RpcException(error.message);
-    }
+  async delete(@Payload() id: string) {
+    return await this.appService.delete(id);
   }
 }

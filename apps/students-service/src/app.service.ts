@@ -1,59 +1,42 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { StudentUserDto, Team, UpdateStudentUserDto } from '@obg/schemas';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Cache } from 'cache-manager';
+import { StudentUserDto } from '@obg/schemas';
 import { PrismaService } from './prisma/prisma.service';
-import { SpecialCategoriesType } from '@obg/enums';
-import { SpecialCategories, Student } from 'generated/prisma';
-import { lastValueFrom } from 'rxjs';
+import { Student } from 'generated/prisma';
 
 @Injectable()
 export class AppService {
   constructor(
+    @Inject('STUDENTS_SERVICE_CONSUMER') private client: ClientProxy,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private prisma: PrismaService,
-    @Inject('STUDENTS_SERVICE_PROVIDER') private client: ClientProxy,
   ) {}
 
-  async create(studentUserDto: StudentUserDto): Promise<Student> {
+  async create(data: StudentUserDto) {
     try {
-      const createdStudent = await this.prisma.$transaction(async (tx) => {
-        const mapToSpecialCategories = (
-          categories: SpecialCategoriesType[],
-        ): SpecialCategories[] => {
-          return categories as unknown as SpecialCategories[];
-        };
-
-        return await tx.student.create({
+      return await this.prisma.$transaction(async (tx) => {
+        return tx.student.create({
           data: {
-            id: studentUserDto.id,
-            name: studentUserDto.name,
-            email: studentUserDto.email,
-            cpf: studentUserDto.cpf,
-            nis: studentUserDto.nis,
-            motherName: studentUserDto.motherName,
-            phone: studentUserDto.phone,
-            birthDate: studentUserDto.birthDate,
-            levelOfEducation: studentUserDto.levelOfEducation,
-            gender: studentUserDto.gender,
-            colorRace: studentUserDto.colorRace,
-            specialCategories: mapToSpecialCategories(
-              studentUserDto.specialCategories,
-            ),
-            schoolId: studentUserDto.schoolId,
-            teamId: studentUserDto.teamId,
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            cpf: data.cpf,
+            nis: data.nis,
+            motherName: data.motherName,
+            phone: data.phone,
+            birthDate: data.birthDate,
+            levelOfEducation: data.levelOfEducation,
+            gender: data.gender,
+            colorRace: data.colorRace,
+            specialCategories: data.specialCategories,
+            schoolId: data.schoolId,
+            teamId: data.teamId,
           },
         });
       });
-
-      // Emitindo o evento de criação de estudante.
-      this.client.emit('createdStudent', {
-        createdStudent,
-        originService: 'students-service',
-        performedBy: 'system',
-      });
-
-      return createdStudent;
     } catch (error) {
-      this.client.emit('failedToCreateStudent', error.message);
       throw new RpcException(error.message);
     }
   }
@@ -64,14 +47,20 @@ export class AppService {
   ): Promise<{ data: Student[]; total: number; totalPages: number }> {
     const MAX_PAGE_SIZE = 1000;
     try {
-      page = parseInt(page as unknown as string);
-      pageSize = parseInt(pageSize as unknown as string);
-      if (pageSize > MAX_PAGE_SIZE) {
-        throw new RpcException('PAGE_SIZE_EXCEEDED');
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `students:page=${page}:pageSize=${pageSize}`;
+      const cached = await this.cacheManager.get<{
+        data: Student[];
+        total: number;
+        totalPages: number;
+      }>(cacheKey);
+
+      if (cached) {
+        return cached;
       }
 
-      const total = await this.prisma.student.count(); // Conta o total de registros
-      const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados
+      const total = await this.prisma.student.count(); // Contar o total de registros.
+      const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados.
 
       const data = await this.prisma.student.findMany({ skip, take: pageSize });
 
@@ -79,125 +68,80 @@ export class AppService {
 
       const result = { data, total, totalPages };
 
-      // Emitindo o evento de estudantes encontrados.
-      this.client.emit('foundStudents', {
-        data,
-        originService: 'students-service',
-        performedBy: 'system',
-      });
+      // Armazenar o resultado no cache.
+      await this.cacheManager.set(cacheKey, result, ttl);
+
       return result;
     } catch (error) {
-      this.client.emit('failedToFindStudents', error.message);
       throw new RpcException(error.message);
     }
   }
 
-  async findOne(id: string): Promise<Student> {
+  async findOne(id: string) {
     try {
-      const student = await this.prisma.student.findUnique({
-        where: { id: id },
-      });
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `student:${id}`;
+
+      const cached = await this.cacheManager.get<Student>(cacheKey);
+      // Verifica se o estudante já está no cache
+
+      if (cached) {
+        return cached;
+      }
+
+      const student = await this.prisma.student.findUnique({ where: { id } });
 
       if (!student) {
         throw new RpcException('STUDENT_NOT_FOUND');
       }
 
-      // Emitindo o evento de estudante encontrado.
-      this.client.emit('foundStudent', {
-        student,
-        originService: 'students-service',
-        performedBy: 'system',
-      });
+      await this.cacheManager.set(cacheKey, student, ttl);
+
       return student;
     } catch (error) {
-      this.client.emit('failedToFindStudent', error.message);
       throw new RpcException(error.message);
     }
   }
 
-  async update(
-    id: string,
-    updateStudentUserDto: UpdateStudentUserDto,
-  ): Promise<Student> {
+  async update(data: StudentUserDto) {
     try {
-      const updateStudent = await this.prisma.$transaction(async (tx) => {
-        const mapToSpecialCategories = (
-          categories: SpecialCategoriesType[],
-        ): SpecialCategories[] => {
-          return categories as unknown as SpecialCategories[];
-        };
-
-        if (updateStudentUserDto.specialCategories !== undefined) {
-          updateStudentUserDto.specialCategories = mapToSpecialCategories(
-            updateStudentUserDto.specialCategories,
-          );
-        }
-
-        return await tx.student.update({
-          where: { id: id },
+      return await this.prisma.$transaction(async (tx) => {
+        return tx.student.update({
+          where: { id: data.id },
           data: {
-            ...updateStudentUserDto,
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            cpf: data.cpf,
+            nis: data.nis,
+            motherName: data.motherName,
+            phone: data.phone,
+            birthDate: data.birthDate,
+            levelOfEducation: data.levelOfEducation,
+            gender: data.gender,
+            colorRace: data.colorRace,
+            specialCategories: data.specialCategories,
+            schoolId: data.schoolId,
+            teamId: data.teamId,
           },
         });
       });
-      // Emitindo o evento de atualização de estudante.
-      this.client.emit('updatedStudent', {
-        updateStudent,
-        originService: 'students-service',
-        performedBy: 'system',
-      });
-      return updateStudent;
     } catch (error) {
-      this.client.emit('failedToUpdateStudent', error.message);
       throw new RpcException(error.message);
     }
   }
 
-  async remove(id: string): Promise<{ message: string }> {
+  async remove(data: StudentUserDto) {
     try {
-      const deleteStudent = await this.prisma.$transaction(async (tx) => {
-        const existingStudent = await tx.student.findUnique({
-          where: { id: id },
-        });
-
-        if (!existingStudent) {
-          throw new RpcException('STUDENT_NOT_FOUND');
-        }
-
-        const findStudentTeam = await lastValueFrom(
-          this.client.send('findOneTeam', existingStudent.teamId),
-        );
-
-        if (findStudentTeam) {
-          throw new RpcException('STUDENT_BELONGS_TO_A_TEAM');
-        }
-
-        await tx.student.delete({ where: { id: id } });
-
-        return existingStudent;
-      });
-
-      // Emitindo o evento de estudante removido.
-      this.client.emit('deletedStudent', {
-        deleteStudent,
-        originService: 'students-service',
-        performedBy: 'system',
-      });
-      return { message: 'STUDENT_REMOVED_SUCCESSFULLY' };
-    } catch (error) {
-      this.client.emit('failedToDeleteStudent', error.message);
-      throw new RpcException(error.message);
-    }
-  }
-
-  // Não concluída, mas a intenção é lidar com a remoção de estudantes quando uma equipe é excluída.
-  async handleDeletedTeam(team: Team) {
-    try {
-      return await this.prisma.$transaction(async (tx) => {
-        const existingStudents = await tx.student.findMany({
-          where: { id: { in: team.studentsId } },
+      const cacheKey = `student:${data.id}`;
+      await this.prisma.$transaction(async (tx) => {
+        await tx.student.delete({
+          where: { id: data.id },
         });
       });
+      // Remove o estudante do cache
+      await this.cacheManager.del(cacheKey);
+      return { message: 'Student removed successfully', data: data.id };
     } catch (error) {
       throw new RpcException(error.message);
     }

@@ -1,9 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { BaseUserDto } from '@obg/schemas';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { lastValueFrom } from 'rxjs';
-import * as argon2 from 'argon2';
 import { JwtService } from '@nestjs/jwt';
+import { BaseUserDto } from '@obg/schemas';
+import * as argon2 from 'argon2';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class AppService {
@@ -30,9 +30,11 @@ export class AppService {
   }
 
   async validateUser(email: string, password: string): Promise<BaseUserDto> {
+    console.log('🔐 Validando usuário', { email, password });
     const user = await lastValueFrom(
       this.client.send('findOneUserByEmail', email),
     );
+    console.error('🧍 Resultado da validação:', user);
     if (user) {
       const isPasswordValid = await argon2.verify(user.password, password);
 

@@ -3,17 +3,17 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 
 @Global()
 @Module({
-  imports: [
-    ClientsModule.register([
-      {
-        name: 'API_GATEWAY_CONSUMER',
-        transport: Transport.NATS,
-        options: {
-          servers: ['nats://localhost:4222'],
-        },
-      },
-    ]),
-  ],
-  exports: [ClientsModule],
+    imports: [
+        ClientsModule.register([
+            {
+                name: 'API_GATEWAY_CONSUMER',
+                transport: Transport.NATS,
+                options: {
+                    servers: ['nats://localhost:4222'],
+                },
+            },
+        ]),
+    ],
+    exports: [ClientsModule],
 })
 export class NatsModule {}

@@ -8,11 +8,12 @@ async function bootstrap() {
     {
       transport: Transport.NATS,
       options: {
+        queue: 'STUDENTS_SERVICE',
         servers: ['nats://localhost:4222'],
-        queue: 'STUDENTS-SERVICE',
       },
     },
   );
   await app.listen();
 }
+
 bootstrap();

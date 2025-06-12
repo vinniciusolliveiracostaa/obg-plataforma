@@ -8,35 +8,35 @@ import * as argon2 from 'argon2';
 @Injectable()
 export class AppService {
   constructor(
+    @Inject('USERS_SERVICE_CONSUMER') private client: ClientProxy,
     private prisma: PrismaService,
-    @Inject('USERS_SERVICE_PROVIDER') private client: ClientProxy,
   ) {}
 
-  async create(createBaseUserDto: CreateBaseUserDto) {
+  async create(data: CreateBaseUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const existingUser = await tx.user.findUnique({
-          where: { email: createBaseUserDto.email },
+          where: { email: data.email },
         });
 
         if (existingUser) {
           throw new RpcException('USER_ALREADY_EXISTS');
         }
 
-        const hashedPassword = argon2.hash(createBaseUserDto.password);
+        const hashedPassword = argon2.hash(data.password);
 
         const createdUser = tx.user.create({
           data: {
-            name: createBaseUserDto.name,
-            email: createBaseUserDto.email,
-            role: createBaseUserDto.role,
+            name: data.name,
+            email: data.email,
+            role: data.role,
             password: await hashedPassword,
           },
         });
 
         // Emitir evento de usuário criado
 
-        const { password, ...payload } = createBaseUserDto;
+        const { password, ...payload } = data;
 
         this.client.emit('createdUser', payload);
 
@@ -61,16 +61,14 @@ export class AppService {
         );
       }
 
-      const total = await this.prisma.user.count(); // Conta o total de registros
+      const total = await this.prisma.user.count(); // Conta o total de registros.
       const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados
 
       const data = await this.prisma.user.findMany({ skip, take: pageSize });
 
       const totalPages = Math.ceil(total / pageSize);
 
-      const result = { data, total, totalPages };
-
-      return result;
+      return { data, total, totalPages };
     } catch (error) {
       throw new RpcException(error.message);
     }
@@ -92,7 +90,6 @@ export class AppService {
 
   async findOneByEmail(email: string) {
     try {
-      console.log(email);
       const user = await this.prisma.user.findUnique({
         where: { email: email },
       });
@@ -107,10 +104,10 @@ export class AppService {
     }
   }
 
-  async update(id: string, updateBaseUserDto: UpdateBaseUserDto) {
+  async update(id: string, data: UpdateBaseUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
-        // Verificar se o usuário existe
+        // Verificar se o usuário existe.
         const existingUser = await this.prisma.user.findUnique({
           where: { id: id },
         });
@@ -120,16 +117,14 @@ export class AppService {
         }
 
         // Verifica se a senha está sendo atualizada
-        if (updateBaseUserDto.password) {
-          updateBaseUserDto.password = await argon2.hash(
-            updateBaseUserDto.password,
-          );
+        if (data.password) {
+          data.password = await argon2.hash(data.password);
         }
 
         // Atualiza o usuário
         return tx.user.update({
           where: { id },
-          data: { ...updateBaseUserDto },
+          data: { ...data },
         });
       });
     } catch (error) {
@@ -137,10 +132,10 @@ export class AppService {
     }
   }
 
-  async delete(id: string): Promise<{ message: string }> {
+  async delete(id: string) {
     try {
       await this.prisma.$transaction(async (tx) => {
-        // Verificar se o usuário existe
+        // Verificar se o usuário existe.
         const existingUser = await tx.user.findUnique({ where: { id: id } });
 
         if (!existingUser) {

@@ -3,17 +3,13 @@ import {
   Controller,
   Delete,
   Get,
-  HttpException,
-  HttpStatus,
-  Inject,
   Param,
   Patch,
   Post,
   Query,
   UsePipes,
 } from '@nestjs/common';
-import { IsPublic } from '@obg/decorators';
-import { ClientProxy } from '@nestjs/microservices';
+import { TeachersService } from './teachers.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {
   CreateTeacherUserInputDto,
@@ -22,38 +18,20 @@ import {
   updateTeacherUserInputSchema,
 } from '@obg/schemas';
 import { ZodValidationPipe } from '@obg/pipes';
-import { UserRole } from '@obg/enums';
-import { lastValueFrom } from 'rxjs';
 
 @ApiTags('Professores')
-@IsPublic()
 @Controller('teachers')
 export class TeachersController {
-  constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
+  constructor(private readonly teachersService: TeachersService) {}
 
   @Post()
+  @UsePipes(new ZodValidationPipe(createTeacherUserInputSchema))
   @ApiOperation({
     summary: 'Criar Professor',
     description: 'Cria um professor',
   })
-  @UsePipes(new ZodValidationPipe(createTeacherUserInputSchema))
-  async create(@Body() createTeacherUserInputDto: CreateTeacherUserInputDto) {
-    try {
-      const payload = {
-        ...createTeacherUserInputDto,
-        role: UserRole.TEACHER,
-      };
-      return await lastValueFrom(this.client.send('createUser', payload));
-    } catch (error) {
-      throw new HttpException(
-        {
-          status: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Internal Server Error',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+  async create(@Body() data: CreateTeacherUserInputDto) {
+    return await this.teachersService.create(data);
   }
 
   @Get()
@@ -65,19 +43,7 @@ export class TeachersController {
     @Query('page') page: number,
     @Query('pageSize') pageSize: number,
   ) {
-    try {
-      const payload = { page, pageSize };
-      return await lastValueFrom(this.client.send('findAllUsers', payload));
-    } catch (error) {
-      throw new HttpException(
-        {
-          status: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Internal Server Error',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+    return await this.teachersService.findAll(page, pageSize);
   }
 
   @Get(':id')
@@ -86,18 +52,7 @@ export class TeachersController {
     description: 'Busca um professor pelo ID',
   })
   async findOne(@Param('id') id: string) {
-    try {
-      return await lastValueFrom(this.client.send('findOneTeacher', id));
-    } catch (error) {
-      throw new HttpException(
-        {
-          status: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Internal Server Error',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+    return await this.teachersService.findOne(id);
   }
 
   @Patch(':id')
@@ -108,25 +63,9 @@ export class TeachersController {
   async update(
     @Param('id') id: string,
     @Body(new ZodValidationPipe(updateTeacherUserInputSchema))
-    updateTeacherUserInputDto: UpdateTeacherUserInputDto,
+    data: UpdateTeacherUserInputDto,
   ) {
-    try {
-      const payload = {
-        ...updateTeacherUserInputDto,
-        role: UserRole.TEACHER,
-        id,
-      };
-      return await lastValueFrom(this.client.send('updateUser', payload));
-    } catch (error) {
-      throw new HttpException(
-        {
-          status: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Internal Server Error',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+    return await this.teachersService.update(id, data);
   }
 
   @Delete(':id')
@@ -135,17 +74,6 @@ export class TeachersController {
     description: 'Remove um professor pelo ID',
   })
   async remove(@Param('id') id: string) {
-    try {
-      return await lastValueFrom(this.client.send('removeUser', id));
-    } catch (error) {
-      throw new HttpException(
-        {
-          status: HttpStatus.INTERNAL_SERVER_ERROR,
-          message: 'Internal Server Error',
-          error: error.message,
-        },
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
-    }
+    return await this.teachersService.remove(id);
   }
 }

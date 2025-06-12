@@ -6,7 +6,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   imports: [
     ClientsModule.register([
       {
-        name: 'USERS_SERVICE_PROVIDER',
+        name: 'USERS_SERVICE_CONSUMER',
         transport: Transport.NATS,
         options: {
           servers: ['nats://localhost:4222'],

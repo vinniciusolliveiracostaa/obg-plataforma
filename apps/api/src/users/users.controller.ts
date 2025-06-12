@@ -3,16 +3,13 @@ import {
   Controller,
   Delete,
   Get,
-  HttpException,
-  HttpStatus,
-  Inject,
   Param,
   Patch,
   Post,
   Query,
   UsePipes,
 } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
+import { UsersService } from './users.service';
 import { ZodValidationPipe } from '@obg/pipes';
 import {
   CreateBaseUserDto,
@@ -21,40 +18,23 @@ import {
   updateBaseUserSchema,
 } from '@obg/schemas';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
-import { lastValueFrom } from 'rxjs';
-import { UserRole } from '@obg/enums';
 import { RequiredRoles } from '@obg/decorators';
+import { UserRole } from '@obg/enums';
 
 @ApiTags('Usuários')
 @RequiredRoles(UserRole.ADMIN)
 @Controller('users')
 export class UsersController {
-  constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
+  constructor(private readonly usersService: UsersService) {}
 
   @Post()
+  @UsePipes(new ZodValidationPipe(createBaseUserSchema))
   @ApiOperation({
     summary: 'Criar Usuário',
     description: 'Cria um usuário',
   })
-  @UsePipes(new ZodValidationPipe(createBaseUserSchema))
-  async create(@Body() createBaseUserDto: CreateBaseUserDto) {
-    try {
-      return await lastValueFrom(
-        this.client.send('createUser', createBaseUserDto),
-      );
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+  async create(@Body() data: CreateBaseUserDto) {
+    return await this.usersService.create(data);
   }
 
   @Get()
@@ -66,22 +46,7 @@ export class UsersController {
     @Query('page') page: number,
     @Query('pageSize') pageSize: number,
   ) {
-    const payload = { page, pageSize };
-    try {
-      return await lastValueFrom(this.client.send('findAllUsers', payload));
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+    return await this.usersService.findAll(page, pageSize);
   }
 
   @Get(':id')
@@ -90,21 +55,7 @@ export class UsersController {
     description: 'Obtém um usuário pelo ID',
   })
   async findOne(@Param('id') id: string) {
-    try {
-      return await lastValueFrom(this.client.send('findOneUser', id));
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+    return await this.usersService.findOne(id);
   }
 
   @Patch(':id')
@@ -115,24 +66,9 @@ export class UsersController {
   async update(
     @Param('id') id: string,
     @Body(new ZodValidationPipe(updateBaseUserSchema))
-    updateBaseUserDto: UpdateBaseUserDto,
+    data: UpdateBaseUserDto,
   ) {
-    const payload = { id, updateBaseUserDto };
-    try {
-      return await lastValueFrom(this.client.send('updateUser', payload));
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+    return await this.usersService.update(id, data);
   }
 
   @Delete(':id')
@@ -141,20 +77,6 @@ export class UsersController {
     description: 'Remove um usuário pelo ID',
   })
   async remove(@Param('id') id: string) {
-    try {
-      return await lastValueFrom(this.client.send('deleteUser', id));
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+    return await this.usersService.remove(id);
   }
 }

@@ -1,25 +1,16 @@
-import {
-  Controller,
-  Get,
-  HttpException,
-  HttpStatus,
-  Inject,
-  Post,
-  Request,
-  UseGuards,
-} from '@nestjs/common';
-import { firstValueFrom } from 'rxjs';
-import { ClientProxy } from '@nestjs/microservices';
+import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { CurrentUSer, IsPublic } from '@obg/decorators';
 import { AuthRequest } from '@obg/interfaces';
-import { LocalAuthGuard } from '../guards/local.guard';
+
 import { BaseUserDto } from '@obg/schemas';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
+import { AuthService } from './auth.service';
+import { LocalAuthGuard } from './guards/local.guard';
 
 @ApiTags('Autenticação')
 @Controller('auth')
 export class AuthController {
-  constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
+  constructor(private readonly authService: AuthService) {}
 
   @IsPublic()
   @UseGuards(LocalAuthGuard)
@@ -29,27 +20,12 @@ export class AuthController {
     description: 'Realiza o login do usuário',
   })
   async login(@Request() req: AuthRequest) {
-    try {
-      return await firstValueFrom(this.client.send('authLogin', req.user));
-    } catch (error) {
-      switch (error.message) {
-        default:
-          throw new HttpException(
-            {
-              status: HttpStatus.INTERNAL_SERVER_ERROR,
-              message: 'Internal Server Error',
-              error: error.message,
-            },
-            HttpStatus.INTERNAL_SERVER_ERROR,
-          );
-      }
-    }
+    return await this.authService.login(req);
   }
 
   @IsPublic()
   @Get('/profile')
   async profile(@CurrentUSer() currentUser: BaseUserDto): Promise<BaseUserDto> {
-    console.log(currentUser);
-    return currentUser;
+    return await this.authService.profile(currentUser);
   }
 }

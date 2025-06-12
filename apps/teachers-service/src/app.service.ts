@@ -1,61 +1,37 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { TeacherUserDto, UpdateTeacherUserDto } from '@obg/schemas';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Cache } from 'cache-manager';
+import { Teacher } from 'generated/prisma';
+import { TeacherUserDto } from '@obg/schemas';
 import { PrismaService } from './prisma/prisma.service';
-import { SpecialCategoriesType } from '@obg/enums';
-import { SpecialCategories, Teacher } from 'generated/prisma';
-import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class AppService {
   constructor(
+    @Inject('TEACHERS_SERVICE_CONSUMER') private client: ClientProxy,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private prisma: PrismaService,
-    @Inject('TEACHERS_SERVICE_PROVIDER') private client: ClientProxy,
   ) {}
 
-  async create(teacherUserDto: TeacherUserDto): Promise<Teacher> {
+  async create(data: TeacherUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
-        const existingTeacher = await tx.teacher.findUnique({
-          where: { email: teacherUserDto.email },
-        });
-
-        if (existingTeacher) {
-          throw new RpcException('TEACHER_ALREADY_EXISTS');
-        }
-
-        // Verificar existência da escola
-        await lastValueFrom(
-          this.client.send('findManySchools', teacherUserDto.schoolsId),
-        );
-
-        const mapToSpecialCategories = (
-          categories: SpecialCategoriesType[],
-        ): SpecialCategories[] => {
-          return categories as unknown as SpecialCategories[];
-        };
-
-        const createdTeacher = await tx.teacher.create({
+        return tx.teacher.create({
           data: {
-            id: teacherUserDto.id,
-            name: teacherUserDto.name,
-            email: teacherUserDto.email,
-            cpf: teacherUserDto.cpf,
-            phone: teacherUserDto.phone,
-            birthDate: teacherUserDto.birthDate,
-            gender: teacherUserDto.gender,
-            colorRace: teacherUserDto.colorRace,
-            specialCategories: mapToSpecialCategories(
-              teacherUserDto.specialCategories,
-            ),
-            schoolsId: teacherUserDto.schoolsId,
-            teamsId: teacherUserDto.teamsId,
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            cpf: data.cpf,
+            phone: data.phone,
+            birthDate: data.birthDate,
+            gender: data.gender,
+            colorRace: data.colorRace,
+            specialCategories: data.specialCategories,
+            schoolsId: data.schoolsId,
+            teamsId: data.teamsId,
           },
         });
-
-        this.client.emit('teacherCreated', createdTeacher);
-
-        return createdTeacher;
       });
     } catch (error) {
       throw new RpcException(error.message);
@@ -68,14 +44,20 @@ export class AppService {
   ): Promise<{ data: Teacher[]; total: number; totalPages: number }> {
     const MAX_PAGE_SIZE = 1000;
     try {
-      page = parseInt(page as unknown as string);
-      pageSize = parseInt(pageSize as unknown as string);
-      if (pageSize > MAX_PAGE_SIZE) {
-        throw new RpcException('PAGE_SIZE_TOO_LARGE');
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `teachers:page=${page}:pageSize=${pageSize}`;
+      const cached = await this.cacheManager.get<{
+        data: Teacher[];
+        total: number;
+        totalPages: number;
+      }>(cacheKey);
+
+      if (cached) {
+        return cached;
       }
 
-      const total = await this.prisma.teacher.count(); // Conta o total de registros
-      const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados
+      const total = await this.prisma.teacher.count(); // Contar o total de registros.
+      const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados.
 
       const data = await this.prisma.teacher.findMany({ skip, take: pageSize });
 
@@ -83,21 +65,34 @@ export class AppService {
 
       const result = { data, total, totalPages };
 
+      // Armazenar o resultado no cache.
+      await this.cacheManager.set(cacheKey, result, ttl);
+
       return result;
     } catch (error) {
       throw new RpcException(error.message);
     }
   }
 
-  async findOne(id: string): Promise<Teacher> {
+  async findOne(id: string) {
     try {
-      const teacher = await this.prisma.teacher.findUnique({
-        where: { id: id },
-      });
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `teacher:${id}`;
+
+      const cached = await this.cacheManager.get<Teacher>(cacheKey);
+
+      // Verifica se o professor já está no cache.
+      if (cached) {
+        return cached;
+      }
+      
+      const teacher = await this.prisma.teacher.findUnique({ where: { id } });
 
       if (!teacher) {
         throw new RpcException('TEACHER_NOT_FOUND');
       }
+
+      await this.cacheManager.set(cacheKey, teacher, ttl);
 
       return teacher;
     } catch (error) {
@@ -105,76 +100,42 @@ export class AppService {
     }
   }
 
-  async update(
-    id: string,
-    updateTeacherUserDto: UpdateTeacherUserDto,
-  ): Promise<Teacher> {
+  async update(data: TeacherUserDto) {
     try {
       return await this.prisma.$transaction(async (tx) => {
-        // Verifica se o professor existe
-        const existingTeacher = await tx.teacher.findUnique({
-          where: { id: id },
-        });
-
-        if (!existingTeacher) {
-          throw new RpcException('TEACHER_NOT_FOUND');
-        }
-
-        // Caso o email tenha sido alterado, verifica se já existe outro professor com o mesmo email
-        if (updateTeacherUserDto.email) {
-          const existingEmailTeacher = await tx.teacher.findFirst({
-            where: {
-              AND: [{ email: updateTeacherUserDto.email }, { id: { not: id } }],
-            },
-          });
-
-          if (existingEmailTeacher) {
-            throw new RpcException('EMAIL_ALREADY_IN_USE');
-          }
-        }
-
-        // Caso a escola tenha sido alterada, verifica se a escola existe
-        if (updateTeacherUserDto.schoolsId) {
-          await lastValueFrom(
-            this.client.send('findManySchools', updateTeacherUserDto.schoolsId),
-          );
-        }
-
-        const updatedTeacher = tx.teacher.update({
-          where: { id: id },
+        return tx.teacher.update({
+          where: { id: data.id },
           data: {
-            ...updateTeacherUserDto,
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            cpf: data.cpf,
+            phone: data.phone,
+            birthDate: data.birthDate,
+            gender: data.gender,
+            colorRace: data.colorRace,
+            specialCategories: data.specialCategories,
+            schoolsId: data.schoolsId,
+            teamsId: data.teamsId,
           },
         });
-        this.client.emit('teacherUpdated', updatedTeacher);
-        return updatedTeacher;
       });
     } catch (error) {
       throw new RpcException(error.message);
     }
   }
 
-  async remove(id: string): Promise<{ message: string }> {
+  async remove(data: TeacherUserDto) {
     try {
-      return await this.prisma.$transaction(async (tx) => {
-        // Verifica se o professor existe
-        const existingTeacher = await tx.teacher.findUnique({
-          where: { id: id },
+      const cacheKey = `teacher:${data.id}`;
+      await this.prisma.$transaction(async (tx) => {
+        return tx.teacher.delete({
+          where: { id: data.id },
         });
-
-        if (!existingTeacher) {
-          throw new RpcException('TEACHER_NOT_FOUND');
-        }
-
-        // Remove o professor
-        await tx.teacher.delete({
-          where: { id: id },
-        });
-
-        this.client.emit('teacherDeleted', { id });
-
-        return { message: 'TEACHER_REMOVED_SUCCESSFULLY' };
       });
+      // Remove o professor do cache
+      await this.cacheManager.del(cacheKey);
+      return { message: 'Teacher removed successfully', data: data.id };
     } catch (error) {
       throw new RpcException(error.message);
     }

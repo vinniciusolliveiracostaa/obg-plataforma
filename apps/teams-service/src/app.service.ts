@@ -1,26 +1,29 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { PrismaService } from './prisma/prisma.service';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
+import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Cache } from 'cache-manager';
 import { Team } from 'generated/prisma';
+import { PrismaService } from './prisma/prisma.service';
 import { CreateTeamDto, UpdateTeamDto } from '@obg/schemas';
 
 @Injectable()
 export class AppService {
   constructor(
+    @Inject('SCHOOLS_SERVICE_CONSUMER') private client: ClientProxy,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private prisma: PrismaService,
-    @Inject('TEAMS_SERVICE_PROVIDER') private client: ClientProxy,
   ) {}
 
-  async create(createTeamDto: CreateTeamDto): Promise<Team> {
+  async create(data: CreateTeamDto): Promise<Team> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const createdTeam = await tx.team.create({
           data: {
-            name: createTeamDto.name,
-            description: createTeamDto.description,
-            studentsId: createTeamDto.studentsId,
-            teacherId: createTeamDto.teacherId,
-            schoolId: createTeamDto.schoolId,
+            name: data.name,
+            description: data.description,
+            studentsId: data.studentsId,
+            teacherId: data.teacherId,
+            schoolId: data.schoolId,
           },
         });
 
@@ -45,7 +48,7 @@ export class AppService {
         throw new RpcException('PAGE_SIZE_EXCEEDED');
       }
 
-      const total = await this.prisma.team.count(); // Conta o total de registros
+      const total = await this.prisma.team.count(); // Conta o total de registros.
       const skip = (page - 1) * pageSize; // Calcula o número de registros a serem pulados
 
       const data = await this.prisma.team.findMany({ skip, take: pageSize });
@@ -73,12 +76,12 @@ export class AppService {
     }
   }
 
-  async update(id: string, updateTeamDto: UpdateTeamDto): Promise<Team> {
+  async update(id: string, data: UpdateTeamDto): Promise<Team> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const updatedTeam = await tx.team.update({
           where: { id: id },
-          data: { ...updateTeamDto },
+          data: { ...data },
         });
 
         this.client.emit('updatedTeam', updatedTeam);
