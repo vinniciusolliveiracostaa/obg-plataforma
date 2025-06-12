@@ -14,7 +14,7 @@ export class AppService {
     private prisma: PrismaService,
   ) {}
 
-  async create(data: TeacherUserDto) {
+  async create(data: TeacherUserDto): Promise<Teacher> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         return tx.teacher.create({
@@ -83,7 +83,7 @@ export class AppService {
     }
   }
 
-  async findOne(id: string) {
+  async findOne(id: string): Promise<Teacher> {
     try {
       const ttl = 60 * 60; // 1 hora
       const cacheKey = `teacher:${id}`;
@@ -109,7 +109,7 @@ export class AppService {
     }
   }
 
-  async update(data: TeacherUserDto) {
+  async update(data: TeacherUserDto): Promise<Teacher> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         return tx.teacher.update({
@@ -134,7 +134,9 @@ export class AppService {
     }
   }
 
-  async remove(data: TeacherUserDto) {
+  async remove(
+    data: TeacherUserDto,
+  ): Promise<{ message: string; data: string }> {
     try {
       const cacheKey = `teacher:${data.id}`;
       await this.prisma.$transaction(async (tx) => {
@@ -144,7 +146,7 @@ export class AppService {
       });
       // Remove o professor do cache
       await this.cacheManager.del(cacheKey);
-      return { message: 'Teacher removed successfully', data: data.id };
+      return { message: 'TEAM_REMOVED_SUCCESSFULLY', data: data.id };
     } catch (error) {
       throw new RpcException(error.message);
     }

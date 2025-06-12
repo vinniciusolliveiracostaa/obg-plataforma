@@ -121,7 +121,7 @@ export class AppService {
     }
   }
 
-  async remove(id: string): Promise<{ message: string }> {
+  async remove(id: string): Promise<{ message: string; data: string }> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const existingTeam = await tx.team.findUnique({ where: { id: id } });
@@ -133,7 +133,7 @@ export class AppService {
 
         this.client.emit('deletedTeam', existingTeam);
 
-        return { message: 'TEAM_REMOVED_SUCCESSFULLY' };
+        return { message: 'TEAM_REMOVED_SUCCESSFULLY', data: id };
       });
     } catch (error) {
       throw new RpcException(error.message);

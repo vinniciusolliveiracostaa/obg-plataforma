@@ -18,7 +18,7 @@ export class LocalStrategy extends PassportStrategy(Strategy, 'local') {
     const payload = { email, password };
     try {
       const user = await firstValueFrom(
-        this.client.send('authValidateUser', payload),
+        this.client.send('auth.validate', payload),
       );
 
       console.log('🧍 Resultado da validação:', user);

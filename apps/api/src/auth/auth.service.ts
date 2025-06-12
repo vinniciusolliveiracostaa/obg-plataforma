@@ -10,7 +10,7 @@ export class AuthService {
 
   async login(req: AuthRequest) {
     console.log(req.user);
-    return await firstValueFrom(this.client.send('authLogin', req.user));
+    return await firstValueFrom(this.client.send('auth.login', req.user));
   }
 
   async profile(currentUser: BaseUserDto): Promise<BaseUserDto> {

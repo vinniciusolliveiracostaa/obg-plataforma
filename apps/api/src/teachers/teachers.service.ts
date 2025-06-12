@@ -16,16 +16,16 @@ export class TeachersService {
       ...data,
       role: UserRole.TEACHER,
     };
-    return await lastValueFrom(this.client.send('createOneTeacher', payload));
+    return await lastValueFrom(this.client.send('user.create', payload));
   }
 
   async findAll(page: number, pageSize: number) {
     const payload = { page, pageSize };
-    return await lastValueFrom(this.client.send('findAllTeachers', payload));
+    return await lastValueFrom(this.client.send('teacher.findAll', payload));
   }
 
   async findOne(id: string) {
-    return await lastValueFrom(this.client.send('findOneTeacher', id));
+    return await lastValueFrom(this.client.send('teacher.findOne', id));
   }
 
   async update(id: string, data: UpdateTeacherUserInputDto) {
@@ -34,10 +34,10 @@ export class TeachersService {
       role: UserRole.TEACHER,
       id,
     };
-    return await lastValueFrom(this.client.send('updateOneTeacher', payload));
+    return await lastValueFrom(this.client.send('user.update', payload));
   }
 
   async remove(id: string) {
-    return await lastValueFrom(this.client.send('removeOneTeacher', id));
+    return await lastValueFrom(this.client.send('user.remove', id));
   }
 }

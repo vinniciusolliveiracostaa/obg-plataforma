@@ -15,7 +15,7 @@ export class AppService {
     private prisma: PrismaService,
   ) {}
 
-  async create(data: CreateBaseUserDto) {
+  async create(data: CreateBaseUserDto): Promise<User> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         const existingUser = await tx.user.findUnique({
@@ -41,7 +41,7 @@ export class AppService {
 
         const { password, ...payload } = data;
 
-        this.client.emit('createdUser', payload);
+        this.client.emit('user.created', payload);
 
         return createdUser;
       });
@@ -94,7 +94,7 @@ export class AppService {
     }
   }
 
-  async findOne(id: string) {
+  async findOne(id: string): Promise<User> {
     try {
       const ttl = 60 * 60; // 1 hora
       const cacheKey = `user:${id}`;
@@ -133,7 +133,7 @@ export class AppService {
     }
   }
 
-  async update(id: string, data: UpdateBaseUserDto) {
+  async update(id: string, data: UpdateBaseUserDto): Promise<User> {
     try {
       return await this.prisma.$transaction(async (tx) => {
         // Verificar se o usuário existe.
@@ -151,17 +151,21 @@ export class AppService {
         }
 
         // Atualiza o usuário
-        return tx.user.update({
+        const updatedUser = tx.user.update({
           where: { id },
           data: { ...data },
         });
+
+        // Emitir evento de usuário atualizado
+        this.client.emit('user.updated', updatedUser);
+        return updatedUser;
       });
     } catch (error) {
       throw new RpcException(error.message);
     }
   }
 
-  async delete(id: string) {
+  async delete(id: string): Promise<{ message: string; data: string }> {
     try {
       await this.prisma.$transaction(async (tx) => {
         // Verificar se o usuário existe.
@@ -173,8 +177,10 @@ export class AppService {
 
         // Deletar o usuário
         await tx.user.delete({ where: { id } });
+        // Emitir evento de usuário removido
+        this.client.emit('user.removed', existingUser);
       });
-      return { message: 'USER_REMOVED_SUCCESSFULLY' };
+      return { message: 'USER_REMOVED_SUCCESSFULLY', data: id };
     } catch (error) {
       throw new RpcException(error.message);
     }

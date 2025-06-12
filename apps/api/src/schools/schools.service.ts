@@ -8,24 +8,24 @@ export class SchoolsService {
   constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
 
   async create(data: CreateSchoolDto) {
-    return await lastValueFrom(this.client.send('createOneSchool', data));
+    return await lastValueFrom(this.client.send('school.create', data));
   }
 
   async findAll(page: number, pageSize: number) {
     const payload = { page, pageSize };
-    return await lastValueFrom(this.client.send('findAllSchools', payload));
+    return await lastValueFrom(this.client.send('school.findAll', payload));
   }
 
   async findOne(id: string) {
-    return await lastValueFrom(this.client.send('findOneSchool', id));
+    return await lastValueFrom(this.client.send('school.findOne', id));
   }
 
   async update(id: string, data: UpdateSchoolDto) {
     const payload = { id, data };
-    return await lastValueFrom(this.client.send('updateOneSchool', payload));
+    return await lastValueFrom(this.client.send('school.update', payload));
   }
 
   async remove(id: string) {
-    return await lastValueFrom(this.client.send('removeOneSchool', id));
+    return await lastValueFrom(this.client.send('school.remove', id));
   }
 }

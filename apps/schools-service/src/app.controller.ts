@@ -8,37 +8,37 @@ import { CreateSchoolDto, UpdateSchoolDto } from '@obg/schemas';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern('createSchool')
+  @MessagePattern('school.create')
   async create(@Payload() data: CreateSchoolDto) {
     return await this.appService.create(data);
   }
 
-  @MessagePattern('findAllSchools')
+  @MessagePattern('school.findAll')
   async findAll(@Payload() payload: { page: number; pageSize: number }) {
     return await this.appService.findAll(payload.page, payload.pageSize);
   }
 
-  @MessagePattern('findManySchools')
+  @MessagePattern('school.findMany')
   async findMany(@Payload() schoolsId: string[]) {
     return await this.appService.findMany(schoolsId);
   }
 
-  @MessagePattern('findOneSchool')
+  @MessagePattern('school.findOne')
   async findOne(@Payload() id: string) {
     return await this.appService.findOne(id);
   }
 
-  @MessagePattern('updateSchool')
+  @MessagePattern('school.update')
   async update(@Payload() payload: { id: string; data: UpdateSchoolDto }) {
     return await this.appService.update(payload.id, payload.data);
   }
 
-  @MessagePattern('removeSchool')
+  @MessagePattern('school.remove')
   async remove(@Payload() id: string) {
     return await this.appService.remove(id);
   }
 
-  @EventPattern('uploadSchoolsCsv')
+  @EventPattern('school.upload')
   async uploadCsv(@Payload() data: { metadata: ChunkMetadata; data: string }) {
     return await this.appService.uploadCsv(data.metadata, data.data);
   }

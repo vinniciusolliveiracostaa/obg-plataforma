@@ -7,27 +7,27 @@ import { CreateTeamDto, UpdateTeamDto } from '@obg/schemas';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern('createTeam')
+  @MessagePattern('team.create')
   async create(@Payload() data: CreateTeamDto) {
     return await this.appService.create(data);
   }
 
-  @MessagePattern('findAllTeams')
+  @MessagePattern('team.findAll')
   async findAll(@Payload() payload: { page: number; pageSize: number }) {
     return await this.appService.findAll(payload.page, payload.pageSize);
   }
 
-  @MessagePattern('findOneTeam')
+  @MessagePattern('team.findOne')
   async findOne(@Payload() id: string) {
     return await this.appService.findOne(id);
   }
 
-  @MessagePattern('updateTeam')
+  @MessagePattern('team.update')
   async update(@Payload() payload: { id: string; data: UpdateTeamDto }) {
     return await this.appService.update(payload.id, payload.data);
   }
 
-  @MessagePattern('removeTeam')
+  @MessagePattern('team.remove')
   async remove(@Payload() id: string) {
     return await this.appService.remove(id);
   }

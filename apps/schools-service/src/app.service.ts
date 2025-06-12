@@ -150,7 +150,7 @@ export class AppService {
     }
   }
 
-  async remove(id: string): Promise<{ message: string }> {
+  async remove(id: string): Promise<{ message: string; data: string }> {
     try {
       await this.prisma.$transaction(async (tx) => {
         // Check if the school exists
@@ -166,7 +166,7 @@ export class AppService {
         await tx.school.delete({ where: { id } });
       });
 
-      return { message: 'SCHOOL_REMOVED_SUCCESSFULLY' };
+      return { message: 'SCHOOL_REMOVED_SUCCESSFULLY', data: id };
     } catch (error) {
       throw new RpcException(error.message);
     }

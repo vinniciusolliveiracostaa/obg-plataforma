@@ -7,33 +7,33 @@ import { CreateBaseUserDto, UpdateBaseUserDto } from '@obg/schemas';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern('createUser')
+  @MessagePattern('user.create')
   async create(@Payload() data: CreateBaseUserDto) {
     return await this.appService.create(data);
   }
 
-  @MessagePattern('findAllUsers')
+  @MessagePattern('user.findAll')
   async findAll(@Payload() payload: { page: number; pageSize: number }) {
     return await this.appService.findAll(payload.page, payload.pageSize);
   }
 
-  @MessagePattern('findOneUser')
+  @MessagePattern('user.findOne')
   async findOne(@Payload() id: string) {
     return await this.appService.findOne(id);
   }
 
-  @MessagePattern('findOneUserByEmail')
+  @MessagePattern('user.findOneByEmail')
   async findOneByEmail(@Payload() email: string) {
     console.log('findOneByEmail', email);
     return await this.appService.findOneByEmail(email);
   }
 
-  @MessagePattern('updateUser')
+  @MessagePattern('user.update')
   async update(@Payload() payload: { id: string; data: UpdateBaseUserDto }) {
     return await this.appService.update(payload.id, payload.data);
   }
 
-  @MessagePattern('deleteUser')
+  @MessagePattern('user.delete')
   async delete(@Payload() id: string) {
     return await this.appService.delete(id);
   }

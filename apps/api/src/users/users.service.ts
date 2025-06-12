@@ -8,24 +8,24 @@ export class UsersService {
   constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
 
   async create(data: CreateBaseUserDto) {
-    return await lastValueFrom(this.client.send('createUser', data));
+    return await lastValueFrom(this.client.send('user.create', data));
   }
 
   async findAll(page: number, pageSize: number) {
     const payload = { page, pageSize };
-    return await lastValueFrom(this.client.send('findAllUsers', payload));
+    return await lastValueFrom(this.client.send('user.findAll', payload));
   }
 
   async findOne(id: string) {
-    return await lastValueFrom(this.client.send('findOneUser', id));
+    return await lastValueFrom(this.client.send('user.findOne', id));
   }
 
   async update(id: string, data: UpdateBaseUserDto) {
     const payload = { id, data };
-    return await lastValueFrom(this.client.send('updateUser', payload));
+    return await lastValueFrom(this.client.send('user.update', payload));
   }
 
   async remove(id: string) {
-    return await lastValueFrom(this.client.send('removeUser', id));
+    return await lastValueFrom(this.client.send('user.remove', id));
   }
 }

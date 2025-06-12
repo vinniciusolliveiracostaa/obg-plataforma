@@ -7,12 +7,12 @@ import { BaseUserDto } from '@obg/schemas';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern('authLogin')
+  @MessagePattern('auth.login')
   async login(@Payload() user: BaseUserDto) {
     return await this.appService.login(user);
   }
 
-  @MessagePattern('authValidateUser')
+  @MessagePattern('auth.validate')
   async validateUser(
     @Payload() payload: { email: string; password: string },
   ): Promise<BaseUserDto> {
