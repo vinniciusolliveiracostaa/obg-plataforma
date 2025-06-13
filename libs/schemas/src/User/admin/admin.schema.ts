@@ -11,4 +11,9 @@ export const adminUserSchema = baseUserSchema
 export const createAdminUserSchema = adminUserSchema.omit({ id: true });
 export const updateAdminUserSchema = adminUserSchema
   .partial()
+  .extend({ role: z.literal(UserRole.ADMIN) })
   .omit({ id: true });
+export const removeAdminUserSchema = adminUserSchema.pick({
+  id: true,
+  role: true,
+});

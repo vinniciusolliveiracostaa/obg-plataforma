@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { NatsModule } from './nats/nats.module';
 import { RedisModule } from './redis/redis.module';
+import { UserIntegrityService } from './user-integrity.service';
 
 @Module({
   imports: [
@@ -14,6 +15,6 @@ import { RedisModule } from './redis/redis.module';
     RedisModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, UserIntegrityService],
 })
 export class AppModule {}

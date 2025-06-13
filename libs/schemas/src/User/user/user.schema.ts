@@ -10,3 +10,4 @@ export const userSchema = baseUserSchema
 
 export const createUserSchema = userSchema.omit({ id: true });
 export const updateUserSchema = userSchema.partial().omit({ id: true });
+export const removeUserSchema = userSchema.pick({ id: true, role: true });

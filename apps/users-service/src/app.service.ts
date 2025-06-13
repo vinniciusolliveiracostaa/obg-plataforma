@@ -6,17 +6,23 @@ import { User } from 'generated/prisma';
 import * as argon2 from 'argon2';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
+import { UserIntegrityService } from './user-integrity.service';
+import { UserRole } from '@obg/enums';
 
 @Injectable()
 export class AppService {
   constructor(
     @Inject('USERS_SERVICE_CONSUMER') private client: ClientProxy,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
+    private readonly userIntegrityService: UserIntegrityService,
     private prisma: PrismaService,
   ) {}
 
   async create(data: CreateBaseUserDto): Promise<User> {
     try {
+      // Validações específicas para o tipo de usuário
+      await this.userIntegrityService.validateCreate(data);
+
       return await this.prisma.$transaction(async (tx) => {
         const existingUser = await tx.user.findUnique({
           where: { email: data.email },
@@ -135,6 +141,9 @@ export class AppService {
 
   async update(id: string, data: UpdateBaseUserDto): Promise<User> {
     try {
+      // Validações específicas para o tipo de usuário
+      await this.userIntegrityService.validateUpdate(id, data);
+
       return await this.prisma.$transaction(async (tx) => {
         // Verificar se o usuário existe.
         const existingUser = await this.prisma.user.findUnique({
@@ -174,7 +183,12 @@ export class AppService {
         if (!existingUser) {
           throw new RpcException('USER_NOT_FOUND');
         }
-
+        // Validações específicas para o tipo de usuário
+        const data = {
+          id: existingUser.id,
+          role: existingUser.role as UserRole,
+        };
+        await this.userIntegrityService.validateRemove(data);
         // Deletar o usuário
         await tx.user.delete({ where: { id } });
         // Emitir evento de usuário removido

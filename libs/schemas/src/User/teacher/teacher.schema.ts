@@ -20,11 +20,17 @@ export const teacherUserSchema = baseUserSchema
 export const createTeacherUserSchema = teacherUserSchema.omit({ id: true });
 export const updateTeacherUserSchema = teacherUserSchema
   .partial()
+  .extend({ role: z.literal(UserRole.TEACHER) })
   .omit({ id: true });
+export const removeTeacherUserSchema = teacherUserSchema.pick({
+  id: true,
+  role: true,
+});
 
 export type TeacherUserDto = z.infer<typeof teacherUserSchema>;
 export type CreateTeacherUserDto = z.infer<typeof createTeacherUserSchema>;
 export type UpdateTeacherUserDto = z.infer<typeof updateTeacherUserSchema>;
+export type RemoveTeacherUserDto = z.infer<typeof removeTeacherUserSchema>;
 
 // Schema e tipo para input de criação de usuário
 export const createTeacherUserInputSchema = createTeacherUserSchema.omit({

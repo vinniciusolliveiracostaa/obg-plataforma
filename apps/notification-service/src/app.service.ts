@@ -24,4 +24,6 @@ export class AppService {
       throw new RpcException(error.message);
     }
   }
+
+  async handlePasswordReset() {}
 }

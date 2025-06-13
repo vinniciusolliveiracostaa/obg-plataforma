@@ -10,6 +10,7 @@ export * from './UF/uf.schema';
 
 // Auth Schema
 export * from './Auth/auth.schema';
+export * from './Auth/permissions.schema';
 
 // User Schema
 export * from './User/base/base-user.schema';

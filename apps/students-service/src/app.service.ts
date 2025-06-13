@@ -86,6 +86,34 @@ export class AppService {
     }
   }
 
+  async findOneByEmail(email: string): Promise<Student> {
+    try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `student:email:${email}`;
+
+      const cached = await this.cacheManager.get<Student>(cacheKey);
+      // Verifica se o estudante já está no cache
+
+      if (cached) {
+        return cached;
+      }
+
+      const student = await this.prisma.student.findUnique({
+        where: { email },
+      });
+
+      if (!student) {
+        throw new RpcException('STUDENT_NOT_FOUND');
+      }
+
+      await this.cacheManager.set(cacheKey, student, ttl);
+
+      return student;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   async findOne(id: string): Promise<Student> {
     try {
       const ttl = 60 * 60; // 1 hora

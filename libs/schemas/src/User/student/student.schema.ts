@@ -30,11 +30,17 @@ export const studentUserSchema = baseUserSchema
 export const createStudentUserSchema = studentUserSchema.omit({ id: true });
 export const updateStudentUserSchema = studentUserSchema
   .partial()
+  .extend({ role: z.literal(UserRole.STUDENT) })
   .omit({ id: true });
+export const removeStudentUserSchema = studentUserSchema.pick({
+  id: true,
+  role: true,
+});
 
 export type StudentUserDto = z.infer<typeof studentUserSchema>;
 export type CreateStudentUserDto = z.infer<typeof createStudentUserSchema>;
 export type UpdateStudentUserDto = z.infer<typeof updateStudentUserSchema>;
+export type RemoveStudentUserDto = z.infer<typeof removeStudentUserSchema>;
 
 // Schema e tipo para input de criação de usuário
 export const createStudentUserInputSchema = createStudentUserSchema.omit({
@@ -51,6 +57,7 @@ export const updateStudentUserInputSchema = updateStudentUserSchema.omit({
 export type UpdateStudentUserInputDto = z.infer<
   typeof updateStudentUserInputSchema
 >;
+
 // Schema para a resposta da API (lista de estudantes)
 export const studentsResponseSchema = z.object({
   data: z.array(studentUserSchema),

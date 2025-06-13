@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações.">
-      <change afterPath="$PROJECT_DIR$/apps/notification-service/.swcrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/notification-service/src/nats/nats.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apps/notification-service/templates/welcome.hbs" afterDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule.">
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/user-integrity.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api.http" beforeDir="false" afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/nest-cli.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +255,7 @@
       <workItem from="1749528792675" duration="616000" />
       <workItem from="1749536745176" duration="2407000" />
       <workItem from="1749569958742" duration="10823000" />
-      <workItem from="1749595577661" duration="29438000" />
+      <workItem from="1749595577661" duration="33129000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -517,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749761340833</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule.">
+      <option name="closed" value="true" />
+      <created>1749770465781</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1749770465781</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="fix: update zod version to 3.25.23 in pnpm-lock.yaml" />
     <MESSAGE value="feat: add authentication and user management modules with schemas and controllers" />
     <MESSAGE value="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores." />
     <MESSAGE value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
@@ -561,6 +564,7 @@
     <MESSAGE value="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml" />
     <MESSAGE value="feat: implementar cache para paginacao de usuários, equipes e professores" />
     <MESSAGE value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
+    <MESSAGE value="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule." />
   </component>
 </project>

@@ -48,7 +48,6 @@ model Teacher {
   colorRace         Race
   specialCategories SpecialCategories[] @default([])
   schoolsId         String[]
-  teamsId           String[]            @default([])
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @updatedAt
 }

@@ -29,7 +29,6 @@ export class AppService {
             colorRace: data.colorRace,
             specialCategories: data.specialCategories,
             schoolsId: data.schoolsId,
-            teamsId: data.teamsId,
           },
         });
       });
@@ -83,6 +82,34 @@ export class AppService {
     }
   }
 
+  async findOneByEmail(email: string): Promise<Teacher> {
+    try {
+      const ttl = 60 * 60; // 1 hora
+      const cacheKey = `teacher:email:${email}`;
+
+      const cached = await this.cacheManager.get<Teacher>(cacheKey);
+      // Verifica se o professor já está no cache.
+
+      if (cached) {
+        return cached;
+      }
+
+      const teacher = await this.prisma.teacher.findUnique({
+        where: { email },
+      });
+
+      if (!teacher) {
+        throw new RpcException('TEACHER_NOT_FOUND');
+      }
+
+      await this.cacheManager.set(cacheKey, teacher, ttl);
+
+      return teacher;
+    } catch (error) {
+      throw new RpcException(error.message);
+    }
+  }
+
   async findOne(id: string): Promise<Teacher> {
     try {
       const ttl = 60 * 60; // 1 hora
@@ -125,7 +152,6 @@ export class AppService {
             colorRace: data.colorRace,
             specialCategories: data.specialCategories,
             schoolsId: data.schoolsId,
-            teamsId: data.teamsId,
           },
         });
       });
