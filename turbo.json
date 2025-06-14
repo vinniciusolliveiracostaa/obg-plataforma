@@ -4,20 +4,17 @@
   "tasks": {
     "build": {
       "dependsOn": [
-        "^build",
-        "^db:generate"
+        "^prisma:generate",
+        "^build"
       ],
       "inputs": [
         "$TURBO_DEFAULT$",
         ".env*"
       ],
       "outputs": [
+        "dist/**",
         ".next/**",
-        "!.next/cache/**",
-        "dist/**"
-      ],
-      "env": [
-        "DATABASE_URL"
+        "!.next/cache/**"
       ]
     },
     "lint": {
@@ -32,19 +29,19 @@
     },
     "dev": {
       "dependsOn": [
-        "^db:generate"
+        "^prisma:generate"
       ],
       "cache": false,
       "persistent": true
     },
-    "db:generate": {
+    "prisma:generate": {
       "cache": false
     },
-    "db:migrate": {
+    "prisma:migrate": {
       "cache": false,
       "persistent": true
     },
-    "db:deploy": {
+    "prisma:deploy": {
       "cache": false
     }
   }

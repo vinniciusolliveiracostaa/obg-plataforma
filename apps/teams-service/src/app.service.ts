@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
-import { Team } from 'generated/prisma';
+import { Team } from '@prisma/client';
 import { PrismaService } from './prisma/prisma.service';
 import { CreateTeamDto, UpdateTeamDto } from '@obg/schemas';
 

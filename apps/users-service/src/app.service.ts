@@ -2,7 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CreateBaseUserDto, UpdateBaseUserDto } from '@obg/schemas';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { PrismaService } from './prisma/prisma.service';
-import { User } from 'generated/prisma';
+import { User } from '@prisma/client';
 import * as argon2 from 'argon2';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
