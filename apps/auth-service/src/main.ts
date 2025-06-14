@@ -9,7 +9,7 @@ async function bootstrap() {
       transport: Transport.NATS,
       options: {
         queue: 'AUTH_SERVICE',
-        servers: ['nats://localhost:4222'],
+        url: process.env.NATS_URL ?? 'nats://localhost:4222',
       },
     },
   );
