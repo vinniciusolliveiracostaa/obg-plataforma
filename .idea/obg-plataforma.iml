@@ -15,6 +15,23 @@
       <excludeFolder url="file://$MODULE_DIR$/libs/dtos/dist" />
       <excludeFolder url="file://$MODULE_DIR$/apps/teams-service/generated/prisma" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/auth-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/notification-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/observability-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/schools-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/students-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/teachers-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/teams-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/users-service/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/apps/web/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/common/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/decorators/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/enums/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/exception-filters/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/interfaces/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/pipes/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/schemas/.turbo" />
+      <excludeFolder url="file://$MODULE_DIR$/libs/utils/.turbo" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

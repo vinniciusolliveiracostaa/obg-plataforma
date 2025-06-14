@@ -28,9 +28,6 @@
       ]
     },
     "dev": {
-      "dependsOn": [
-        "prisma:generate"
-      ],
       "cache": false,
       "persistent": true
     },
@@ -46,6 +43,19 @@
     },
     "prod": {
       "cache": false
+    },
+    "docker": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "Dockerfile",
+        ".dockerignore"
+      ],
+      "outputs": []
     }
   }
 }
