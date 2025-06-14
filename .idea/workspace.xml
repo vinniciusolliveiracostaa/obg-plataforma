@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule.">
-      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/user-integrity.service.ts" afterDir="false" />
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: implementar validações de integridade para criação, atualização e remoção de usuários">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/notification-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/libs/schemas/src/User/teacher/teacher.schema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,69 +67,69 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.api/Dockerfile.executor": "Run",
-    "Docker.docker-compose.yaml.nats: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
-    "HTTP Request.All in api.executor": "Run",
-    "HTTP Request.api | #14.executor": "Run",
-    "HTTP Request.api | #2.executor": "Run",
-    "HTTP Request.api | #7.executor": "Run",
-    "HTTP Request.api | #8.executor": "Run",
-    "HTTP Request.api | Atualizar Escola.executor": "Run",
-    "HTTP Request.api | Atualizar Usuário.executor": "Run",
-    "HTTP Request.api | Autenticação.executor": "Run",
-    "HTTP Request.api | Deletar Usuário.executor": "Run",
-    "HTTP Request.api | Escolas.executor": "Run",
-    "HTTP Request.api | Obter Escola por CUID.executor": "Run",
-    "HTTP Request.api | Obter Escolas.executor": "Run",
-    "HTTP Request.api | Obter Usuário por ID.executor": "Run",
-    "HTTP Request.api | Obter Usuários.executor": "Run",
-    "HTTP Request.api | Profile.executor": "Run",
-    "HTTP Request.api | Schools.executor": "Run",
-    "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
-    "HTTP Request.api | Usuários (1).executor": "Run",
-    "HTTP Request.api | Usuários.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Node.js.schools-csv.service.ts.executor": "Run",
-    "Node.js.teachers-service > app.service.ts.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "development",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "23.11.1",
-    "javascript.nodejs.core.library.typings.version": "24.0.0",
-    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/notification-service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/vinni/.local/share/fnm/aliases/default/bin/node",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
-    "rearrange.code.on.save": "true",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.language.and.region",
-    "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.api/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.nats: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.postgres: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yaml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.All in api.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | #14.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | #7.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | #8.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Atualizar Escola.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Atualizar Usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Autenticação.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Deletar Usuário.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Escolas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Obter Escola por CUID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Obter Escolas.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Obter Usuário por ID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Obter Usuários.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Profile.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Schools.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Upload Escolas via CSV.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Usuários (1).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.api | Usuários.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.schools-csv.service.ts.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.teachers-service &gt; app.service.ts.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;23.11.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;24.0.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/notification-service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/vinni/.local/share/fnm/aliases/default/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.and.region&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "TypeScript"
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TypeScript&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/apps/notification-service" />
@@ -148,11 +139,11 @@
       <recent name="$PROJECT_DIR$/apps/students-service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/users-service/src" />
       <recent name="$PROJECT_DIR$/apps/notification-service" />
       <recent name="$PROJECT_DIR$/libs/errors/src/user" />
       <recent name="$PROJECT_DIR$/apps/api/src/strategies" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/apps/web/src/app/(private)/(dashboard)/schools/components/data-table" />
     </key>
   </component>
   <component name="RunManager" selected="HTTP Request.api | Usuários (1)">
@@ -256,6 +247,8 @@
       <workItem from="1749536745176" duration="2407000" />
       <workItem from="1749569958742" duration="10823000" />
       <workItem from="1749595577661" duration="33129000" />
+      <workItem from="1749788533434" duration="8545000" />
+      <workItem from="1749837893007" duration="2908000" />
     </task>
     <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
       <option name="closed" value="true" />
@@ -521,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749770465781</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: implementar validações de integridade para criação, atualização e remoção de usuários">
+      <option name="closed" value="true" />
+      <created>1749796361380</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1749796361380</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CODE_SMELLS_PROFILE" value="Project Default" />
-    <MESSAGE value="feat: add authentication and user management modules with schemas and controllers" />
     <MESSAGE value="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores." />
     <MESSAGE value="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações" />
     <MESSAGE value="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente" />
@@ -565,6 +565,7 @@
     <MESSAGE value="feat: implementar cache para paginacao de usuários, equipes e professores" />
     <MESSAGE value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
     <MESSAGE value="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule." />
+    <MESSAGE value="feat: implementar validações de integridade para criação, atualização e remoção de usuários" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implementar validações de integridade para criação, atualização e remoção de usuários" />
   </component>
 </project>
