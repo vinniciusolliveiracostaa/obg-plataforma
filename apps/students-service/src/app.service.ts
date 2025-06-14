@@ -4,7 +4,7 @@ import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { StudentUserDto } from '@obg/schemas';
 import { PrismaService } from './prisma/prisma.service';
-import { Student } from '@prisma/client';
+import { Student } from 'generated/prisma';
 
 @Injectable()
 export class AppService {

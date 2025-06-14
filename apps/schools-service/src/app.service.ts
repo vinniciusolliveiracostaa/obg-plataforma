@@ -5,7 +5,7 @@ import { CreateSchoolDto, UpdateSchoolDto } from '@obg/schemas';
 import { ChunkMetadata } from '@obg/interfaces';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
-import { School } from '@prisma/client';
+import { School } from 'generated/prisma';
 
 @Injectable()
 export class AppService {
