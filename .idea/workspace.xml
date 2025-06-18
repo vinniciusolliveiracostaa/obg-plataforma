@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="feat: terminando migração para yarn">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/@types/express/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/jwt-auth/jwt-auth.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/jwt-auth/jwt-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/local-auth/local-auth.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/local-auth/local-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/refresh-auth/refresh-auth.guard.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/guards/refresh-auth/refresh-auth.guard.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/strategies/jwt-auth/jwt.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/auth/strategies/local-auth/local.strategy.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/schools/schools.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/students/students.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teachers/teachers.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/teams/teams.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/src/users/users.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/api/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/jwt/jwt.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/auth-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/mailer/mailer.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/templates/welcome.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/notifications-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/prisma/migrations/20250610184933_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/src/redis/redis.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/schools-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/prisma/migrations/20250618071825_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/src/redis/redis.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/students-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/20250613040001_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/src/redis/redis.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teachers-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.prettierrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/eslint.config.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/nest-cli.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/20250610193134_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/app.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/src/redis/redis.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/test/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/test/jest-e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/teams-service/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/.swcrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/prisma/migrations/20250618061700_/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/prisma/migrations/migration_lock.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/prisma/schema.prisma" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/config/configuration.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/config/nats.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/nats/nats.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/prisma/prisma.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/prisma/prisma.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/redis/redis.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/src/user-integrity.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/users-service/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarn/install-state.gz" beforeDir="false" afterPath="$PROJECT_DIR$/.yarn/install-state.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/api/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/api/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/auth-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/auth-service/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/nest-cli.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/nest-cli.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/app.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/users-service/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/users-service/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/common/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/decorators/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/decorators/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/enums/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/enums/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/exception-filters/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/exception-filters/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/interfaces/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/interfaces/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/pipes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/pipes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/schemas/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/schemas/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myAllFileTypesSelected" value="true" />
+    <option name="mySelectedFileTypes">
+      <set />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="development" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="vinniciusolliveiracostaa &lt;vinnicius.olliveira.costaa@outlook.com.br&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vinniciusolliveiracostaa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vinniciusolliveiracostaa/obg-plataforma.git&quot;,
+    &quot;accountId&quot;: &quot;b41ae52d-a9de-4f05-9b50-2adbc13735c5&quot;
+  }
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2wvTWnPzy44szK8xtpYczE41K0v" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.api/Dockerfile (1).executor": "Run",
+    "Docker.api/Dockerfile.executor": "Run",
+    "Docker.auth-service/Dockerfile.executor": "Run",
+    "Docker.docker-compose.yaml.nats: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.postgres: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml.redis: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yaml: Deploy do Compose.executor": "Run",
+    "HTTP Request.All in api.executor": "Run",
+    "HTTP Request.api | #14.executor": "Run",
+    "HTTP Request.api | #2.executor": "Run",
+    "HTTP Request.api | #7.executor": "Run",
+    "HTTP Request.api | #8.executor": "Run",
+    "HTTP Request.api | Atualizar Escola.executor": "Run",
+    "HTTP Request.api | Atualizar Usuário.executor": "Run",
+    "HTTP Request.api | Autenticação.executor": "Run",
+    "HTTP Request.api | Deletar Usuário.executor": "Run",
+    "HTTP Request.api | Escolas.executor": "Run",
+    "HTTP Request.api | Obter Escola por CUID.executor": "Run",
+    "HTTP Request.api | Obter Escolas.executor": "Run",
+    "HTTP Request.api | Obter Usuário por ID.executor": "Run",
+    "HTTP Request.api | Obter Usuários.executor": "Run",
+    "HTTP Request.api | Profile.executor": "Run",
+    "HTTP Request.api | Schools.executor": "Run",
+    "HTTP Request.api | Upload Escolas via CSV.executor": "Run",
+    "HTTP Request.api | Usuários (1).executor": "Run",
+    "HTTP Request.api | Usuários.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.schools-csv.service.ts.executor": "Run",
+    "Node.js.teachers-service > app.service.ts.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "23.11.1",
+    "javascript.nodejs.core.library.typings.version": "24.0.0",
+    "last_opened_file_path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/apps/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/home/vinni/.local/share/fnm/aliases/default/bin/node",
+    "nodejs_package_manager_path": "yarn",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/prettier",
+    "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/home/vinni/Desktop/Projetos/OBG/Desenvolvimento/obg-plataforma/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "TypeScript"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api" />
+      <recent name="$PROJECT_DIR$/apps/notifications-service" />
+      <recent name="$PROJECT_DIR$/apps/schools-service" />
+      <recent name="$PROJECT_DIR$/apps/students-service" />
+      <recent name="$PROJECT_DIR$/apps/teachers-service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apps/api/src/auth/strategies/local-auth" />
+      <recent name="$PROJECT_DIR$/apps/api/src/auth/strategies/jwt-auth" />
+      <recent name="$PROJECT_DIR$/apps/users-service/src" />
+      <recent name="$PROJECT_DIR$/apps/notification-service" />
+      <recent name="$PROJECT_DIR$/libs/errors/src/user" />
+    </key>
+  </component>
+  <component name="RunManager" selected="HTTP Request.api | Usuários (1)">
+    <configuration name="api | Autenticação" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Autenticação" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Deletar Usuário" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Deletar Usuário" index="7" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Obter Usuários" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Obter Usuários" index="4" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration name="api | Usuários (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/api.http" executionIdentifier="Usuários" index="3" runType="Executar requisição única">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml: Deploy do Compose" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Podman">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.api | Usuários (1)" />
+        <item itemvalue="HTTP Request.api | Deletar Usuário" />
+        <item itemvalue="HTTP Request.api | Obter Usuários" />
+        <item itemvalue="HTTP Request.api | Autenticação" />
+        <item itemvalue="Docker.docker-compose.yaml: Deploy do Compose" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Tarefa padrão">
+      <changelist id="88000d0a-0bae-485f-8ce6-22a15ed977fe" name="Alterações" comment="" />
+      <created>1746921081868</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746921081868</updated>
+      <workItem from="1746921083322" duration="11502000" />
+      <workItem from="1747214506963" duration="13000" />
+      <workItem from="1747670824675" duration="1241000" />
+      <workItem from="1747672079401" duration="3593000" />
+      <workItem from="1747678312342" duration="717000" />
+      <workItem from="1747693119045" duration="27056000" />
+      <workItem from="1747741461129" duration="17527000" />
+      <workItem from="1747787969216" duration="66000" />
+      <workItem from="1747797405235" duration="10117000" />
+      <workItem from="1747840577558" duration="13000" />
+      <workItem from="1747840640252" duration="131000" />
+      <workItem from="1747840782291" duration="18000" />
+      <workItem from="1747840809203" duration="1404000" />
+      <workItem from="1747842848383" duration="339000" />
+      <workItem from="1747846187735" duration="2160000" />
+      <workItem from="1747848530686" duration="1273000" />
+      <workItem from="1747849824977" duration="619000" />
+      <workItem from="1747919605058" duration="10000" />
+      <workItem from="1747924415856" duration="17244000" />
+      <workItem from="1747945328772" duration="52399000" />
+      <workItem from="1748071561597" duration="8627000" />
+      <workItem from="1748084005967" duration="356000" />
+      <workItem from="1748084374318" duration="476000" />
+      <workItem from="1748187729045" duration="3147000" />
+      <workItem from="1748211687639" duration="3449000" />
+      <workItem from="1748261371657" duration="8778000" />
+      <workItem from="1748276964726" duration="893000" />
+      <workItem from="1748286286033" duration="617000" />
+      <workItem from="1748286916371" duration="10417000" />
+      <workItem from="1748351602415" duration="933000" />
+      <workItem from="1748536523236" duration="13046000" />
+      <workItem from="1748554312290" duration="7688000" />
+      <workItem from="1748712808322" duration="695000" />
+      <workItem from="1749151907133" duration="1488000" />
+      <workItem from="1749210962608" duration="3247000" />
+      <workItem from="1749219168775" duration="3927000" />
+      <workItem from="1749302335000" duration="6321000" />
+      <workItem from="1749316434065" duration="7083000" />
+      <workItem from="1749445581983" duration="62000" />
+      <workItem from="1749445663924" duration="30000" />
+      <workItem from="1749445715723" duration="121000" />
+      <workItem from="1749445845384" duration="1003000" />
+      <workItem from="1749528050511" duration="126000" />
+      <workItem from="1749528296674" duration="50000" />
+      <workItem from="1749528355430" duration="427000" />
+      <workItem from="1749528792675" duration="616000" />
+      <workItem from="1749536745176" duration="2407000" />
+      <workItem from="1749569958742" duration="10823000" />
+      <workItem from="1749595577661" duration="33129000" />
+      <workItem from="1749788533434" duration="8545000" />
+      <workItem from="1749837893007" duration="2908000" />
+      <workItem from="1749878807416" duration="1835000" />
+      <workItem from="1750090301615" duration="7890000" />
+      <workItem from="1750098389510" duration="5237000" />
+      <workItem from="1750219243125" duration="2862000" />
+      <workItem from="1750222116190" duration="1127000" />
+      <workItem from="1750223265713" duration="4822000" />
+      <workItem from="1750228473812" duration="4054000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat(dashboard): adicione páginas de painel para análises, escolas, configurações, alunos, professores, equipes e usuários">
+      <option name="closed" value="true" />
+      <created>1747672174435</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747672174435</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: adicionar recursos de gerenciamento escolar com tabela de dados e validação de esquema">
+      <option name="closed" value="true" />
+      <created>1747738894181</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747738894181</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: implementar CORS para permitir origens específicas e melhorar a segurança da API">
+      <option name="closed" value="true" />
+      <created>1747738932388</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747738932388</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: ajustar estado total na tabela de dados e atualizar saídas de build no Turbo">
+      <option name="closed" value="true" />
+      <created>1747739594136</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747739594136</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix(data-table): remover aviso de variável não utilizada para estado total">
+      <option name="closed" value="true" />
+      <created>1747830154043</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747830154043</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: atualizar importações de esquema para usar @obg/schemas e ajustar tipos relacionados">
+      <option name="closed" value="true" />
+      <created>1747976698427</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747976698427</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: adicione o arquivo .gitignore para excluir artefatos de construção, logs e arquivos de ambiente">
+      <option name="closed" value="true" />
+      <created>1747978020905</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747978020905</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: update Dockerfile to include package.json from libs and modify pnpm-workspace.yaml dependencies">
+      <option name="closed" value="true" />
+      <created>1747979263278</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747979263278</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: update zod version to 3.25.23 in pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1747979477423</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747979477423</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: adicionar biblioteca de estratégias com configuração TypeScript e importação de reflect-metadata&#10;&#10;- Criado arquivo main.ts na biblioteca de estratégias para importar 'reflect-metadata'.&#10;- Adicionado tsconfig.json com opções do compilador TypeScript, incluindo suporte a decorators e metadata.&#10;- Criado tsconfig.lib.json estendendo o tsconfig principal com configurações específicas da biblioteca.&#10;- Atualizado pnpm-lock.yaml para incluir dependências da nova biblioteca de estratégias, incluindo pacotes do NestJS e reflect-metadata.&#10;- adicionar módulos de autenticação e gerenciamento de usuários com esquemas e controladores.">
+      <option name="closed" value="true" />
+      <created>1748043079573</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748043079573</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: implementar autenticação com JWT e estratégia local, incluindo validação de usuário e tratamento de solicitações">
+      <option name="closed" value="true" />
+      <created>1748059987553</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1748059987553</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente">
+      <option name="closed" value="true" />
+      <created>1748078683103</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748078683103</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma">
+      <option name="closed" value="true" />
+      <created>1748083386623</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1748083386623</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: adicionando comandos Prisma ao package.json para migração e implantação">
+      <option name="closed" value="true" />
+      <created>1748214276458</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214276458</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: adicionando comandos Prisma ao package.json para migração e implantação">
+      <option name="closed" value="true" />
+      <created>1748214346663</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214346663</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: remove outdated Prisma version from pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1748214637550</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1748214637550</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28">
+      <option name="closed" value="true" />
+      <created>1748293651884</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1748293651884</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências">
+      <option name="closed" value="true" />
+      <created>1748379604611</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1748379604611</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências">
+      <option name="closed" value="true" />
+      <created>1748379659476</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1748379659476</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat(api): implementar operações CRUD para estudantes e professores&#10;&#10;- Criado StudentsController e TeachersController para lidar com requisições relacionadas a estudantes e professores.&#10;- Adicionados endpoints para criar, atualizar, recuperar e deletar estudantes e professores.&#10;- Adicionada validação utilizando Zod para os dados de entrada em ambos os controladores.&#10;- Integrada documentação Swagger para melhor visibilidade da API.&#10;- Atualizado app.module.ts para incluir StudentsModule e TeachersModule.&#10;- Aprimorado o tratamento de erros nos controladores para retornar os códigos de status HTTP apropriados.&#10;- Atualizados os schemas de estudantes e professores para incluir tipos de entrada sem os campos de role.&#10;- Modificado api.http para incluir os novos endpoints de criação de professores.">
+      <option name="closed" value="true" />
+      <created>1748544517588</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1748544517588</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: adicionar autorização ao endpoint de listagem de escolas&#10;&#10;feat: tornar temporariamente público o endpoint &quot;Obter Escolas&quot;&#10;&#10;feat: implementar pattern de mensagem findManySchools no serviço de escolas&#10;&#10;feat: adicionar método findMany no SchoolsService para busca em massa de escolas&#10;&#10;fix: remover valor padrão dos IDs de Student e Teacher no schema do Prisma&#10;&#10;feat: atualizar controllers de estudante e professor para lidar com novas estruturas de payload&#10;&#10;feat: aprimorar serviços de estudante e professor com tratamento de erros e validações adequadas&#10;&#10;feat: adicionar mensagens NATS para criação e atualização de professores&#10;&#10;feat: introduzir enums para gênero, raça e categorias especiais&#10;&#10;feat: estender schemas de estudante e professor com novos campos e validações&#10;&#10;chore: criar migration para definir valor padrão de teamsId no modelo Teacher&#10;&#10;feat: implementar módulo NATS para comunicação entre microsserviços">
+      <option name="closed" value="true" />
+      <created>1748566443826</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1748566443826</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados">
+      <option name="closed" value="true" />
+      <created>1748566783875</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1748566783875</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores">
+      <option name="closed" value="true" />
+      <created>1749164091230</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1749164091230</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: aprimorar configuração do workspace, adicionar NATS para comunicação e implementar operações CRUD para estudantes">
+      <option name="closed" value="true" />
+      <created>1749213777780</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1749213777780</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: adicionar analytics da Vercel e aprimorar layout da aplicação">
+      <option name="closed" value="true" />
+      <created>1749243409578</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749243409578</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor">
+      <option name="closed" value="true" />
+      <created>1749245930695</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1749245930695</updated>
+    </task>
+    <task id="LOCAL-00027" summary="feat: adicionar Vercel Speed Insights ao layout da aplicação">
+      <option name="closed" value="true" />
+      <created>1749247605926</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1749247605926</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat: adicionar tratamento de exceções personalizadas e configuração de JWT">
+      <option name="closed" value="true" />
+      <created>1749538285909</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1749538285909</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção.">
+      <option name="closed" value="true" />
+      <created>1749739381448</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1749739381448</updated>
+    </task>
+    <task id="LOCAL-00030" summary="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml">
+      <option name="closed" value="true" />
+      <created>1749739725050</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1749739725050</updated>
+    </task>
+    <task id="LOCAL-00031" summary="feat: implementar cache para paginacao de usuários, equipes e professores">
+      <option name="closed" value="true" />
+      <created>1749740762677</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1749740762677</updated>
+    </task>
+    <task id="LOCAL-00032" summary="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações.">
+      <option name="closed" value="true" />
+      <created>1749761340833</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1749761340833</updated>
+    </task>
+    <task id="LOCAL-00033" summary="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule.">
+      <option name="closed" value="true" />
+      <created>1749770465781</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1749770465781</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat: implementar validações de integridade para criação, atualização e remoção de usuários">
+      <option name="closed" value="true" />
+      <created>1749796361380</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1749796361380</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CODE_SMELLS_PROFILE" value="Project Default" />
+    <MESSAGE value="feat: autenticação parcialmente termina, JWT, Guards e Passport Strategies, proteção nos endpoints da api, decorator IsPublic para poder uma rota ser acessada externamente" />
+    <MESSAGE value="feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração para OBG Plataforma" />
+    <MESSAGE value="feat: adicionando comandos Prisma ao package.json para migração e implantação" />
+    <MESSAGE value="fix: remove outdated Prisma version from pnpm-lock.yaml" />
+    <MESSAGE value="feat: adicionar mapeamento da biblioteca core do Node.js e atualizar configurações do workspace&#10;&#10;feat: atualizar README.md com detalhes do projeto, tecnologias, arquitetura e instruções de configuração&#10;&#10;fix: corrigir requisições na api.http com valores corretos de email e role&#10;&#10;refactor: alterar UserSchemaType para BaseUserDto no controller e serviço de autenticação&#10;&#10;refactor: atualizar controller de usuários para usar os novos schemas e DTOs base&#10;&#10;feat: implementar novos schemas de usuário (admin, professor e aluno) com validação de role&#10;&#10;refactor: remover schemas antigos de aluno e professor, e consolidar schemas de usuário&#10;&#10;fix: atualizar main.ts para exportar os novos schemas e tipos de usuário&#10;&#10;chore: atualizar dependência do zod para a versão 3.25.28" />
+    <MESSAGE value="feat(api): atualizar criação de usuário e atribuição de cargo nas requisições da API&#10;&#10;- Alterado o e-mail de &quot;teste3@teste.com&quot; para &quot;teste5@teste.com&quot; na requisição da API.&#10;- Atualizado o cargo do usuário de &quot;ADMIN&quot; para &quot;TEACHER&quot; e adicionado campo CPF na criação do usuário.&#10;&#10;chore(api): reorganizar dependências do pacote&#10;&#10;- Movidas as dependências @obg para uma ordem mais estruturada no package.json.&#10;- Adicionada dependência express-session para gerenciamento de sessões.&#10;&#10;refactor(auth): simplificar processo de login&#10;&#10;- Removido console.log desnecessário no método de login.&#10;- Simplificada a lógica de autenticação do usuário.&#10;&#10;fix(guards): comentar lógica de login via sessão&#10;&#10;- Comentada a chamada ao logIn no LocalAuthGuard para tornar o gerenciamento de sessão opcional.&#10;&#10;feat(users): aprimorar lógica de criação de usuários&#10;&#10;- Atualizada a lógica de criação de usuários para usar CreateBaseUserDto.&#10;- Emitido evento de criação de usuário após sucesso na criação.&#10;&#10;feat(students-service): implementar tratamento básico de eventos&#10;&#10;- Criado AppController para lidar com eventos relacionados a usuários no serviço de estudantes.&#10;- Adicionados padrões de eventos para criação e recuperação de usuários.&#10;&#10;feat(teachers-service): adicionar tratamento de eventos para ações de professores&#10;&#10;- Criado AppController para lidar com eventos relacionados a professores.&#10;- Implementados padrões de eventos para ações de professores.&#10;&#10;fix(users-service): atualizar serviço de usuários para lidar com novos DTOs&#10;&#10;- Refatorados métodos do serviço de usuários para usar CreateBaseUserDto e UpdateBaseUserDto.&#10;- Integrada comunicação via NATS no serviço de usuários.&#10;&#10;refactor(decorators): atualizar decorator de usuário atual&#10;&#10;- Alterado o tipo de retorno do decorator CurrentUser para BaseUserDto.&#10;&#10;chore(interfaces): atualizar interface de requisição de autenticação&#10;&#10;- Alterado o tipo de usuário na interface AuthRequest para BaseUserDto.&#10;&#10;feat(schemas): estender schema de professor com tipos DTO&#10;&#10;- Adicionados TeacherUserDto e tipos relacionados para maior segurança de tipos.&#10;&#10;chore(lock): atualizar pnpm lock file para novas dependências" />
+    <MESSAGE value="feat(api): implementar operações CRUD para estudantes e professores&#10;&#10;- Criado StudentsController e TeachersController para lidar com requisições relacionadas a estudantes e professores.&#10;- Adicionados endpoints para criar, atualizar, recuperar e deletar estudantes e professores.&#10;- Adicionada validação utilizando Zod para os dados de entrada em ambos os controladores.&#10;- Integrada documentação Swagger para melhor visibilidade da API.&#10;- Atualizado app.module.ts para incluir StudentsModule e TeachersModule.&#10;- Aprimorado o tratamento de erros nos controladores para retornar os códigos de status HTTP apropriados.&#10;- Atualizados os schemas de estudantes e professores para incluir tipos de entrada sem os campos de role.&#10;- Modificado api.http para incluir os novos endpoints de criação de professores." />
+    <MESSAGE value="feat: adicionar autorização ao endpoint de listagem de escolas&#10;&#10;feat: tornar temporariamente público o endpoint &quot;Obter Escolas&quot;&#10;&#10;feat: implementar pattern de mensagem findManySchools no serviço de escolas&#10;&#10;feat: adicionar método findMany no SchoolsService para busca em massa de escolas&#10;&#10;fix: remover valor padrão dos IDs de Student e Teacher no schema do Prisma&#10;&#10;feat: atualizar controllers de estudante e professor para lidar com novas estruturas de payload&#10;&#10;feat: aprimorar serviços de estudante e professor com tratamento de erros e validações adequadas&#10;&#10;feat: adicionar mensagens NATS para criação e atualização de professores&#10;&#10;feat: introduzir enums para gênero, raça e categorias especiais&#10;&#10;feat: estender schemas de estudante e professor com novos campos e validações&#10;&#10;chore: criar migration para definir valor padrão de teamsId no modelo Teacher&#10;&#10;feat: implementar módulo NATS para comunicação entre microsserviços" />
+    <MESSAGE value="feat: atualizar configurações do workspace e adicionar novos endpoints para escolas e serviços relacionados" />
+    <MESSAGE value="feat: atualizar configurações do workspace e aprimorar endpoints de autenticação e professores" />
+    <MESSAGE value="feat: aprimorar configuração do workspace, adicionar NATS para comunicação e implementar operações CRUD para estudantes" />
+    <MESSAGE value="feat: adicionar analytics da Vercel e aprimorar layout da aplicação" />
+    <MESSAGE value="feat: adicionar esquema de categorias especiais e integrá-lo aos esquemas de estudante e professor" />
+    <MESSAGE value="feat: adicionar Vercel Speed Insights ao layout da aplicação" />
+    <MESSAGE value="feat: implementar CRUD e novo serviço para equipes" />
+    <MESSAGE value="feat: adicionar configuração JWT e atualizar dependências no package.json" />
+    <MESSAGE value="feat: adicionar tratamento de exceções personalizadas e configuração de JWT" />
+    <MESSAGE value="feat: adicionar módulos NATS e Redis aos serviços de escolas, estudantes, professores e equipes&#10;&#10;- Implementado módulo NATS para comunicação assíncrona no serviço de escolas.&#10;- Adicionado módulo de cache Redis aos serviços de escolas, estudantes, professores e equipes.&#10;- Criados testes e2e para os controladores das aplicações dos serviços de escolas, estudantes e professores.&#10;- Configurada a Jest para testes e2e nos serviços de escolas, estudantes e professores.&#10;- Atualizados os arquivos .env.example com configurações de Redis e banco de dados para o serviço de equipes.&#10;- Criadas migrações Prisma para o serviço de equipes para definir a estrutura da tabela Team.&#10;- Adicionada biblioteca de filtros de exceção com tratamento de exceções RPC.&#10;- Implementadas configurações do ESLint e Prettier para as bibliotecas de filtros e filtros de exceção." />
+    <MESSAGE value="feat: adicionar dependências de NATS e Passport ao projeto e atualizar pnpm-lock.yaml" />
+    <MESSAGE value="feat: implementar cache para paginacao de usuários, equipes e professores" />
+    <MESSAGE value="refactor: atualizar padrões de mensagens para serviços de autenticação e usuários&#10;&#10;- Alterados os padrões de mensagens no AuthService e LocalStrategy para usar notação por pontos.&#10;- Atualizados SchoolsService, StudentsService, TeachersService, TeamsService e UsersService para seguir as novas convenções de padrões de mensagens.&#10;- Modificados AppController e AppService nos respectivos serviços para alinhar com os padrões atualizados.&#10;- Melhorada a estrutura de resposta nos métodos de remoção em vários serviços para incluir dados na resposta.&#10;- Adicionado novo serviço de notificações com configuração básica, incluindo controlador, serviço e testes.&#10;- Configurado ESLint e Prettier para o novo serviço de notificações." />
+    <MESSAGE value="feat: adicionar módulo NATS e template de e-mail de boas-vindas ao serviço de notificações&#10;&#10;- Criado módulo NATS para comunicação assíncrona.&#10;- Implementado envio de e-mail de boas-vindas ao criar um novo usuário.&#10;- Adicionado template de e-mail de boas-vindas em Handlebars.&#10;- Atualizado app.module.ts para incluir NatsModule e NodeMailerModule." />
+    <MESSAGE value="feat: implementar validações de integridade para criação, atualização e remoção de usuários" />
+    <MESSAGE value="feat(users-service): iniciar serviço de usuários com integração Prisma e NATS&#10;&#10;- Adicionado schema Prisma para o modelo User com enum UserRole.&#10;- Implementados microsserviços NATS para gerenciamento de usuários.&#10;- Criados UsersController e UsersService para manipular operações de usuário.&#10;- Adicionado PrismaService para interações com o banco de dados.&#10;- Configurados os módulos do NestJS e o bootstrap da aplicação.&#10;- Criadas as migrações necessárias para o banco de dados PostgreSQL.&#10;- Configuração do TypeScript para build do serviço.&#10;- Adicionado package.json com scripts e dependências do serviço." />
+    <MESSAGE value="feat: terminando migração para yarn" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: terminando migração para yarn" />
+  </component>
+</project>

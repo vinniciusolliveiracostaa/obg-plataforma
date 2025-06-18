@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "tsc -p tsconfig.lib.json",
-    "dev": "tsc -p tsconfig.lib.json --watch",
+    "start:dev": "tsc -p tsconfig.lib.json --watch",
     "lint": "eslint \"src/**/*.{ts,js}\" \"main.ts\" --fix",
     "format": "prettier --write \"src/**/*.{ts,js,json,md}\""
   },

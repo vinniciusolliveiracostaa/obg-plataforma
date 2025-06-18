@@ -3,13 +3,14 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "start:dev": "turbo run start:dev",
+    "start:dev": "turbo run start:dev --concurrency 20",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
     "prettier": "^3.5.3",
+    "prisma": "latest",
     "turbo": "^2.5.4",
     "typescript": "5.8.2"
   },
