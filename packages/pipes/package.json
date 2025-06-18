@@ -1,0 +1,44 @@
+{
+  "name": "@obg/pipes",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.lib.json",
+    "dev": "tsc -p tsconfig.lib.json --watch",
+    "lint": "eslint \"src/**/*.{ts,js}\" \"main.ts\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,json,md}\""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/core": "^11.0.1",
+    "reflect-metadata": "^0.2.2",
+    "zod": "^3.25.28"
+  },
+  "devDependencies": {
+    "@nestjs/schematics": "^11.0.0",
+    "@types/node": "^22.15.3",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
