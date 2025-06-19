@@ -1,18 +1,49 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
+import {
+  Inject,
+  Injectable,
+  InternalServerErrorException,
+  OnApplicationBootstrap,
+} from '@nestjs/common';
+import { BaseUserDto, CreateAllUsersDto } from '@obg/schemas';
 import { AuthRequest } from '@obg/interfaces';
-import { firstValueFrom } from 'rxjs';
-import { BaseUserDto } from '@obg/schemas';
+import { firstValueFrom, lastValueFrom } from 'rxjs';
+import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
-export class AuthService {
-  constructor(@Inject('API_GATEWAY_CONSUMER') private client: ClientProxy) {}
+export class AuthService implements OnApplicationBootstrap {
+  constructor(@Inject('AUTH_CLIENT') private client: ClientProxy) {}
 
-  async login(req: AuthRequest) {
-    return await firstValueFrom(this.client.send('auth.login', req.user));
+  async onApplicationBootstrap() {
+    await this.client.connect();
   }
 
-  async profile(currentUser: BaseUserDto): Promise<BaseUserDto> {
+  async register(data: CreateAllUsersDto) {
+    try {
+      console.log(data);
+      return await lastValueFrom(this.client.send('user.create', data));
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
+  }
+
+  async login(req: AuthRequest) {
+    try {
+      console.log(req.user);
+      return await firstValueFrom(this.client.send('auth.login', req.user));
+    } catch (error) {
+      throw new InternalServerErrorException(error.message);
+    }
+  }
+
+  async refresh() {}
+
+  async logout() {}
+
+  async forgotPassword() {}
+
+  async resetPassword() {}
+
+  async me(currentUser: BaseUserDto): Promise<BaseUserDto> {
     return currentUser;
   }
 }

@@ -1,46 +1,36 @@
 import { NestFactory } from '@nestjs/core';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
-import { NatsConfig } from './config/nats.config';
+import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
-  const logger = new Logger('UsersService');
-
+  const logger = new Logger('Users-Service Bootstrap');
   try {
     const app = await NestFactory.create(AppModule);
     const configService = app.get(ConfigService);
 
-    const natsConfig = configService.get<NatsConfig>('nats');
-
-    if (!natsConfig) {
-      throw new Error('NATS configuration not found');
-    }
-
     const microservice = app.connectMicroservice<MicroserviceOptions>({
       transport: Transport.NATS,
       options: {
-        servers: [natsConfig.url],
-        queue: natsConfig.queue,
-        user: natsConfig.user,
-        pass: natsConfig.pass,
-        timeout: natsConfig.timeout,
-        name: natsConfig.name,
+        servers: [
+          configService.get<string>('NATS_URL', 'nats://localhost:4222'),
+        ],
+        queue: 'users-service',
+        timeout: 5000,
         reconnect: true,
-        reconnectTimeWait: 5000,
+        reconnectTimeWait: 1000,
         maxReconnectAttempts: 10,
-        pingInterval: 120000,
+        pingInterval: 10000,
       },
     });
 
     await app.startAllMicroservices();
-
     logger.log(
-      `Microservice ${natsConfig.queue} is running on ${natsConfig.url}`,
+      `Microservice is running on ${configService.get<string>('NATS_URL', 'nats://localhost:4222')}`,
     );
   } catch (error) {
-    logger.error('Failed to start microservice', error);
+    logger.error('Error starting Microservice', error);
     process.exit(1);
   }
 }

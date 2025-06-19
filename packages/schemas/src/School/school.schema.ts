@@ -1,60 +1,45 @@
-import { z } from 'zod';
-import { SchoolLocationSchema } from './school-location.schema';
-import { SchoolLocalitySchema } from './school-locality.schema';
-import { SchoolAdministrativeCategorySchema } from './school-administrative-category.schema';
-import { SchoolServiceRestrictionSchema } from './school-service-restriction.schema';
-import { UFSchema } from '../UF/uf.schema';
-import { SchoolAdministrativeDependenceSchema } from './school-administrative-dependence.schema';
-import { SchoolPrivateCategorySchema } from './school-private-category.schema';
+import { z } from 'zod/v4';
 import {
-  SchoolLatitudeSchema,
-  SchoolLongitudeSchema,
-} from './school-latitude-longitude.schema';
+  Administrativecategory,
+  AdministrativeDependencies,
+  Locality,
+  Location,
+  Privatecategory,
+  Servicerestriction,
+  UF,
+} from '@obg/enums';
 
 export const schoolSchema = z
   .object({
-    id: z.string().cuid(),
+    id: z.cuid2(),
     name: z.string().min(1, 'Nome é Obrigatório'),
     inep: z.string().length(8, 'INEP deve ter exatamente 8 caracteres'),
-    uf: UFSchema,
+    uf: z.enum(UF),
     city: z.string().min(1, 'Cidade é Obrigatória'),
-    location: SchoolLocationSchema,
-    locality: SchoolLocalitySchema,
-    administrativeCategory: SchoolAdministrativeCategorySchema,
-    serviceRestriction: SchoolServiceRestrictionSchema,
+    location: z.enum(Location),
+    locality: z.enum(Locality),
+    administrativeCategory: z.enum(Administrativecategory),
+    serviceRestriction: z.enum(Servicerestriction),
     address: z.string().min(1, 'Endereço é Obrigatório'),
     phone: z
       .string()
       .regex(/^\+?[0-9\s\-()]{7,15}$/, 'Telefone inválido')
       .optional(),
-    administrativeDependence: SchoolAdministrativeDependenceSchema,
-    privateCategory: SchoolPrivateCategorySchema,
+    administrativeDependence: z.enum(AdministrativeDependencies),
+    privateCategory: z.enum(Privatecategory),
     publicPowerAgreement: z.enum(['Sim', 'Não']),
     regulation: z.string().optional(),
     size: z.string().optional(),
     teachingModalityStage: z.string().optional(),
     otherOffers: z.string().optional(),
-    latitude: SchoolLatitudeSchema,
+    latitude: z
+      .number()
+      .min(-90, 'Latitude mínima é -90')
+      .max(90, 'Latitude máxima é 90'),
 
-    longitude: SchoolLongitudeSchema,
+    longitude: z
+      .number()
+      .min(-180, 'Longitude mínima é -180')
+      .max(180, 'Longitude máxima é 180'),
   })
   .required();
-
-// Schema para a criação (sem o id)
-export const createSchoolSchema = schoolSchema.omit({ id: true });
-
-// Schema para a atualização (com o id)
-export const updateSchoolSchema = schoolSchema.omit({ id: true }).partial();
-
-// Schema para a resposta da API (lista de escolas)
-export const schoolsResponseSchema = z.object({
-  data: z.array(schoolSchema),
-  total: z.number(),
-  totalPages: z.number(),
-});
-
-// Tipos inferidos dos schemas - use esses tipos para validação de dados
-export type SchoolSchemaType = z.infer<typeof schoolSchema>;
-export type SchoolsResponse = z.infer<typeof schoolsResponseSchema>;
-export type CreateSchoolDto = z.infer<typeof createSchoolSchema>;
-export type UpdateSchoolDto = z.infer<typeof updateSchoolSchema>;

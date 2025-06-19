@@ -1,25 +1,15 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { NatsModule } from './nats/nats.module';
 import { RedisModule } from './redis/redis.module';
-import { natsConfig, natsConfigValidationSchema } from './config/configuration';
+import { StudentsModule } from './students/students.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [natsConfig],
-      validationSchema: natsConfigValidationSchema,
-      validationOptions: { abortEarly: true },
-    }),
+    ConfigModule.forRoot({ isGlobal: true }),
     PrismaModule,
-    NatsModule,
     RedisModule,
+    StudentsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

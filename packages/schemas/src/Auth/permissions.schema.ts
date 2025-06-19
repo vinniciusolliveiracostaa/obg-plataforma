@@ -1,12 +1,9 @@
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
-export const permissionSchema = z.object({
+export const permissionsSchema = z.object({
   action: z.string(),
   resource: z.string(),
-  condition: z.record(z.any()).optional(),
+  condition: z.record(z.string(), z.any()).optional(),
 });
 
-export const permissionsListSchema = z.array(permissionSchema);
-
-export type Permission = z.infer<typeof permissionSchema>;
-export type PermissionsList = z.infer<typeof permissionsListSchema>;
+export const permissionsArraySchema = z.array(permissionsSchema);
